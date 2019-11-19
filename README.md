@@ -29,9 +29,9 @@ Things you may want to cover:
 
 ### Association
 - has_many :comments
-- has_many :items
-- has_many :credit_cards
-- has_one :address
+- has_many :items, dependent: :destroy
+- has_many :credit_cards, dependent: :destroy
+- has_one :address, dependent: :destroy
 
 
 
@@ -63,8 +63,8 @@ Things you may want to cover:
 |category_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :images
-- has_many :comments
+- has_many :images, dependent: :destroy
+- has_many :comments, dependent: :destroy
 - belongs_to :user
 - belongs_to :category
 
@@ -94,7 +94,7 @@ Things you may want to cover:
 
 
 
-## adressテーブル
+## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
 |zip_code|string||
