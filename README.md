@@ -26,14 +26,12 @@ Things you may want to cover:
 |birthday_year|string|null: false|
 |birthday_month|string|null: false|
 |birthday_date|string|null: false|
-|adress_id|integer|null: false, foreign_key: true|
-
 
 ### Association
 - has_many :comments
 - has_many :items
 - has_many :credit_cards
-- belongs_to :adress
+- has_one :address
 
 
 
@@ -104,9 +102,10 @@ Things you may want to cover:
 |city|string||
 |adress|string||
 |building|string||
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :users
+- belongs_to :user
 
 
 
@@ -114,7 +113,7 @@ Things you may want to cover:
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nomber|integer||
+|number|integer||
 |limit|integer||
 |security_code|integer||
 |user_id|integer|null: false, foreign_key: true|
