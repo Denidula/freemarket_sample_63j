@@ -100,7 +100,7 @@ Things you may want to cover:
 |zip_code|string||
 |prefecture|string||
 |city|string||
-|adress|string||
+|address|string||
 |building|string||
 |user_id|integer|null: false, foreign_key: true|
 
