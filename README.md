@@ -53,6 +53,11 @@ Things you may want to cover:
 |name|string|null: false|
 |price|integer|null: false|
 |description|string|null: false|
+|size|string||
+|status|string|null: false|
+|charge|string|null: false|
+|delivery_method|string|null: false|
+|send_date|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 
@@ -78,7 +83,9 @@ Things you may want to cover:
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|major|string|null: false|
+|medium|string|null: false|
+|small|string|null: false|
 
 ### Association
 - has_many :items
