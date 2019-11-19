@@ -38,8 +38,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |text|string|null: false|
-|user_id|integer|null: false|
-|item_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -53,8 +53,8 @@ Things you may want to cover:
 |name|string|null: false|
 |price|integer|null: false|
 |description|string|null: false|
-|user_id|integer|null: false|
-|category_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :images
@@ -68,7 +68,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|integer|null: false|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
