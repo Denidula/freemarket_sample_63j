@@ -26,11 +26,14 @@ Things you may want to cover:
 |birthday_year|string|null: false|
 |birthday_month|string|null: false|
 |birthday_date|string|null: false|
+|adress_id|integer|null: false, foreign_key: true|
 
 
 ### Association
 - has_many :comments
 - has_many :items
+- has_many :credit_cards
+- belongs_to :adress
 
 
 
@@ -89,6 +92,48 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
+
+
+
+
+## adressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|zip_code|string||
+|prefecture|string||
+|city|string||
+|adress|string||
+|building|string||
+
+### Association
+- has_many :users
+
+
+
+
+## credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nomber|integer||
+|limit|integer||
+|security_code|integer||
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+
+
+
+## snsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|facebook|string||
+|google|string||
+|mail|string||
+
+### Association
+
 
 
 
