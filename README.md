@@ -42,8 +42,8 @@ Things you may want to cover:
 |item_id|integer|null: false|
 
 ### Association
-- belong_to :user
-- belong_to :item
+- belongs_to :user
+- belongs_to :item
 
 
 
@@ -59,8 +59,8 @@ Things you may want to cover:
 ### Association
 - has_many :images
 - has_many :comments
-- belong_to :user
-- belong_to :category
+- belongs_to :user
+- belongs_to :category
 
 
 
@@ -71,7 +71,7 @@ Things you may want to cover:
 |item_id|integer|null: false|
 
 ### Association
-- belong_to :item
+- belongs_to :item
 
 
 
