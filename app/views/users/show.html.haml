@@ -129,3 +129,41 @@
 
 
     .content
+
+      .user-icon
+        .inner
+          .inner__image
+            = image_tag 'https://cdn.pixabay.com/photo/2016/07/23/13/21/pokemon-1536855_1280.png', height: '60', width: '60'
+          %h2.inner__name
+            user.name
+          .inner__number
+            .evaluation
+              評価
+              %span.bold
+                10
+            .num
+              出品数
+              %span.bold
+                3
+            
+      .container-notification-todo
+        %ul.mypage-tabs
+          %li.active
+            %h3
+              お知らせ
+          %li
+            %h3
+              やることリスト
+        .tab-content
+
+      .tab-container
+        %h2.tab-head
+          購入した商品
+        %ul.mypage-tabs
+          %li.active
+            %h3
+              取引中
+          %li
+            %h3
+              過去の取り引き
+        .tab-content
