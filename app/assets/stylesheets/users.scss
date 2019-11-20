@@ -1,3 +1,105 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contents {
+  margin: 0;
+  padding: 0;
+
+  .header {
+    background-color: #fff;
+    height: 100px;
+    padding-bottom: 10px;
+
+    .header-inner {
+      width: 1020px;
+      margin: 0 auto;
+      padding: 8px 0 0;
+      
+      &__up {
+        display: flex;
+
+        .inner-form {
+          height: 40px;
+          width: 841px;
+          border: 1px solid black;
+          line-height: 40px;
+          padding-left: 10px;
+          margin-left: 40px;
+          background-color: rgb(221, 221, 221);
+        }
+      }
+      &__down {
+        padding: 10px 0 0;
+        @extend .clearfix;
+        li {
+          padding: 0 11px;
+        }
+        .down-left {
+          float: left;
+          
+          ul {
+            padding-left: 0;
+            
+            li {
+              display: inline;
+            }
+          }
+        }
+        .down-right {
+          float: right;
+
+          ul {
+            list-style: none;
+            
+            li {
+              display: inline;
+
+              .like {
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav {
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    background: #fff;
+
+    ul {
+      width: 1020px;
+      margin: 0 auto;
+      padding: 16px 0;
+      
+      li {
+        display: inline;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .main {
+    margin: 40px auto 0;
+    width: 1020px;
+    padding: 0 0 40px;
+    display: block;
+  }
+}
+  
+
+
+
+.clearfix {
+  *zoom: 1;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

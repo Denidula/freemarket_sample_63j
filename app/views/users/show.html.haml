@@ -1,0 +1,44 @@
+
+.contents
+
+  .header
+    .header-inner
+      .header-inner__up
+        .inner-image
+          = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', height: '36', width: '134'
+        .inner-form
+          何かお探しですか？
+          = fa_icon 'search'
+      .header-inner__down
+        .down-left
+          %ul
+            %li
+              = fa_icon 'list'
+              カテゴリーから探す
+            %li
+              = fa_icon 'tag'
+              ブランドから探す
+        .down-right
+          %ul
+            %li.like
+              = fa_icon 'heart'
+              いいね！一覧
+            %li
+              = fa_icon 'bell'
+              お知らせ
+            %li
+              = fa_icon 'check'
+              やることリスト
+            %li
+              マイページ
+
+  .nav
+    %ul
+      %li
+        メルカリ >
+      %li.bold
+        マイページ
+
+  .main
+    .side
+    .content
