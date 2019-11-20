@@ -13,7 +13,7 @@ body {
   padding: 0;
   background-repeat: no-repeat;
 
-  .header {
+  header {
     background-color: #fff;
     height: 100px;
     padding-bottom: 10px;
@@ -52,6 +52,7 @@ body {
             li {
               display: inline;
             }
+            
           }
         }
         .down-right {
@@ -61,11 +62,33 @@ body {
             list-style: none;
             
             li {
-              display: inline;
-
+              display: inline-block;
+              img {
+                border-radius: 50%;
+                overflow: hidden;
+              }
               .like {
                 padding-left: 0;
               }
+              .menu-link {
+                display: block;
+                height: 44px;
+                line-height: 32px;
+                font-size: 0;
+                color: #333;
+                figure {
+                  display: inline-block;
+                  text-align: center;
+                  vertical-align: middle;
+                }
+                span {
+                  margin-left: 10px;
+                  font-size: 14px;
+                }
+              }
+            }
+            .last {
+              padding-right: 0;
             }
           }
         }
@@ -264,16 +287,80 @@ body {
       }
     }
   }
+  .banner {
+    background: url('https://cdn.pixabay.com/photo/2016/04/18/08/50/kitchen-1336160_1280.jpg');
+    background-position: center;
+    background-size: cover;
+    .banner-pc {
+      display: block;
+      overflow: hidden;
+      width: 750px;
+      height: 260px;
+      margin: 0 auto;
+      color: #fff;
+      position: relative;
+      .inner {
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        h2 {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 24px;
+          margin: 0;
+          line-height: 1.4;
+        }
+        p {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 35px;
+          margin: 10px 0 0;
+        }
+        .banner-icon {
+          margin: 20px 0 0;
+          figure {
+            float: left;
+          }
+          ul {
+            float: left;
+            margin: 0 0 0 24px;
+            list-style: none;
+            li {
+              float: left;
+              padding-top: 14px;
+              .link {
+                display: block;
+                line-height: 68px;
+              }
+            }
+            .last {
+              margin: 0 0 0 16px;
+            }
+          }
+        }
+      }
+      .smaho {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        height: 100%;
+      }
+    }
+  }
 }
   
 
 
 
 .clearfix {
-  *zoom: 1;
   &:after {
     content: "";
     display: table;
     clear: both;
   }
+}
+a {
+  color: #0099e8;
+  text-decoration: none;
 }
