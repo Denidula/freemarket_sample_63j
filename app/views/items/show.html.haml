@@ -48,4 +48,73 @@
               .stage-item.active{ style: 'width: 300px;' }
                 .stage-item-inner
                   = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m45896064172_1.jpg?1553586186', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
+
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th
+              出品者
+            %td
+              %p.link
+                出品者名
+              .face-icon
+                .rating-icon
+                  = fa_icon 'laugh', class: 'good'
+                  %span
+                    38
+                .rating-icon
+                  = fa_icon 'laugh', class: ''
+                  %span
+                    6
+                .rating-icon
+                  = fa_icon 'laugh', class: ''
+                  %span
+                    1
+          %tr
+            %th
+              カテゴリー
+            %td
+              .major.link
+                メンズ
+              .mid.link
+                = fa_icon 'chevron-right'
+                トップス
+              .small.link
+                = fa_icon 'chevron-right'
+                ニット/セーター
+          %tr
+            %th
+              ブランド
+            %td
+          %tr
+            %th
+              商品のサイズ
+            %td
+              M
+          %tr
+            %th
+              商品の状態
+            %td
+              新品、未使用
+          %tr
+            %th
+              配送料の負担
+            %td
+              送料込み(出品者負担)
+          %tr
+            %th
+              配送の方法
+            %td
+              未定
+          %tr
+            %th
+              配送元地域
+            %td
+              .link
+                東京都
+          %tr
+            %th
+              発送日の目安
+            %td
+              4~7日で発送
       
