@@ -145,6 +145,7 @@ a {
           ul {
             list-style: none;
             li {
+              position: relative;
               .list-item {
                 display: block;
                 padding: 16px;
@@ -502,3 +503,13 @@ a {
 }
   
 
+.red-icon {
+  color: #ea352d;
+} 
+.right-icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translate(0, -50%);
+  transition: all ease-out .2s;
+}
