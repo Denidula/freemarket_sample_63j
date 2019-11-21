@@ -234,3 +234,37 @@ header {
     }
   }
 }
+
+.item-detail-message {
+  width: 700px;
+  margin: 8px auto;
+  .message-content {
+    background: #fff;
+    padding: 24px;
+    p {
+      padding: 8px;
+      font-size: 14px;
+      background: #fff6de;
+    }
+    .textarea {
+      margin: 8px 0 0;
+      width: 652px;
+      height: 104px;
+      border: 1px solid gray;
+    }
+    .message-submit {
+      width: 100%;
+      height: 50px;
+      margin: 8px 0 0;
+      font-size: 0;
+      text-align: center;
+      background: #aaa;
+      border: solid 1px #aaa;
+      color: #fff;
+      span {
+        font-size: 14px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
