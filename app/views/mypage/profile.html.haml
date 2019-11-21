@@ -9,6 +9,19 @@
     = render partial: 'mypage/shared/side_column'
 
     .content
+      %section.chapter__container
+        %h2.chapter__head
+          プロフィール
+        %form(action="")
+          .setting__profile--icon
+            = image_tag 'pink-bubble.jpg', class: 'pink-bubble'
+            %figure
+              = image_tag 'prf_meganezaru.png', class: 'icon-image'
+            %input(type="text" class="input-box")/
+          .setting__profile--content
+            %textarea(name="introduction" cols="30" rows="10" class="textarea-box" placeholder="例）こんにちは☆")
+            %button
+              変更する
 
   = render partial: 'shared/footer'
 
