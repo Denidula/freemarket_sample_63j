@@ -132,3 +132,23 @@
     .item-description
       %p.item-description-inner
         ・素材構成: ポリエステル
+
+    .item-buttons.clearfix
+      .item-button-left
+        %button
+          = fa_icon 'heart'
+          %span
+            いいね!
+          %span
+            2
+        .report.clearfix
+          = fa_icon 'flag'
+          %span
+            不適切な商品の報告
+          
+      .item-button-right
+        .safe-link
+          = fa_icon 'lock'
+          %span
+            あんしん・あんぜんへの取り組み
+      
