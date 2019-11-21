@@ -11,6 +11,8 @@ Things you may want to cover:
 
 * Configuration
 
+<!-- ---------------------------------- -->
+
 * Database creation
 
 ## usersテーブル
@@ -32,6 +34,7 @@ Things you may want to cover:
 - has_many :items, dependent: :destroy
 - has_many :credit_cards, dependent: :destroy
 - has_one :address, dependent: :destroy
+- has_many :sns_credentials, dependent: :destroy
 
 
 
@@ -125,17 +128,17 @@ Things you may want to cover:
 
 
 
-## snsテーブル
+## sns_credentialsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|facebook|string||
-|google|string||
-|mail|string||
+|uid|string|null: false|
+|provider|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :user
 
-
-
+<!-- ---------------------------------- -->
 
 * Database initialization
 
