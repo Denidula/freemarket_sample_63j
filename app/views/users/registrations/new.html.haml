@@ -1,21 +1,25 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "users/shared/links"
+.container.sign-up
+  .header
+    = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', class: 'header__logo'
+  .main
+    .main__text
+      新規会員登録
+    .main__login
+      - if devise_mapping.omniauthable?
+        - resource_class.omniauth_providers.each do |provider|
+          = link_to "#{OmniAuth::Utils.camelize(provider)}で登録する", omniauth_authorize_path(resource_name, provider), method: :post, class: 'main__login__omniauth'
+          %br/
+
+  .footer
+    %nav
+      %ul.clearfix
+        %li
+          プライバシーポリシー
+        %li
+          メルカリ利用規約
+        %li
+          特定商取引に関する表記
+    .fotter__logo
+      = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229', alt: 'mercari', class: 'footer__logo--gray'
+    %p.footer__text
+      ©️ 2019 Mercari
