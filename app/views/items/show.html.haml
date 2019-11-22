@@ -1,0 +1,380 @@
+.contents
+
+  %header
+    .header-inner
+      .header-inner__up
+        .inner-image
+          = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', height: '36', width: '134'
+        .inner-form
+          何かお探しですか？
+          = fa_icon 'search'
+      .header-inner__down
+        .down-left
+          %ul
+            %li
+              = fa_icon 'list-ul', class: 'red-icon'
+              カテゴリーから探す
+            %li
+              = fa_icon 'tag', class: 'red-icon'
+              ブランドから探す
+        .down-right
+          %ul
+            %li.like
+              = fa_icon 'heart'
+              いいね！一覧
+            %li
+              = fa_icon 'bell'
+              お知らせ
+            %li
+              = fa_icon 'check'
+              やることリスト
+            %li.last
+              .menu-link
+                %figure
+                  = image_tag 'https://cdn.pixabay.com/photo/2016/07/23/13/21/pokemon-1536855_1280.png', height: '32', width: '32'
+                %span
+                  マイページ
+  
+  .item-show-box
+
+    %h1.item-show-name
+      メンズ ニット グレー 
+
+    .item-show-main.clearfix
+      .item-show-photo
+        .carousel
+          .stage-outer
+            .stage{ style: 'left: 0px;' 'width: 300px;' }
+              .stage__item.active{ style: 'width: 300px;' }
+                .stage__item__inner
+                  = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m45896064172_1.jpg?1553586186', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
+
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th
+              出品者
+            %td
+              %p.link
+                出品者名
+              .face-icon
+                .rating-icon
+                  = fa_icon 'laugh', class: 'good'
+                  %span
+                    38
+                .rating-icon
+                  = fa_icon 'laugh', class: ''
+                  %span
+                    6
+                .rating-icon
+                  = fa_icon 'laugh', class: ''
+                  %span
+                    1
+          %tr
+            %th
+              カテゴリー
+            %td
+              .major.link
+                メンズ
+              .mid.link
+                = fa_icon 'chevron-right'
+                トップス
+              .small.link
+                = fa_icon 'chevron-right'
+                ニット/セーター
+          %tr
+            %th
+              ブランド
+            %td
+          %tr
+            %th
+              商品のサイズ
+            %td
+              M
+          %tr
+            %th
+              商品の状態
+            %td
+              新品、未使用
+          %tr
+            %th
+              配送料の負担
+            %td
+              送料込み(出品者負担)
+          %tr
+            %th
+              配送の方法
+            %td
+              未定
+          %tr
+            %th
+              配送元地域
+            %td
+              .link
+                東京都
+          %tr
+            %th
+              発送日の目安
+            %td
+              4~7日で発送
+
+    .item-price-box
+      %span.item-price
+        ¥2,480
+      %span.item-tax
+        (税込)
+      %span.item-shipping-fee
+        送料込み
+
+    .item-buy-btn
+      購入画面に進む
+
+    .item-description
+      %p.item-description__inner
+        ・素材構成: ポリエステル
+
+    .item-buttons.clearfix
+      .item-button-left
+        %button
+          = fa_icon 'heart'
+          %span
+            いいね!
+          %span
+            2
+        .report.clearfix
+          = fa_icon 'flag'
+          %span
+            不適切な商品の報告
+          
+      .item-button-right
+        .safe-link
+          = fa_icon 'lock'
+          %span
+            あんしん・あんぜんへの取り組み
+      
+  .item-detail-message
+    .message-container
+      .message-content
+        .message-form
+          %p
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          .textarea
+          %button.message-submit
+            %span
+              コメントする
+
+  .social-media-box
+    %ul.medias
+      %li
+        .share-btn.fb
+          = fa_icon 'facebook-square'
+      %li
+        .share-btn.tw
+          = fa_icon 'twitter'
+      %li
+        .share-btn.pi
+          = fa_icon 'pinterest'
+
+  .items-in-user-profile
+    %section.items-in-user-profile
+      %h2.items-box-head
+        %p.link
+          出品者名さんのその他の出品
+      .items-box-content.clearfix
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m36212156624_1.jpg?1572504945'
+            .items-box-body
+              %h3.items-box-name
+                ゴールドブレンド コク深め
+              .items-box-num
+                .items-box-price
+                  ¥1,700
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    8
+        
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m24093039934_1.jpg?1573262934'
+            .items-box-body
+              %h3.items-box-name
+                コットン 黒シャツ
+              .items-box-num
+                .items-box-price
+                  ¥2,200
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    2
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m68021190973_1.jpg?1572585469'
+            .items-box-body
+              %h3.items-box-name
+                加圧シャツ インナー タンクトップ 黒
+              .items-box-num
+                .items-box-price
+                  ¥4,880
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    0
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m49951246692_1.jpg?1572585380'
+            .items-box-body
+              %h3.items-box-name
+                加圧シャツ インナー タンクトップ 白
+              .items-box-num
+                .items-box-price
+                  ¥4,880
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    0
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m60721341453_1.jpg?1572506369'
+            .items-box-body
+              %h3.items-box-name
+                ネスカフェ ゴールド
+              .items-box-num
+                .items-box-price
+                  ¥1,700
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    4
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m56795772690_1.jpg?1572504397'
+            .items-box-body
+              %h3.items-box-name
+                ネスカフェ ゴールドブレンド
+              .items-box-num
+                .items-box-price
+                  ¥1,800
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    6
+
+
+  .items-in-user-profile
+    %section.items-in-user-profile
+      %h2.items-box-head
+        %p.link
+          カテゴリー名 その他の商品
+      .items-box-content.clearfix
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m78568103826_1.jpg?1573357947'
+            .items-box-body
+              %h3.items-box-name
+                ニットセーター
+              .items-box-num
+                .items-box-price
+                  ¥2,700
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    8
+        
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m34573881650_1.jpg?1574394939'
+            .items-box-body
+              %h3.items-box-name
+                総柄デザインニット
+              .items-box-num
+                .items-box-price
+                  ¥7,800
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    2
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m74439506321_1.jpg?1574396137'
+            .items-box-body
+              %h3.items-box-name
+                ユニクロ 白 ニット
+              .items-box-num
+                .items-box-price
+                  ¥1,200
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    0
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m99844236042_1.jpg?1573119705'
+            .items-box-body
+              %h3.items-box-name
+                coogi classic
+              .items-box-num
+                .items-box-price
+                  ¥8,000
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    0
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m19609921616_1.jpg?1574396129'
+            .items-box-body
+              %h3.items-box-name
+                メンズ ニット セーター 茶
+              .items-box-num
+                .items-box-price
+                  ¥2,399
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    4
+
+        %section.items-box
+          .link
+            %figure.items-box-photo
+              = image_tag 'https://static.mercdn.net/thumb/photos/m53190385164_1.jpg?1574078574'
+            .items-box-body
+              %h3.items-box-name
+                neos ベスト
+              .items-box-num
+                .items-box-price
+                  ¥4,700
+                .box-icon
+                  = fa_icon 'heart'
+                  %span
+                    6
+    
+
+  .nav
+    %ul
+      %li
+        メルカリ 
+        = fa_icon 'chevron-right'
+      %li.bold
+        メンズ ニット グレー
