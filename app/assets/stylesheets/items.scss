@@ -50,11 +50,11 @@ header {
           overflow: hidden;
           .stage {
             position: relative;
-            .stage-item {
+            &__item {
               min-height: 1px;
               float: left;
               user-select: none;
-              .stage-item-inner {
+              &__inner {
                 min-height: 300px;
                 position: relative;
                 width: 100%;
@@ -156,7 +156,7 @@ header {
     padding: 32px 0 0;
     line-height: 1.5;
     font-size: 18px;
-    .item-description-inner{
+    &__inner{
       white-space: pre-wrap;
       text-align: left;
     }
