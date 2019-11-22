@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get 'notification'
     get 'profile'
   end
+
+  namespace :transaction do
+    get 'buy'
+  end
   
   resources :items
   
