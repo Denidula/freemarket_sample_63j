@@ -48,6 +48,51 @@
         line-height: 40px;
       }
 
+      &__facebook{
+        position: relative;
+
+        &--btn{
+          display: block;
+          text-align: center;
+          // margin: 8px 0 0;
+          border: 1px solid #385185;
+          background: #385185;
+          color: #fff;
+          line-height: 40px;
+          margin-top: 16px;
+          border-radius: 4px;
+        }
+        .fa-facebook-f{
+          color: #fff;
+          font-size: 25px;
+          position: absolute;
+          left: 20px;
+          top: 10px;
+        }
+      }
+      &__google{
+        position: relative;
+        
+        &--btn{
+          display: block;
+          text-align: center;
+          // margin: 8px 0 0;
+          border: 1px solid #979797;
+          background: #fff;
+          color: #000;
+          line-height: 40px;
+          margin-top: 16px;
+          border-radius: 4px;
+        }
+        .fa-google{
+          color: gray;
+          font-size: 25px;
+          position: absolute;
+          left: 15px;
+          top: 10px;
+        }
+      }
+
       .new_user{
         .field__email{
           margin-top: 40px;

@@ -36,14 +36,71 @@
       padding: 30px 200px;
       border-top: 1px solid #eee;
 
-      &__omniauth{
-        display: block;
-        text-align: center;
-        // margin: 8px 0 0;
-        border: 1px solid #385185;
-        background: #385185;
-        color: #fff;
-        line-height: 40px;
+      &__mail{
+        position: relative;
+        
+        &--btn{
+          display: block;
+          text-align: center;
+          // margin: 8px 0 0;
+          border: 1px solid #ea352d;
+          background: #ea352d;
+          color: #fff;
+          line-height: 40px;
+          margin-top: 16px;
+          border-radius: 4px;
+        }
+        .fa-envelope{
+          color: #fff;
+          font-size: 25px;
+          position: absolute;
+          left: 15px;
+          top: 10px;
+        }
+      }
+      &__facebook{
+        position: relative;
+
+        &--btn{
+          display: block;
+          text-align: center;
+          // margin: 8px 0 0;
+          border: 1px solid #385185;
+          background: #385185;
+          color: #fff;
+          line-height: 40px;
+          margin-top: 16px;
+          border-radius: 4px;
+        }
+        .fa-facebook-f{
+          color: #fff;
+          font-size: 25px;
+          position: absolute;
+          left: 20px;
+          top: 10px;
+        }
+      }
+      &__google{
+        position: relative;
+
+        &--btn{
+          display: block;
+          text-align: center;
+          // margin: 8px 0 0;
+          border: 1px solid #979797;
+          background: #fff;
+          color: #000;
+          line-height: 40px;
+          margin-top: 16px;
+          border-radius: 4px;
+        }
+        .fa-google{
+          color: gray;
+          font-size: 25px;
+          position: absolute;
+          left: 15px;
+          top: 10px;
+        }
       }
 
       .new_user{
