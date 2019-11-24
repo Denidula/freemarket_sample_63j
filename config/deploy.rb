@@ -43,8 +43,8 @@ set :default_env, {
 #     invoke 'unicorn:restart'
 #   end
 # end
-# secrets.yml用のシンボリックリンクを追加
-set :linked_files, %w{ config/credentials.yml.enc }
+# secrets.yml用のシンボリックリンクを追加とあったので下を追記したらエラーになったのでmaster.keyだけで良い模様
+# set :linked_files, %w{ config/credentials.yml.enc }
 
 # 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
 
