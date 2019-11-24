@@ -41,6 +41,9 @@
       .buy-content:first-of-type {
         margin: 0;
       }
+      .buy-content:last-of-type {
+        padding: 24px 12.5% 40px;
+      }
       .buy-item > .buy-content__inner {
         display: flex;
         flex-wrap: wrap;
@@ -130,6 +133,34 @@
             text-align: center;
             font-weight: 600;
             min-height: 1.5rem;
+          }
+        }
+      }
+      .buy-user-info {
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        address {
+          display: block;
+          font-style: normal;
+        }
+        h3 {
+          margin: 40px 0 0;
+          font-size: 14px;
+        }
+        h3:first-child {
+          margin: 0;
+        }
+        .buy-user-info-text {
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+        .change {
+          display: block;
+          text-align: right;
+          span {
+            vertical-align: middle;
+            color: #0099e8;
           }
         }
       }
