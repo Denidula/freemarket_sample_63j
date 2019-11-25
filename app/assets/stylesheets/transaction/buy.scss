@@ -1,0 +1,206 @@
+
+.single-contents {
+  padding: 0 0 220px;
+
+  .single-header {
+    height: 128px;
+    text-align: center;
+    h1 {
+      margin: 40px 0 0;
+      display: inline-block;
+      .top-link {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        display: inline-block;
+        margin: 0 8px 0 0;
+      }
+    }
+  }
+
+  .single-main {
+    display: block;
+    .buy-item-contents {
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      .buy-item-head {
+        padding: 16px;
+        font-size: 22px;line-height: 1.5;
+        text-align: center;
+      }
+      .buy-content {
+        margin: 40px 0 0;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        &__inner {
+          max-width: 320px;
+          margin: 0 auto;
+        }
+      }
+      .buy-content:first-of-type {
+        margin: 0;
+      }
+      .buy-content:last-of-type {
+        padding: 24px 12.5% 40px;
+      }
+      .buy-item > .buy-content__inner {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .buy-item {
+        text-align: center;
+        
+        h3 {
+          font-size: 22px;
+          
+        }
+        img {
+          width: 64px;
+          max-height: 148px;
+          vertical-align: middle;
+        }
+        .item-name {
+          width: calc(100% - 80px);
+          margin: 0 0 0 16px;
+          text-align: center;
+          font-size: 16px;
+          line-height: 1.5;
+          font-weight: 600;
+          
+        }
+        form {
+          width: 100%;
+          p {
+            margin: 8px 0 0;
+            line-height: 1.5;
+            font-size: 22px;
+            font-weight: 600;
+          }
+          .in-shipping-fee {
+            margin: 0 0 0 8px;
+            font-size: 14px;
+            font-weight: 400;
+            display: inline-block;
+          }
+          .not-have {
+            background: #ccc;
+            margin: 16px 0 0;
+            list-style: none;
+            .accordion-toggle {
+              cursor: default;
+              padding: 16px;
+              border: 1px solid #ccc;
+              position: relative;
+              height: 20px;
+            }
+          }
+          .buy-price-table {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            list-style: none;
+            li {
+              border: 0;
+              font-size: 18px;
+              display: table-row;
+              font-weight: 600;
+            }
+            .buy-price-cell {
+              display: table-cell;
+              padding: 16px 0;
+              text-align: right;
+              span {
+                font-size: 28px;
+              }
+            }
+            .buy-price-cell:first-child {
+              text-align: left;
+            }
+          }
+          .buy-btn {
+            margin-top: 8px;
+            background: #ea352d;
+            border: #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+            font-weight: 600;
+            min-height: 1.5rem;
+          }
+        }
+      }
+      .buy-user-info {
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        address {
+          display: block;
+          font-style: normal;
+        }
+        h3 {
+          margin: 40px 0 0;
+          font-size: 14px;
+        }
+        h3:first-child {
+          margin: 0;
+        }
+        .buy-user-info-text {
+          margin: 8px 0 0;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+        .change {
+          display: block;
+          text-align: right;
+          span {
+            vertical-align: middle;
+            color: #0099e8;
+          }
+        }
+      }
+    }
+  }
+
+  .single-footer {
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    nav {
+      list-style: none;
+      display: block;
+    }
+    ul {
+      font-size: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        margin: 0 0 0 16px;
+        font-size: 12px;
+      }
+      li:first-child {
+        margin: 0;
+      }
+    }
+    .single-footer-logo {
+      display: block;
+      color: #333;
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+    }
+    p {
+      margin: 8px 0 0;
+      small {
+        font-size: 13px;
+      }
+    }
+  }
+}
