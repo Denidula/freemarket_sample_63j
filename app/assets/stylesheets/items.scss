@@ -406,6 +406,36 @@ header {
   }
   .sell-form {
     border-top: 1px solid #eee;
+    .btn-box {
+      line-height: 1.5;
+      span {
+        color: #0099e8;
+      }
+      .btn-red {
+        margin: 40px 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 14px;
+      }
+      .a {
+        width: 45%;
+        margin: 24px auto 0;
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
+        display: block;
+        line-height: 48px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+      }
+    }
     .sell-content {
       padding: 40px;
       .form-question {
@@ -429,6 +459,73 @@ header {
         float: right;
         width: 400px;
         margin: 0;
+        .sell-price {
+          list-style: none;
+          li {
+            padding: 24px 0;
+            border-top: 1px solid #ccc;
+            .left {
+              float: left;
+            }
+            .right {
+              float: right;
+            }
+          }
+          li:first-child {
+            padding: 0 0 24px;
+            border: 0;
+          }
+          .profit {
+            .left {
+              float: left;
+            }
+            .right {
+              float: right;
+            }
+            font-weight: 600;
+          }
+          .form-group:first-child {
+            margin: 0;
+            .right {
+              width: 50%;
+              text-align: right;
+              float: right;
+              .input_1 {
+                display: inline-block;
+                width: 80%;
+                margin: 0 0 0 5%;
+                input {
+                  margin: 0;
+                  text-align: right;
+                  width: 160px;
+                  height: 48px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+              }
+            }
+            .left {
+              width: 50%;
+              line-height: 48px;
+              float: left;
+            }
+            label {
+              font-weight: 600;
+              span {
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+                background: #ea352d;
+              }
+            }
+          }
+        }
         .form-group:first-child {
           margin: 0;
         }
