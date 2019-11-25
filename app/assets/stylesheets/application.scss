@@ -1,4 +1,9 @@
 @import "./reset";
-@import "font-awesome";
 @import "items";
-@import "./footer";
+@import "font-awesome";
+@import "./mypage/mypage.scss";
+@import "./mypage/profile.scss";
+@import "./users/session.scss";
+@import "./users/registration.scss";
+@import "./items.scss";
+@import "./transaction/buy.scss";
