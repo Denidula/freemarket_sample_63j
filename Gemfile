@@ -75,3 +75,5 @@ gem "omniauth-rails_csrf_protection"
 gem 'haml-rails'
 
 gem 'font-awesome-rails'
+
+gem 'active_hash'
