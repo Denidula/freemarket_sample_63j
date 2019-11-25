@@ -1,0 +1,94 @@
+
+.single-contents
+  
+  .single-header
+    %h1
+      .top-link
+        = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229', height: '49', width: '185'
+
+  .single-main
+
+    %section.buy-item-contents
+
+      %h2.sell-item-head
+        商品の情報を入力
+
+      %form.sell-form(action="")
+        
+        .sell-upload-box
+          %h3.sell-upload-head
+            出品画像
+            %span.form-require
+              必須
+          %p
+            最大10枚までアップロードできます
+          .sell-dropbox.clearfix
+            .sell-upload-drop-box
+              %pre.visible-pc
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+        .sell-content
+          .form-group
+            %label(for="")
+              商品名
+              %span.form-require
+                必須
+            .input
+          .form-group
+            %label(for="")
+              商品の説明
+              %span.form-require
+                必須
+            .text-area
+        .sell-content.clearfix
+          %h3.sell-sub-head
+            商品の詳細
+          .sell-form-box
+            .form-group
+              %label(for="")
+                カテゴリー
+                %span.form-require
+                  必須
+              .select
+
+            .form-group
+              %label(for="")
+                商品の状態
+                %span.form-require
+                  必須
+              .select
+              
+        .sell-content.clearfix
+          %h3.sell-sub-head
+            配送について
+          .form-question
+            ?
+          .sell-form-box
+            .form-group
+              %label(for="")
+                配送料の負担
+                %span.form-require
+                  必須
+              .select
+
+            .form-group
+              %label(for="")
+                発送元の地域
+                %span.form-require
+                  必須
+              .select
+              
+            .form-group
+              %label(for="")
+                発送までの日数
+                %span.form-require
+                  必須
+              .select
+              
+        .sell-content.clearfix
+          %h3.sell-sub-head
+            販売価格(300〜9,999,999)
+          .form-question
+            ?
+
+

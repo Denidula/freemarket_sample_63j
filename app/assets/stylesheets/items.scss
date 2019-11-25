@@ -396,3 +396,151 @@ header {
     }
   }
 }
+
+.single-main {
+  display: block;
+  h2 {
+    padding: 32px 16px;
+    font-size: 22px;
+    text-align: center;
+  }
+  .sell-form {
+    border-top: 1px solid #eee;
+    .sell-content {
+      padding: 40px;
+      .form-question {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #0099e8;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+      }
+      border-top: 1px solid #eee;
+      .sell-sub-head {
+        float: left;
+        color: #888;
+        font-size: 14px;
+      }
+      .sell-form-box {
+        float: right;
+        width: 400px;
+        margin: 0;
+        .form-group:first-child {
+          margin: 0;
+        }
+        .form-group {
+          margin: 40px 0 0;
+          .select {
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            margin-top: 8px;
+            width: 400px;
+            height: 48px;
+          }
+          label {
+            font-weight: 600;
+            display: inline-block;
+            .form-require {
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+          }
+        }
+      }
+      .form-group {
+        margin: 40px 0 0;
+        label {
+          font-weight: 600;
+          display: inline-block;
+          .form-require {
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+          }
+        }
+        .input {
+          width: 620px;
+          height: 48px;
+          border: 1px solid #ccc;
+          margin: 8px 0 0;
+          border-radius: 4px;
+        }
+        .text-area {
+          width: 620px;
+          height: 142px;
+          border: 1px solid #ccc;
+          margin: 8px 0 0;
+          border-radius: 4px;
+        }
+      }
+      .form-group:first-child {
+        margin: 0;
+      }
+    }
+    .sell-upload-box {
+      width: 620px;
+      padding: 40px;
+      p {
+        margin: 8px 0 0;
+        line-height: 1.5;
+        font-size: 13px;
+      }
+      
+      .sell-dropbox {
+        display: block;
+        width: 620px;
+        margin: 16px auto 0;
+        
+        .sell-upload-drop-box {
+          margin-left: 0;
+          padding: 80px;
+          background: #f5f5f5;
+          border: 1px dashed #ccc;
+          font-size: 0;
+          text-align: center;
+          cursor: pointer;
+          position: relative;
+          .visible-pc {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            right: 16px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            pointer-events: none;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+          }
+        }
+      }
+      .sell-upload-head {
+        font-size: 16px;
+        .form-require {
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
