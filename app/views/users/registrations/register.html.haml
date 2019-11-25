@@ -1,0 +1,68 @@
+.container.register
+  .header
+    = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', class: 'header__logo'
+  .main
+    .main__text 会員情報入力
+    .main__form
+      = form_for @user, url: registration_path(resource_name) do |f|
+        .main__form__group
+          = f.label 'ニックネーム', class: 'main__form__group__label', for: "nickname"
+          %span.main__form__group__require 必須
+          = f.text_field :nickname, class: "main__form__group__input-box", placeholder: "例）惣流・アスカ・ラングレー"
+        .main__form__group
+          = f.label 'メールアドレス', class: 'main__form__group__label', for: "email"
+          %span.main__form__group__require 必須
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'PC・携帯どちらでも可', class: 'main__form__group__input-box'
+        .main__form__group
+          = f.label 'パスワード', class: 'main__form__group__label', for: "password"
+          %span.main__form__group__require 必須
+          = f.password_field :password, autocomplete: "current-password", placeholder: '7文字以上', class: 'main__form__group__input-box'
+          .main__form__group__password-revelation
+            .main__form__group__password-revelation__checkbox
+              = f.check_box :password, {class: 'checkbox'}, true, false
+              = f.label :password, 'パスワードを表示する', for: "revial-password"
+        .main__form__group
+          %h3 本人確認
+          %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .main__form__group
+          = f.label 'お名前（全角）', class: 'main__form__group__label', for: "username"
+          %span.main__form__group__require 必須
+          .main__form__group__input-boxes
+            = f.text_field :family_name_kanji, class: "main__form__group__input-boxes--username-family", placeholder: "例）綾波"
+            = f.text_field :first_name_kanji, class: "main__form__group__input-boxes--username-first", placeholder: "例）レイ"
+        .main__form__group
+          = f.label 'お名前カナ（全角）', class: 'main__form__group__label', for: "username"
+          %span.main__form__group__require 必須
+          .main__form__group__input-boxes
+            = f.text_field :family_name_kana, class: "main__form__group__input-boxes--username-family", placeholder: "例）アヤナミ"
+            = f.text_field :first_name_kana, class: "main__form__group__input-boxes--username-first", placeholder: "例）レイ"
+        .main__form__group
+          = f.label '生年月日', class: 'main__form__group__label', for: "username"
+          %span.main__form__group__require 必須
+          .main__form__group__birthday
+            .main__form__group__birthday__select-box
+              = fa_icon 'chevron-down'
+              = f.select :birthday_year, options_for_select(1919..2019), {}, { autofocus: 'true'}
+            %span.main__form__group__birthday__text 年
+            .main__form__group__birthday__select-box
+              = fa_icon 'chevron-down'
+              %select(name="month")
+            %span.main__form__group__birthday__text 月
+            .main__form__group__birthday__select-box
+              = fa_icon 'chevron-down'
+              %select(name="day")
+            %span.main__form__group__birthday__text 日
+
+  .footer
+    %nav
+      %ul.clearfix
+        %li
+          プライバシーポリシー
+        %li
+          メルカリ利用規約
+        %li
+          特定商取引に関する表記
+    .fotter__logo
+      = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229', alt: 'mercari', class: 'footer__logo--gray'
+    %p.footer__text
+      ©️ 2019 Mercari

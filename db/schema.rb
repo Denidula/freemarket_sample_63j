@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_043139) do
+ActiveRecord::Schema.define(version: 2019_11_25_080942) do
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 2019_11_20_043139) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname", null: false
+    t.string "family_name_kanji", null: false
+    t.string "first_name_kanji", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthday_year", null: false
+    t.integer "birthday_month", null: false
+    t.integer "birthday_day", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

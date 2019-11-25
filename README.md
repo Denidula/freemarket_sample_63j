@@ -25,9 +25,9 @@ Things you may want to cover:
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birthday_year|string|null: false|
-|birthday_month|string|null: false|
-|birthday_date|string|null: false|
+|birthday_year|integer|null: false|
+|birthday_month|integer|null: false|
+|birthday_day|integer|null: false|
 
 ### Association
 - has_many :comments
@@ -84,7 +84,7 @@ Things you may want to cover:
 
 
 
-## categorysテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |major|string|null: false|
