@@ -88,6 +88,8 @@ gem 'haml-rails'
 
 gem 'font-awesome-rails'
 
+gem 'active_hash'
+
 group :production do
   gem 'unicorn', '5.4.1'
 end
