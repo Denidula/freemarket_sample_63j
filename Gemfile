@@ -43,7 +43,13 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
+
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -53,6 +59,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+gem 'carrierwave'
+gem 'fog-aws'
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
@@ -75,3 +83,7 @@ gem "omniauth-rails_csrf_protection"
 gem 'haml-rails'
 
 gem 'font-awesome-rails'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
