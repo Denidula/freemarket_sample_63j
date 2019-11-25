@@ -6,6 +6,10 @@ root to: "items#index"
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
+  namespace :logout do
+    get 'index'
+  end
+
   namespace :mypage do
     get 'index'
     get 'notification'
@@ -15,6 +19,8 @@ root to: "items#index"
   namespace :transaction do
     get 'buy'
   end
+
+
   
   resources :items
   

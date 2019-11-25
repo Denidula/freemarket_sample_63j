@@ -5,8 +5,7 @@
 
 .header {
   width: 100vw;
-  height: 100px;
-  margin-bottom: 10px;
+  height: 110px;
   background-color: rgb(255, 255, 255);
   .searches_regist {
     width: 1020px;
@@ -46,11 +45,11 @@
           position: absolute;
           top: 2px;
           right: 0;
-            &__hidden {
-              display: none;
-            }
+          &__hidden {
+            display: none;
           }
         }
+      }
     }
     &__bottom {
       height: 42px;
@@ -3918,4 +3917,3 @@ header {
     }
   }
 }
-
