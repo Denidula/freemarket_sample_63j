@@ -1,0 +1,24 @@
+
+.contents
+
+  = render partial: 'shared/header'
+  .nav
+    %ul
+      %li
+        メルカリ 
+        = fa_icon 'chevron-right'
+      %li.bold
+        マイページ
+        = fa_icon 'chevron-right'
+      %li.bold
+        ログアウト
+
+  .main.clearfix
+    
+    = render partial: 'mypage/shared/side_column'
+
+    .content
+      .logout
+        %input{type: 'submit', value: 'ログアウト', class: 'logout__destroy'}
+
+  = render partial: 'shared/footer'
