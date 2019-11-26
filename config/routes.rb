@@ -14,6 +14,7 @@ root to: "items#index"
     get 'index'
     get 'notification'
     get 'profile'
+    get 'card'
   end
 
   namespace :transaction do
