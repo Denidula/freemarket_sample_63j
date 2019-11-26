@@ -1,3 +1,3524 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100vw;
+  height: 110px;
+  background-color: rgb(255, 255, 255);
+  .searches_regist {
+    width: 1020px;
+    padding: 8px 0px 0px;
+    margin: 0 auto;
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      &__image {
+        margin-right: 45px;
+        cursor: pointer;
+      }
+      &__search {
+        position:relative;
+        width: 100%;
+        &__text {
+          background-color: #f5f5f5;
+          width: calc(100% - 50px);
+          font-size: 16px;
+          height: 40px;
+          line-height: 40px;
+          border-style: solid;
+          border-color: rgb(204, 204, 204);
+          border-radius: 4px 0 0 4px;
+          padding: 0 40px 0 10px;
+        }
+        &__btn {
+          cursor: pointer;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          background-color: #f5f5f5;
+          height: 38px;
+          width: 38px;
+          border-radius: 4px;
+          border: solid 1px transparent;
+          position: absolute;
+          top: 2px;
+          right: 0;
+          &__hidden {
+            display: none;
+          }
+        }
+      }
+    }
+    &__bottom {
+      height: 42px;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 42px;
+      &__left {
+        display: flex;
+        &__category-search {
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 600;
+          padding-right: 10px;
+          .list-ul-icon {
+            font-size: 12px;
+            color: red;
+            margin-right: 4px;
+          }
+        }
+        &__bland-search {
+          cursor: pointer;
+          font-size: 14px;
+          padding-left: 10px;
+          font-weight: 600;
+          .tag-icon {
+            font-size: 12px;
+            color: red;
+            margin-right: 4px;
+          }
+        }
+      }
+      &__right {
+        display: flex;
+        &__sign-in {
+          background-color: #EA352D;
+          padding: 0px 10px;
+          color: #FFFFFF;
+          font-size: 14px;
+          font-family: 'Arial';
+          text-align: center;
+          border: solid 1px #EA352D;
+          cursor: pointer;
+          border-radius: 3px;
+        }
+        &__log-in {
+          color: #0095EE;
+          border: solid 1px #0095EE;
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 0px 10px;
+          background-color: #FFFFFF;
+          text-align: center;
+          margin-left: 11px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.advertisement {
+  .main-visual{
+    width: 100vw;
+    height: 360px;
+    object-fit: cover;
+  }
+}
+.popular_category {
+  padding: 56px 0px 30px;
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  text-align: center;
+  &__title {
+    margin-bottom: 16px;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Arial', 'Helvetica', 'sans-serif';
+  }
+  &__sorts {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      font-weight: 600;
+      margin: 20px 0 0 20px;
+    &__sort  {
+      background-color: rgb(239, 239, 239);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      border: solid 1px rgb(239, 239, 239);
+      border-radius: 30px;
+      padding: 8px 16px;
+      margin: 0 4px;
+    }
+  }
+}
+.items {
+  background-color: rgb(245, 245, 245);
+  &__item {
+    width: 1020px;
+    margin: 0 auto;
+    background-color: rgb(245, 245, 245);
+    padding: 42px 0 100px;
+    &__ladies {
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &__title {
+          font-size: 24px;
+          font-family: 'Arial';
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        &__logo {
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 5px 16px 5px 5px;
+          color: #0095EE;
+          cursor: pointer;
+        }
+      }
+      &__catalog {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        &__product1 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture1 {
+            background: url("https://static.mercdn.net/thumb/photos/m78549057165_1.jpg?1573813583");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price1 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name1 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product2 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture2 {
+            background: url("https://static.mercdn.net/thumb/photos/m69948716913_1.jpg?1572141933");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price2 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name2 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product3 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture3 {
+            background: url("https://static.mercdn.net/thumb/photos/m95379236398_1.jpg?1574523948");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price3 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name3 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product4 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture4 {
+            background: url("https://static.mercdn.net/thumb/photos/m84761944617_1.jpg?1573699190");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price4 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name4 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product5 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture5 {
+            background: url("https://static.mercdn.net/thumb/photos/m68979519879_1.jpg?1573116858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price5 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name5 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product6 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture6 {
+            background: url("https://static.mercdn.net/thumb/photos/m65041407115_1.jpg?1569754529");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price6 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name6 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product7 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture7 {
+            background: url("https://static.mercdn.net/thumb/photos/m53400150739_1.jpg?1527316007");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price7 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name7 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product8 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture8 {
+            background: url("https://static.mercdn.net/thumb/photos/m51538605152_1.jpg?1571631289");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price8 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name8 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product9 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture9 {
+            background: url("https://static.mercdn.net/thumb/photos/m41147405102_1.jpg?1574551399");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price9 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name9 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product10 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture10 {
+            background: url("https://static.mercdn.net/thumb/photos/m98629086755_1.jpg?1574523909");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price10 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name10 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &__mens {
+      margin-top: 35px;
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &__title {
+          font-size: 24px;
+          font-family: 'Arial';
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        &__logo {
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 5px 16px 5px 5px;
+          color: #0095EE;
+          cursor: pointer;
+        }
+      }
+      &__catalog {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        &__product1 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture1 {
+            background: url("https://static.mercdn.net/thumb/photos/m78549057165_1.jpg?1573813583");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price1 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name1 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product2 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture2 {
+            background: url("https://static.mercdn.net/thumb/photos/m69948716913_1.jpg?1572141933");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price2 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name2 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product3 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture3 {
+            background: url("https://static.mercdn.net/thumb/photos/m95379236398_1.jpg?1574523948");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price3 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name3 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product4 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture4 {
+            background: url("https://static.mercdn.net/thumb/photos/m84761944617_1.jpg?1573699190");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price4 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name4 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product5 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture5 {
+            background: url("https://static.mercdn.net/thumb/photos/m68979519879_1.jpg?1573116858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price5 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name5 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product6 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture6 {
+            background: url("https://static.mercdn.net/thumb/photos/m65041407115_1.jpg?1569754529");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price6 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name6 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product7 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture7 {
+            background: url("https://static.mercdn.net/thumb/photos/m53400150739_1.jpg?1527316007");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price7 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name7 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product8 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture8 {
+            background: url("https://static.mercdn.net/thumb/photos/m51538605152_1.jpg?1571631289");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price8 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name8 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product9 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture9 {
+            background: url("https://static.mercdn.net/thumb/photos/m41147405102_1.jpg?1574551399");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price9 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name9 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product10 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture10 {
+            background: url("https://static.mercdn.net/thumb/photos/m98629086755_1.jpg?1574523909");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price10 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name10 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &__appliance {
+      margin-top: 35px;
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &__title {
+          font-size: 24px;
+          font-family: 'Arial';
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        &__logo {
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 5px 16px 5px 5px;
+          color: #0095EE;
+          cursor: pointer;
+        }
+      }
+      &__catalog {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        &__product1 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture1 {
+            background: url("https://static.mercdn.net/thumb/photos/m78549057165_1.jpg?1573813583");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price1 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name1 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product2 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture2 {
+            background: url("https://static.mercdn.net/thumb/photos/m69948716913_1.jpg?1572141933");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price2 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name2 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product3 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture3 {
+            background: url("https://static.mercdn.net/thumb/photos/m95379236398_1.jpg?1574523948");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price3 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name3 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product4 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture4 {
+            background: url("https://static.mercdn.net/thumb/photos/m84761944617_1.jpg?1573699190");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price4 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name4 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product5 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture5 {
+            background: url("https://static.mercdn.net/thumb/photos/m68979519879_1.jpg?1573116858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price5 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name5 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product6 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture6 {
+            background: url("https://static.mercdn.net/thumb/photos/m65041407115_1.jpg?1569754529");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price6 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name6 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product7 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture7 {
+            background: url("https://static.mercdn.net/thumb/photos/m53400150739_1.jpg?1527316007");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price7 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name7 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product8 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture8 {
+            background: url("https://static.mercdn.net/thumb/photos/m51538605152_1.jpg?1571631289");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price8 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name8 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product9 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture9 {
+            background: url("https://static.mercdn.net/thumb/photos/m41147405102_1.jpg?1574551399");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price9 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name9 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product10 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture10 {
+            background: url("https://static.mercdn.net/thumb/photos/m98629086755_1.jpg?1574523909");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price10 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name10 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &__hobby {
+      margin-top: 35px;
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &__title {
+          font-size: 24px;
+          font-family: 'Arial';
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        &__logo {
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 5px 16px 5px 5px;
+          color: #0095EE;
+          cursor: pointer;
+        }
+      }
+      &__catalog {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        &__product1 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture1 {
+            background: url("https://static.mercdn.net/thumb/photos/m23926994768_1.jpg?1574503773");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price1 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name1 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product2 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture2 {
+            background: url("https://static.mercdn.net/thumb/photos/m69948716913_1.jpg?1572141933");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price2 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name2 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product3 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture3 {
+            background: url("https://static.mercdn.net/thumb/photos/m95379236398_1.jpg?1574523948");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price3 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name3 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product4 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture4 {
+            background: url("https://static.mercdn.net/thumb/photos/m84761944617_1.jpg?1573699190");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price4 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name4 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product5 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture5 {
+            background: url("https://static.mercdn.net/thumb/photos/m68979519879_1.jpg?1573116858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price5 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name5 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product6 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture6 {
+            background: url("https://static.mercdn.net/thumb/photos/m65041407115_1.jpg?1569754529");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price6 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name6 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product7 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture7 {
+            background: url("https://static.mercdn.net/thumb/photos/m53400150739_1.jpg?1527316007");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price7 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name7 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product8 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture8 {
+            background: url("https://static.mercdn.net/thumb/photos/m51538605152_1.jpg?1571631289");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price8 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name8 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product9 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture9 {
+            background: url("https://static.mercdn.net/thumb/photos/m41147405102_1.jpg?1574551399");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price9 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name9 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product10 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture10 {
+            background: url("https://static.mercdn.net/thumb/photos/m98629086755_1.jpg?1574523909");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price10 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name10 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+.popular_bland {
+  padding: 56px 0px 30px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  &__title {
+    margin-bottom: 16px;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Arial';
+  }
+  &__sorts {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      font-weight: 600;
+      margin: 20px 0 0 20px;
+    &__sort {
+      background-color: rgb(239, 239, 239);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      border: solid 1px rgb(239, 239, 239);
+      border-radius: 30px;
+      padding: 8px 16px;
+      margin: 0 4px;
+    }
+  }
+}
+.bland_items {
+  background-color: rgb(239, 239, 239);
+  width: 100vw;
+  &__item {
+    padding:42px 0 100px;
+    width: 1020px;
+    margin: 0 auto;
+    background-color: rgb(239, 239, 239);
+    &__Chanel {
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &__title {
+          font-size: 24px;
+          font-family: 'Arial';
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        &__logo {
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 5px 16px 5px 5px;
+          color: #0095EE;
+          cursor: pointer;
+        }
+      }
+      &__catalog {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        &__product1 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture1 {
+            background: url("https://static.mercdn.net/thumb/photos/m58323821262_1.jpg?1574503724");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price1 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name1 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product2 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture2 {
+            background: url("https://static.mercdn.net/thumb/photos/m69948716913_1.jpg?1572141933");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price2 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name2 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product3 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture3 {
+            background: url("https://static.mercdn.net/thumb/photos/m95379236398_1.jpg?1574523948");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price3 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name3 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product4 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture4 {
+            background: url("https://static.mercdn.net/thumb/photos/m84761944617_1.jpg?1573699190");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price4 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name4 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product5 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture5 {
+            background: url("https://static.mercdn.net/thumb/photos/m68979519879_1.jpg?1573116858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price5 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name5 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product6 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture6 {
+            background: url("https://static.mercdn.net/thumb/photos/m65041407115_1.jpg?1569754529");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price6 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name6 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product7 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture7 {
+            background: url("https://static.mercdn.net/thumb/photos/m53400150739_1.jpg?1527316007");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price7 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name7 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product8 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture8 {
+            background: url("https://static.mercdn.net/thumb/photos/m51538605152_1.jpg?1571631289");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price8 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name8 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product9 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture9 {
+            background: url("https://static.mercdn.net/thumb/photos/m41147405102_1.jpg?1574551399");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price9 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name9 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product10 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture10 {
+            background: url("https://static.mercdn.net/thumb/photos/m98629086755_1.jpg?1574523909");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price10 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name10 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &__Louis-Vuitton{
+      margin-top: 35px;
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &__title {
+          font-size: 24px;
+          font-family: 'Arial';
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        &__logo {
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 5px 16px 5px 5px;
+          color: #0095EE;
+          cursor: pointer;
+        }
+      }
+      &__catalog {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        &__product1 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture1 {
+            background: url("https://static.mercdn.net/thumb/photos/m69927810144_1.jpg?1572051229");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price1 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name1 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product2 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture2 {
+            background: url("https://static.mercdn.net/thumb/photos/m69948716913_1.jpg?1572141933");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price2 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name2 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product3 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture3 {
+            background: url("https://static.mercdn.net/thumb/photos/m95379236398_1.jpg?1574523948");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price3 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name3 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product4 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture4 {
+            background: url("https://static.mercdn.net/thumb/photos/m84761944617_1.jpg?1573699190");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price4 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name4 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product5 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture5 {
+            background: url("https://static.mercdn.net/thumb/photos/m68979519879_1.jpg?1573116858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price5 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name5 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product6 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture6 {
+            background: url("https://static.mercdn.net/thumb/photos/m65041407115_1.jpg?1569754529");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price6 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name6 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product7 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture7 {
+            background: url("https://static.mercdn.net/thumb/photos/m53400150739_1.jpg?1527316007");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price7 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name7 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product8 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture8 {
+            background: url("https://static.mercdn.net/thumb/photos/m51538605152_1.jpg?1571631289");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price8 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name8 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product9 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture9 {
+            background: url("https://static.mercdn.net/thumb/photos/m41147405102_1.jpg?1574551399");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price9 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name9 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product10 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture10 {
+            background: url("https://static.mercdn.net/thumb/photos/m98629086755_1.jpg?1574523909");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price10 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name10 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &__Supreme {
+      margin-top: 35px;
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &__title {
+          font-size: 24px;
+          font-family: 'Arial';
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        &__logo {
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 5px 16px 5px 5px;
+          color: #0095EE;
+          cursor: pointer;
+        }
+      }
+      &__catalog {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        &__product1 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture1 {
+            background: url("https://static.mercdn.net/thumb/photos/m65664797825_1.jpg?1574173836");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price1 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name1 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product2 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture2 {
+            background: url("https://static.mercdn.net/thumb/photos/m69948716913_1.jpg?1572141933");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price2 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name2 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product3 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture3 {
+            background: url("https://static.mercdn.net/thumb/photos/m95379236398_1.jpg?1574523948");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price3 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name3 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product4 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture4 {
+            background: url("https://static.mercdn.net/thumb/photos/m84761944617_1.jpg?1573699190");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price4 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name4 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product5 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture5 {
+            background: url("https://static.mercdn.net/thumb/photos/m68979519879_1.jpg?1573116858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price5 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name5 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product6 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture6 {
+            background: url("https://static.mercdn.net/thumb/photos/m65041407115_1.jpg?1569754529");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price6 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name6 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product7 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture7 {
+            background: url("https://static.mercdn.net/thumb/photos/m53400150739_1.jpg?1527316007");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price7 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name7 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product8 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture8 {
+            background: url("https://static.mercdn.net/thumb/photos/m51538605152_1.jpg?1571631289");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price8 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name8 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product9 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture9 {
+            background: url("https://static.mercdn.net/thumb/photos/m41147405102_1.jpg?1574551399");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price9 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name9 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product10 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture10 {
+            background: url("https://static.mercdn.net/thumb/photos/m98629086755_1.jpg?1574523909");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price10 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name10 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &__Nike {
+      margin-top: 35px;
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        &__title {
+          font-size: 24px;
+          font-family: 'Arial';
+          font-weight: 600;
+          line-height: 1.4em;
+        }
+        &__logo {
+          font-size: 14px;
+          font-family: 'Arial';
+          padding: 5px 16px 5px 5px;
+          color: #0095EE;
+          cursor: pointer;
+        }
+      }
+      &__catalog {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        &__product1 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture1 {
+            background: url("https://static.mercdn.net/thumb/photos/m98014969162_1.jpg?1574507858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price1 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name1 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product2 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture2 {
+            background: url("https://static.mercdn.net/thumb/photos/m69948716913_1.jpg?1572141933");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price2 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name2 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product3 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture3 {
+            background: url("https://static.mercdn.net/thumb/photos/m95379236398_1.jpg?1574523948");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price3 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name3 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product4 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture4 {
+            background: url("https://static.mercdn.net/thumb/photos/m84761944617_1.jpg?1573699190");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price4 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name4 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product5 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture5 {
+            background: url("https://static.mercdn.net/thumb/photos/m68979519879_1.jpg?1573116858");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price5 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name5 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product6 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture6 {
+            background: url("https://static.mercdn.net/thumb/photos/m65041407115_1.jpg?1569754529");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price6 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name6 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product7 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture7 {
+            background: url("https://static.mercdn.net/thumb/photos/m53400150739_1.jpg?1527316007");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price7 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name7 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product8 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture8 {
+            background: url("https://static.mercdn.net/thumb/photos/m51538605152_1.jpg?1571631289");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price8 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name8 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product9 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture9 {
+            background: url("https://static.mercdn.net/thumb/photos/m41147405102_1.jpg?1574551399");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price9 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name9 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+        &__product10 {
+          margin: 5px;
+          width: 188px;
+          height: 252px;
+          &__picture10 {
+            background: url("https://static.mercdn.net/thumb/photos/m98629086755_1.jpg?1574523909");
+            background-size: cover;
+            height: calc(100% - 64px);
+            width: 100%;
+            position: relative;
+            &__price10 {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 0 14px 14px 0;
+              border: solid 1px rgba(0, 0, 0, 0.4);
+              color: #fff;
+              text-align: center;
+              font-size: 17px;
+              width: 90px;
+              height: 28px;
+              letter-spacing: .02em;
+              padding: 0 12px;
+              position: absolute;
+              bottom: 0px;
+            }
+          }
+          &__name10 {
+            box-sizing: border-box;
+            color: #222;
+            font-size: 14px;
+            height: 64px;
+            padding: 0 12px;
+            width: 100%;
+            background-color: #fff;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4em;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
 
 .clearfix {
   &:after {
@@ -393,6 +3914,281 @@ header {
     }
     .items-box:nth-child(3n) {
       margin-right: 0;
+    }
+  }
+}
+
+
+.single-main {
+  display: block;
+  h2 {
+    padding: 32px 16px;
+    font-size: 22px;
+    text-align: center;
+  }
+  .sell-form {
+    border-top: 1px solid #eee;
+    .btn-box {
+      line-height: 1.5;
+      span {
+        color: #0099e8;
+      }
+      .btn-red {
+        margin: 40px 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 14px;
+      }
+      .a {
+        width: 45%;
+        margin: 24px auto 0;
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
+        display: block;
+        line-height: 48px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+      }
+    }
+    .sell-content {
+      padding: 40px;
+      border-top: 1px solid #eee;
+      .form-question {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #0099e8;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+      }
+      .sell-sub-head {
+        float: left;
+        color: #888;
+        font-size: 14px;
+      }
+      .sell-form-box {
+        float: right;
+        width: 400px;
+        margin: 0;
+        .sell-price {
+          list-style: none;
+          li {
+            padding: 24px 0;
+            border-top: 1px solid #ccc;
+            .left {
+              float: left;
+            }
+            .right {
+              float: right;
+            }
+          }
+          li:first-child {
+            padding: 0 0 24px;
+            border: 0;
+          }
+          .profit {
+            .left {
+              float: left;
+            }
+            .right {
+              float: right;
+            }
+            font-weight: 600;
+          }
+          .form-group:first-child {
+            margin: 0;
+            .right {
+              width: 50%;
+              text-align: right;
+              float: right;
+              .input_1 {
+                display: inline-block;
+                width: 80%;
+                margin: 0 0 0 5%;
+                input {
+                  margin: 0;
+                  text-align: right;
+                  width: 160px;
+                  height: 48px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+              }
+            }
+            .left {
+              width: 50%;
+              line-height: 48px;
+              float: left;
+            }
+            label {
+              font-weight: 600;
+              span {
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+                background: #ea352d;
+              }
+            }
+          }
+        }
+        .form-group:first-child {
+          margin: 0;
+        }
+        .form-group {
+          margin: 40px 0 0;
+          .select {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 8px;
+            width: 400px;
+            height: 48px;
+            position: relative;
+            select {
+              width: 400px;
+              height: 48px;
+              background: #fff;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              padding: 15px;
+              font-size: 14px;
+              z-index: 2;
+              //background-image: url('../images/chevron-down-solid.svg');
+              //background-repeat: no-repeat;
+              //background-size: 12px 10px;
+              //background-position: right 10px center;
+            }
+            select::-ms-expand{
+              display: none;
+            }
+            .select-icon {
+              color: #fff;
+              position: absolute;
+              right: 5px;
+              top: 15px;
+              z-index: 2;
+              color: black;
+              font-size: 20px;
+              opacity: 0.5;
+            }
+          }
+          label {
+            font-weight: 600;
+            display: inline-block;
+            .form-require {
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+          }
+        }
+      }
+      .form-group {
+        margin: 40px 0 0;
+        label {
+          font-weight: 600;
+          display: inline-block;
+          .form-require {
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+          }
+        }
+        .input {
+          width: 620px;
+          height: 48px;
+          border: 1px solid #ccc;
+          margin: 8px 0 0;
+          border-radius: 4px;
+        }
+        .text-area {
+          width: 620px;
+          height: 142px;
+          border: 1px solid #ccc;
+          margin: 8px 0 0;
+          border-radius: 4px;
+        }
+      }
+      .form-group:first-child {
+        margin: 0;
+      }
+    }
+    .sell-upload-box {
+      width: 620px;
+      padding: 40px;
+      p {
+        margin: 8px 0 0;
+        line-height: 1.5;
+        font-size: 13px;
+      }
+      
+      .sell-dropbox {
+        display: block;
+        width: 620px;
+        margin: 16px auto 0;
+        
+        .sell-upload-drop-box {
+          margin-left: 0;
+          padding: 80px;
+          background: #f5f5f5;
+          border: 1px dashed #ccc;
+          font-size: 0;
+          text-align: center;
+          cursor: pointer;
+          position: relative;
+          .visible-pc {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            right: 16px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            pointer-events: none;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+          }
+        }
+      }
+      .sell-upload-head {
+        font-size: 16px;
+        .form-require {
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+        }
+      }
     }
   }
 }

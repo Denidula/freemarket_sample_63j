@@ -9,4 +9,6 @@ class MypageController < ApplicationController
   def profile
   end
   
+  def card
+  end
 end

@@ -11,6 +11,7 @@ working_directory "#{app_path}/current"
 pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 
 #ポート番号を指定
+# listen 3000
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 
 #エラーのログを記録するファイルを指定
@@ -52,4 +53,4 @@ end
 
 after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
-end
+end 
