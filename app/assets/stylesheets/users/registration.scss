@@ -200,6 +200,7 @@
     height: 128px;
     margin: 0 auto;
     position: relative;
+    background-color: #f7f7f7;
 
     &__h1{
       &__logo{
@@ -294,7 +295,7 @@
         transition: all ease-out .3s;
         cursor: pointer;
         text-align: center;
-        margin: 20px auto 0;
+        margin: 20px auto;
       }
 
       &__group{

@@ -8,6 +8,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
+  def sms_confirmation
+    @user = User.new
+  end
+
   # GET /resource/sign_up
   # def new
   #   super

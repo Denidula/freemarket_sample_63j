@@ -8,6 +8,7 @@ root to: "items#index"
 
   devise_scope :user do 
     get 'users/sign_up/register' => 'users/registrations#register'
+    get 'users/sign_up/sms_confirmation' => 'users/registrations#sms_confirmation'
   end
   
   namespace :logout do

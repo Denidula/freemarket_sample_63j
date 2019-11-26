@@ -11,7 +11,7 @@ Things you may want to cover:
 
 * Configuration
 
-<!-- ---------------------------------- -->
+---
 
 * Database creation
 
@@ -28,6 +28,7 @@ Things you may want to cover:
 |birthday_year|integer|null: false|
 |birthday_month|integer|null: false|
 |birthday_day|integer|null: false|
+|phone_number|integer||
 
 ### Association
 - has_many :comments
@@ -105,7 +106,6 @@ Things you may want to cover:
 |city|string|null: false|
 |address|string|null: false|
 |building|string||
-|phone_number|integer||
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -138,7 +138,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-<!-- ---------------------------------- -->
+---
 
 * Database initialization
 
