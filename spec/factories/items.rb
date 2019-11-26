@@ -10,5 +10,6 @@ FactoryBot.define do
     send_date { "MyString" }
     user_id { 1 }
     category_id { 1 }
+    created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
   end
 end
