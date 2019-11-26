@@ -1,0 +1,167 @@
+
+.single-contents
+  
+  .single-header
+    %h1
+      .top-link
+        = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229', height: '49', width: '185'
+
+  .single-main
+
+    %section.buy-item-contents
+
+      %h2.sell-item-head
+        商品の情報を入力
+
+      %form.sell-form(action="")
+        
+        .sell-upload-box
+          %h3.sell-upload-head
+            出品画像
+            %span.form-require
+              必須
+          %p
+            最大10枚までアップロードできます
+          .sell-dropbox.clearfix
+            .sell-upload-drop-box
+              %pre.visible-pc
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+        .sell-content
+          .form-group
+            %label(for="")
+              商品名
+              %span.form-require
+                必須
+            .input
+          .form-group
+            %label(for="")
+              商品の説明
+              %span.form-require
+                必須
+            .text-area
+        .sell-content.clearfix
+          %h3.sell-sub-head
+            商品の詳細
+          .sell-form-box
+            .form-group
+              %label(for="")
+                カテゴリー
+                %span.form-require
+                  必須
+              .select
+
+            .form-group
+              %label(for="")
+                商品の状態
+                %span.form-require
+                  必須
+              .select
+              
+        .sell-content.clearfix
+          %h3.sell-sub-head
+            配送について
+          .form-question
+            ?
+          .sell-form-box
+            .form-group
+              %label(for="")
+                配送料の負担
+                %span.form-require
+                  必須
+              .select
+
+            .form-group
+              %label(for="")
+                発送元の地域
+                %span.form-require
+                  必須
+              .select
+                = form_for '' do |f|
+                  = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: 'input'
+                  = fa_icon 'chevron-down', class: 'select-icon'
+              
+
+            .form-group
+              %label(for="")
+                発送までの日数
+                %span.form-require
+                  必須
+              .select
+
+      %form.sell-form(action="")
+              
+        .sell-content.clearfix
+          %h3.sell-sub-head
+            販売価格(300〜9,999,999)
+          .form-question
+            ?
+          .sell-form-box
+            %ul.sell-price
+              %li.form-group
+                .clearfix
+                  %label.left(for="")
+                    価格
+                    %span
+                      必須
+                  .right
+                    ¥
+                    .input_1
+                      %input{placeholder: "例）300  "}/
+
+              %li.clearfix
+                .left
+                  販売手数料 (10%)
+                .right
+                  ー
+
+              %li.profit.clearfix
+                .left
+                  販売利益
+                .right
+                  ー
+
+        .sell-content.btn-box
+          %p
+            %span
+              禁止されている出品
+            、
+            %span
+              行為
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            %span
+              偽ブランドの販売
+            は犯罪であり処罰される可能性があります。
+          %p
+            また、出品をもちまして
+            %span
+              加盟店規約
+            に同意したことになります。
+          %button.btn-red
+            出品する
+          .a
+            もどる
+
+  .single-footer
+    %nav
+      %ul.clearfix
+        %li
+          .a
+            プライバシーポリシー
+        %li
+          .a
+            メルカリ利用規約
+        %li
+          .a 
+            特定商取引に関する表記
+    .single-footer-logo
+      = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2177740229', height: '65', width: '80'
+    %p
+      %small
+        © 2019 Mercari
+
+
+
+

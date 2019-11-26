@@ -1,0 +1,17 @@
+.logout {
+  float: right;
+  background-color: white;
+  text-align: center;
+  width: 700px;
+  height: 179px;
+  line-height: 179px;
+  &__destroy {
+    background-color: #EA352D;
+    width: 320px;
+    height: 50px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-family: 'Arial';
+    border: solid 1px #EA352D;
+  }
+}

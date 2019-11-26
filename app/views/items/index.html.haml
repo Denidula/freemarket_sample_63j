@@ -1,0 +1,584 @@
+%header.header
+  .searches_regist
+    .searches_regist__top
+      .searches_regist__top__image
+        = image_tag "mercari_logo_horizontal.png", size: "134x40", alt: "Mercari"
+      %form.searches_regist__top__search
+        %input{type: 'text', name: 'keyword', placeholder: '何かお探しですか？', class: 'searches_regist__top__search__text'}
+        %label{class: 'searches_regist__top__search__btn'}
+          = fa_icon 'search'
+          %input{type: 'submit', value: 'send', class: 'searches_regist__top__search__btn__hidden'}
+    .searches_regist__bottom
+      .searches_regist__bottom__left
+        .searches_regist__bottom__left__category-search
+          = fa_icon 'list-ul', class: "list-ul-icon"
+          カテゴリーから探す
+        .searches_regist__bottom__left__bland-search
+          = fa_icon 'tag', class: "tag-icon"
+          ブランドから探す
+      .searches_regist__bottom__right
+        .searches_regist__bottom__right__sign-in
+          新規会員登録
+        .searches_regist__bottom__right__log-in
+          ログイン
+.advertisement
+  = image_tag 'main-visual.png', class: 'main-visual'
+.popular_category
+  %h1.popular_category__title
+    人気のカテゴリー
+  %ul.popular_category__sorts
+    %li.popular_category__sorts__sort レディース
+    %li.popular_category__sorts__sort メンズ
+    %li.popular_category__sorts__sort 家電・スマホ・カメラ
+    %li.popular_category__sorts__sort おもちゃ・ホビー・グッズ
+.items
+  .items__item
+    .items__item__ladies
+      .items__item__ladies__top
+        %h2.items__item__ladies__top__title
+          レディース新着アイテム
+        .items__item__ladies__top__logo
+          もっと見る ＞
+      %ul.items__item__ladies__catalog
+        %li.items__item__ladies__catalog__product1
+          .items__item__ladies__catalog__product1__picture1
+            .items__item__ladies__catalog__product1__picture1__price1
+              ¥ 14,480
+          .items__item__ladies__catalog__product1__name1
+            氣志團の靴
+        %li.items__item__ladies__catalog__product2
+          .items__item__ladies__catalog__product2__picture2
+            .items__item__ladies__catalog__product2__picture2__price2
+              ¥ 5,000
+          .items__item__ladies__catalog__product2__name2
+            バッグ
+        %li.items__item__ladies__catalog__product3
+          .items__item__ladies__catalog__product3__picture3
+            .items__item__ladies__catalog__product3__picture3__price3
+              ¥ 14,480
+          .items__item__ladies__catalog__product3__name3
+            カード入れ
+        %li.items__item__ladies__catalog__product4
+          .items__item__ladies__catalog__product4__picture4
+            .items__item__ladies__catalog__product4__picture4__price4
+              ¥ 14,480
+          .items__item__ladies__catalog__product4__name4
+            風景入りのハンカチ
+        %li.items__item__ladies__catalog__product5
+          .items__item__ladies__catalog__product5__picture5
+            .items__item__ladies__catalog__product5__picture5__price5
+              ¥ 14,480
+          .items__item__ladies__catalog__product5__name5
+            女性用革靴
+        %li.items__item__ladies__catalog__product6
+          .items__item__ladies__catalog__product6__picture6
+            .items__item__ladies__catalog__product6__picture6__price6
+              ¥ 14,480
+          .items__item__ladies__catalog__product6__name6
+            洋服
+        %li.items__item__ladies__catalog__product7
+          .items__item__ladies__catalog__product7__picture7
+            .items__item__ladies__catalog__product7__picture7__price7
+              ¥ 14,480
+          .items__item__ladies__catalog__product7__name7
+            革靴
+        %li.items__item__ladies__catalog__product8
+          .items__item__ladies__catalog__product8__picture8
+            .items__item__ladies__catalog__product8__picture8__price8
+              ¥ 14,480
+          .items__item__ladies__catalog__product8__name8
+            靴
+        %li.items__item__ladies__catalog__product9
+          .items__item__ladies__catalog__product9__picture9
+            .items__item__ladies__catalog__product9__picture9__price9
+              ¥ 14,480
+          .items__item__ladies__catalog__product9__name9
+            洋服
+        %li.items__item__ladies__catalog__product10
+          .items__item__ladies__catalog__product10__picture10
+            .items__item__ladies__catalog__product10__picture10__price10
+              ¥ 14,480
+          .items__item__ladies__catalog__product10__name10
+            洋服
+
+    .items__item__mens
+      .items__item__mens__top
+        %h2.items__item__mens__top__title
+          メンズ新着アイテム
+        .items__item__mens__top__logo
+          もっと見る ＞
+      %ul.items__item__mens__catalog
+        %li.items__item__mens__catalog__product1
+          .items__item__mens__catalog__product1__picture1
+            .items__item__mens__catalog__product1__picture1__price1
+              ¥ 14,480
+          .items__item__mens__catalog__product1__name1
+            男の勝負着
+        %li.items__item__mens__catalog__product2
+          .items__item__mens__catalog__product2__picture2
+            .items__item__mens__catalog__product2__picture2__price2
+              ¥ 5,000
+          .items__item__mens__catalog__product2__name2
+            男の勝負着
+        %li.items__item__mens__catalog__product3
+          .items__item__mens__catalog__product3__picture3
+            .items__item__mens__catalog__product3__picture3__price3
+              ¥ 14,480
+          .items__item__mens__catalog__product3__name3
+            男の勝負着
+        %li.items__item__mens__catalog__product4
+          .items__item__mens__catalog__product4__picture4
+            .items__item__mens__catalog__product4__picture4__price4
+              ¥ 14,480
+          .items__item__mens__catalog__product4__name4
+            男の勝負着
+        %li.items__item__mens__catalog__product5
+          .items__item__mens__catalog__product5__picture5
+            .items__item__mens__catalog__product5__picture5__price5
+              ¥ 14,480
+          .items__item__mens__catalog__product5__name5
+            男の勝負着
+        %li.items__item__mens__catalog__product6
+          .items__item__mens__catalog__product6__picture6
+            .items__item__mens__catalog__product6__picture6__price6
+              ¥ 14,480
+          .items__item__mens__catalog__product6__name6
+            男の勝負着
+        %li.items__item__mens__catalog__product7
+          .items__item__mens__catalog__product7__picture7
+            .items__item__mens__catalog__product7__picture7__price7
+              ¥ 14,480
+          .items__item__mens__catalog__product7__name7
+            男の勝負着
+        %li.items__item__mens__catalog__product8
+          .items__item__mens__catalog__product8__picture8
+            .items__item__mens__catalog__product8__picture8__price8
+              ¥ 14,480
+          .items__item__mens__catalog__product8__name8
+            男の勝負着
+        %li.items__item__mens__catalog__product9
+          .items__item__mens__catalog__product9__picture9
+            .items__item__mens__catalog__product9__picture9__price9
+              ¥ 14,480
+          .items__item__mens__catalog__product9__name9
+            男の勝負着
+        %li.items__item__mens__catalog__product10
+          .items__item__mens__catalog__product10__picture10
+            .items__item__mens__catalog__product10__picture10__price10
+              ¥ 14,480
+          .items__item__mens__catalog__product10__name10
+            男の勝負着
+    .items__item__appliance
+      .items__item__appliance__top
+        %h2.items__item__appliance__top__title
+          家電・スマホ・カメラ新着アイテム
+        .items__item__appliance__top__logo
+          もっと見る ＞
+      %ul.items__item__appliance__catalog
+        %li.items__item__appliance__catalog__product1
+          .items__item__appliance__catalog__product1__picture1
+            .items__item__appliance__catalog__product1__picture1__price1
+              ¥ 14,480
+          .items__item__appliance__catalog__product1__name1
+            お肌の守り神
+        %li.items__item__appliance__catalog__product2
+          .items__item__appliance__catalog__product2__picture2
+            .items__item__appliance__catalog__product2__picture2__price2
+              ¥ 5,000
+          .items__item__appliance__catalog__product2__name2
+            お肌の守り神
+        %li.items__item__appliance__catalog__product3
+          .items__item__appliance__catalog__product3__picture3
+            .items__item__appliance__catalog__product3__picture3__price3
+              ¥ 14,480
+          .items__item__appliance__catalog__product3__name3
+            お肌の守り神
+        %li.items__item__appliance__catalog__product4
+          .items__item__appliance__catalog__product4__picture4
+            .items__item__appliance__catalog__product4__picture4__price4
+              ¥ 14,480
+          .items__item__appliance__catalog__product4__name4
+            お肌の守り神
+        %li.items__item__appliance__catalog__product5
+          .items__item__appliance__catalog__product5__picture5
+            .items__item__appliance__catalog__product5__picture5__price5
+              ¥ 14,480
+          .items__item__appliance__catalog__product5__name5
+            お肌の守り神
+        %li.items__item__appliance__catalog__product6
+          .items__item__appliance__catalog__product6__picture6
+            .items__item__appliance__catalog__product6__picture6__price6
+              ¥ 14,480
+          .items__item__appliance__catalog__product6__name6
+            お肌の守り神
+        %li.items__item__appliance__catalog__product7
+          .items__item__appliance__catalog__product7__picture7
+            .items__item__appliance__catalog__product7__picture7__price7
+              ¥ 14,480
+          .items__item__appliance__catalog__product7__name7
+            お肌の守り神
+        %li.items__item__appliance__catalog__product8
+          .items__item__appliance__catalog__product8__picture8
+            .items__item__appliance__catalog__product8__picture8__price8
+              ¥ 14,480
+          .items__item__appliance__catalog__product8__name8
+            お肌の守り神
+        %li.items__item__appliance__catalog__product9
+          .items__item__appliance__catalog__product9__picture9
+            .items__item__appliance__catalog__product9__picture9__price9
+              ¥ 14,480
+          .items__item__appliance__catalog__product9__name9
+            お肌の守り神
+        %li.items__item__appliance__catalog__product10
+          .items__item__appliance__catalog__product10__picture10
+            .items__item__appliance__catalog__product10__picture10__price10
+              ¥ 14,480
+          .items__item__appliance__catalog__product10__name10
+            お肌の守り神
+
+    .items__item__hobby
+      .items__item__hobby__top
+        %h2.items__item__hobby__top__title
+          おもちゃ・ホビー・グッズ新着アイテム
+        .items__item__hobby__top__logo
+          もっと見る ＞
+      %ul.items__item__hobby__catalog
+        %li.items__item__hobby__catalog__product1
+          .items__item__hobby__catalog__product1__picture1
+            .items__item__hobby__catalog__product1__picture1__price1
+              ¥ 14,480
+          .items__item__hobby__catalog__product1__name1
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product2
+          .items__item__hobby__catalog__product2__picture2
+            .items__item__hobby__catalog__product2__picture2__price2
+              ¥ 5,000
+          .items__item__hobby__catalog__product2__name2
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product3
+          .items__item__hobby__catalog__product3__picture3
+            .items__item__hobby__catalog__product3__picture3__price3
+              ¥ 14,480
+          .items__item__hobby__catalog__product3__name3
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product4
+          .items__item__hobby__catalog__product4__picture4
+            .items__item__hobby__catalog__product4__picture4__price4
+              ¥ 14,480
+          .items__item__hobby__catalog__product4__name4
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product5
+          .items__item__hobby__catalog__product5__picture5
+            .items__item__hobby__catalog__product5__picture5__price5
+              ¥ 14,480
+          .items__item__hobby__catalog__product5__name5
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product6
+          .items__item__hobby__catalog__product6__picture6
+            .items__item__hobby__catalog__product6__picture6__price6
+              ¥ 14,480
+          .items__item__hobby__catalog__product6__name6
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product7
+          .items__item__hobby__catalog__product7__picture7
+            .items__item__hobby__catalog__product7__picture7__price7
+              ¥ 14,480
+          .items__item__hobby__catalog__product7__name7
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product8
+          .items__item__hobby__catalog__product8__picture8
+            .items__item__hobby__catalog__product8__picture8__price8
+              ¥ 14,480
+          .items__item__hobby__catalog__product8__name8
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product9
+          .items__item__hobby__catalog__product9__picture9
+            .items__item__hobby__catalog__product9__picture9__price9
+              ¥ 14,480
+          .items__item__hobby__catalog__product9__name9
+            ハローキティーの貯金箱
+        %li.items__item__hobby__catalog__product10
+          .items__item__hobby__catalog__product10__picture10
+            .items__item__hobby__catalog__product10__picture10__price10
+              ¥ 14,480
+          .items__item__hobby__catalog__product10__name10
+            ハローキティーの貯金箱
+.popular_bland
+  %h.popular_bland__title
+    人気のブランド
+  %ul.popular_bland__sorts
+    %li.popular_bland__sorts__sort シャネル
+    %li.popular_bland__sorts__sort ルイヴィトン
+    %li.popular_bland__sorts__sort シュプリーム
+    %li.popular_bland__sorts__sort ナイキ
+.bland_items
+  .bland_items__item
+    .bland_items__item__Chanel
+      .bland_items__item__Chanel__top
+        %h2.bland_items__item__Chanel__top__title
+          シャネル新着アイテム
+        .bland_items__item__Chanel__top__logo
+          もっと見る ＞
+      %ul.bland_items__item__Chanel__catalog
+        %li.bland_items__item__Chanel__catalog__product1
+          .bland_items__item__Chanel__catalog__product1__picture1
+            .bland_items__item__Chanel__catalog__product1__picture1__price1
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product1__name1
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product2
+          .bland_items__item__Chanel__catalog__product2__picture2
+            .bland_items__item__Chanel__catalog__product2__picture2__price2
+              ¥ 5,000
+          .bland_items__item__Chanel__catalog__product2__name2
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product3
+          .bland_items__item__Chanel__catalog__product3__picture3
+            .bland_items__item__Chanel__catalog__product3__picture3__price3
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product3__name3
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product4
+          .bland_items__item__Chanel__catalog__product4__picture4
+            .bland_items__item__Chanel__catalog__product4__picture4__price4
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product4__name4
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product5
+          .bland_items__item__Chanel__catalog__product5__picture5
+            .bland_items__item__Chanel__catalog__product5__picture5__price5
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product5__name5
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product6
+          .bland_items__item__Chanel__catalog__product6__picture6
+            .bland_items__item__Chanel__catalog__product6__picture6__price6
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product6__name6
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product7
+          .bland_items__item__Chanel__catalog__product7__picture7
+            .bland_items__item__Chanel__catalog__product7__picture7__price7
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product7__name7
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product8
+          .bland_items__item__Chanel__catalog__product8__picture8
+            .bland_items__item__Chanel__catalog__product8__picture8__price8
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product8__name8
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product9
+          .bland_items__item__Chanel__catalog__product9__picture9
+            .bland_items__item__Chanel__catalog__product9__picture9__price9
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product9__name9
+            シャネル ハンドバック
+        %li.bland_items__item__Chanel__catalog__product10
+          .bland_items__item__Chanel__catalog__product10__picture10
+            .bland_items__item__Chanel__catalog__product10__picture10__price10
+              ¥ 14,480
+          .bland_items__item__Chanel__catalog__product10__name10
+            シャネル ハンドバック
+    .bland_items__item__Louis-Vuitton
+      .bland_items__item__Louis-Vuitton__top
+        %h2.bland_items__item__Louis-Vuitton__top__title
+          ルイヴィトン新着アイテム
+        .bland_items__item__Louis-Vuitton__top__logo
+          もっと見る ＞
+      %ul.bland_items__item__Louis-Vuitton__catalog
+        %li.bland_items__item__Louis-Vuitton__catalog__product1
+          .bland_items__item__Louis-Vuitton__catalog__product1__picture1
+            .bland_items__item__Louis-Vuitton__catalog__product1__picture1__price1
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product1__name1
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product2
+          .bland_items__item__Louis-Vuitton__catalog__product2__picture2
+            .bland_items__item__Louis-Vuitton__catalog__product2__picture2__price2
+              ¥ 5,000
+          .bland_items__item__Louis-Vuitton__catalog__product2__name2
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product3
+          .bland_items__item__Louis-Vuitton__catalog__product3__picture3
+            .bland_items__item__Louis-Vuitton__catalog__product3__picture3__price3
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product3__name3
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product4
+          .bland_items__item__Louis-Vuitton__catalog__product4__picture4
+            .bland_items__item__Louis-Vuitton__catalog__product4__picture4__price4
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product4__name4
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product5
+          .bland_items__item__Louis-Vuitton__catalog__product5__picture5
+            .bland_items__item__Louis-Vuitton__catalog__product5__picture5__price5
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product5__name5
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product6
+          .bland_items__item__Louis-Vuitton__catalog__product6__picture6
+            .bland_items__item__Louis-Vuitton__catalog__product6__picture6__price6
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product6__name6
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product7
+          .bland_items__item__Louis-Vuitton__catalog__product7__picture7
+            .bland_items__item__Louis-Vuitton__catalog__product7__picture7__price7
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product7__name7
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product8
+          .bland_items__item__Louis-Vuitton__catalog__product8__picture8
+            .bland_items__item__Louis-Vuitton__catalog__product8__picture8__price8
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product8__name8
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product9
+          .bland_items__item__Louis-Vuitton__catalog__product9__picture9
+            .bland_items__item__Louis-Vuitton__catalog__product9__picture9__price9
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product9__name9
+            ルイヴィトン ハンドバック
+        %li.bland_items__item__Louis-Vuitton__catalog__product10
+          .bland_items__item__Louis-Vuitton__catalog__product10__picture10
+            .bland_items__item__Louis-Vuitton__catalog__product10__picture10__price10
+              ¥ 14,480
+          .bland_items__item__Louis-Vuitton__catalog__product10__name10
+            ルイヴィトン ハンドバック
+    .bland_items__item__Supreme
+      .bland_items__item__Supreme__top
+        %h2.bland_items__item__Supreme__top__title
+          シュプリーム新着アイテム
+        .bland_items__item__Supreme__top__logo
+          もっと見る ＞
+      %ul.bland_items__item__Supreme__catalog
+        %li.bland_items__item__Supreme__catalog__product1
+          .bland_items__item__Supreme__catalog__product1__picture1
+            .bland_items__item__Supreme__catalog__product1__picture1__price1
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product1__name1
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product2
+          .bland_items__item__Supreme__catalog__product2__picture2
+            .bland_items__item__Supreme__catalog__product2__picture2__price2
+              ¥ 5,000
+          .bland_items__item__Supreme__catalog__product2__name2
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product3
+          .bland_items__item__Supreme__catalog__product3__picture3
+            .bland_items__item__Supreme__catalog__product3__picture3__price3
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product3__name3
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product4
+          .bland_items__item__Supreme__catalog__product4__picture4
+            .bland_items__item__Supreme__catalog__product4__picture4__price4
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product4__name4
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product5
+          .bland_items__item__Supreme__catalog__product5__picture5
+            .bland_items__item__Supreme__catalog__product5__picture5__price5
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product5__name5
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product6
+          .bland_items__item__Supreme__catalog__product6__picture6
+            .bland_items__item__Supreme__catalog__product6__picture6__price6
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product6__name6
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product7
+          .bland_items__item__Supreme__catalog__product7__picture7
+            .bland_items__item__Supreme__catalog__product7__picture7__price7
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product7__name7
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product8
+          .bland_items__item__Supreme__catalog__product8__picture8
+            .bland_items__item__Supreme__catalog__product8__picture8__price8
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product8__name8
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product9
+          .bland_items__item__Supreme__catalog__product9__picture9
+            .bland_items__item__Supreme__catalog__product9__picture9__price9
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product9__name9
+            Thumbnail of "sneakerwolf パーカー L
+        %li.bland_items__item__Supreme__catalog__product10
+          .bland_items__item__Supreme__catalog__product10__picture10
+            .bland_items__item__Supreme__catalog__product10__picture10__price10
+              ¥ 14,480
+          .bland_items__item__Supreme__catalog__product10__name10
+            Thumbnail of "sneakerwolf パーカー L
+    .bland_items__item__Nike
+      .bland_items__item__Nike__top
+        %h2.bland_items__item__Nike__top__title
+          ナイキ新着アイテム
+        .bland_items__item__Nike__top__logo
+          もっと見る ＞
+      %ul.bland_items__item__Nike__catalog
+        %li.bland_items__item__Nike__catalog__product1
+          .bland_items__item__Nike__catalog__product1__picture1
+            .bland_items__item__Nike__catalog__product1__picture1__price1
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product1__name1
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product2
+          .bland_items__item__Nike__catalog__product2__picture2
+            .bland_items__item__Nike__catalog__product2__picture2__price2
+              ¥ 5,000
+          .bland_items__item__Nike__catalog__product2__name2
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product3
+          .bland_items__item__Nike__catalog__product3__picture3
+            .bland_items__item__Nike__catalog__product3__picture3__price3
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product3__name3
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product4
+          .bland_items__item__Nike__catalog__product4__picture4
+            .bland_items__item__Nike__catalog__product4__picture4__price4
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product4__name4
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product5
+          .bland_items__item__Nike__catalog__product5__picture5
+            .bland_items__item__Nike__catalog__product5__picture5__price5
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product5__name5
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product6
+          .bland_items__item__Nike__catalog__product6__picture6
+            .bland_items__item__Nike__catalog__product6__picture6__price6
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product6__name6
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product7
+          .bland_items__item__Nike__catalog__product7__picture7
+            .bland_items__item__Nike__catalog__product7__picture7__price7
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product7__name7
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product8
+          .bland_items__item__Nike__catalog__product8__picture8
+            .bland_items__item__Nike__catalog__product8__picture8__price8
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product8__name8
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product9
+          .bland_items__item__Nike__catalog__product9__picture9
+            .bland_items__item__Nike__catalog__product9__picture9__price9
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product9__name9
+            Thumbnail of "NIKE SBトレーナー
+        %li.bland_items__item__Nike__catalog__product10
+          .bland_items__item__Nike__catalog__product10__picture10
+            .bland_items__item__Nike__catalog__product10__picture10__price10
+              ¥ 14,480
+          .bland_items__item__Nike__catalog__product10__name10
+            Thumbnail of "NIKE SBトレーナー
+= render partial: 'shared/footer'

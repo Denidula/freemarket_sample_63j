@@ -1,0 +1,34 @@
+
+.contents
+
+  = render partial: 'shared/header'
+  .nav
+    %ul
+      %li
+        メルカリ 
+        = fa_icon 'chevron-right'
+      %li.bold
+        マイページ
+        = fa_icon 'chevron-right'
+      %li.bold
+        支払い方法
+
+  .main.clearfix
+    
+    = render partial: 'mypage/shared/side_column'
+
+    .content
+      .l-content
+        %h2.l-chapter-head
+          支払い方法
+        .l-single-inner
+          .l-single-inner__list
+            クレジットカード一覧
+          .l-single-inner__add
+            .l-single-inner__add__card
+              = fa_icon 'credit-card', class: 'l-single-inner__add__card__credit'
+              クレジットカードを追加する
+          .l-single-inner__setting-not-regist
+            支払い方法について
+            =fa_icon 'chevron-right', class: 'l-single-inner__setting-not-regist__icon'
+  = render partial: 'shared/footer'

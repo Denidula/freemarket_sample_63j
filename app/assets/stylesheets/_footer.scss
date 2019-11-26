@@ -1,0 +1,199 @@
+.banner {
+  background: url('https://cdn.pixabay.com/photo/2016/04/18/08/50/kitchen-1336160_1280.jpg');
+  background-position: center;
+  background-size: cover;
+  .banner-pc {
+    display: block;
+    overflow: hidden;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+    color: #fff;
+    position: relative;
+    .inner {
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      h2 {
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 24px;
+        margin: 0;
+        line-height: 1.4;
+      }
+      p {
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 35px;
+        margin: 10px 0 0;
+      }
+      .banner-icon {
+        margin: 20px 0 0;
+        figure {
+          float: left;
+        }
+        ul {
+          float: left;
+          margin: 0 0 0 24px;
+          list-style: none;
+          li {
+            float: left;
+            padding-top: 14px;
+            .link {
+              display: block;
+              line-height: 68px;
+            }
+          }
+          .last {
+            margin: 0 0 0 16px;
+          }
+        }
+      }
+    }
+    .smaho {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 300px;
+      height: 100%;
+    }
+  }
+}
+footer {
+  //font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+  font-weight: 500;
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+  display: block;
+  .footer-nav {
+    width: 1020px;
+    margin: 0 auto;
+    display: block;
+    .footer-cell {
+      width: 23%;
+      padding: 0 40px 0 0;
+      //vertical-align: top;
+      display: block;
+      float: left;
+      margin-top: 18px;
+      h2 {
+        line-height: 1.4;
+        display: block;
+      }
+      .footer-head {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      ul {
+        list-style: none;
+        li {
+          margin: 14px 0 0;
+          color: #fff;
+          //a
+          display: block;
+          opacity: .7;
+          font-size: 12px;
+          line-height: 1.5em;
+        }
+        .first {
+          margin: 16px 0 0;
+        }
+        .sns-link {
+          display: inline-block;
+          background: transparent;
+          margin: 16px 18px 0 0;
+          opacity: 1;
+        }
+        .twitter{
+          font-size: 29px;
+          color: #fff;
+        }
+        .facebook {
+          font-size: 31px;
+          color: #fff;
+        }
+      }
+    }
+    .footer-cell:first-child {
+      padding: 0 20px 0 0;
+      width: 20%;
+    }
+    .full-width {
+      margin-top: 18px;
+      padding: 0 40px 0 0;
+      width: 38%;
+      //margin: 30px 0 0;
+      .flex {
+        display: flex;
+        .inner-cell {
+          padding-left: 10px;
+          vertical-align: top;
+          width: 50%;
+          ul {
+            list-style: none;
+            li {
+              margin: 14px 0 0;
+            }
+            li:first-child {
+              margin: 16px 0 0;
+            }
+          }
+        }
+        .inner-cell:first-of-type {
+          padding: 0 10px 0 0;
+        }
+      }
+        
+    }
+    .nav-lang {
+      width: auto;
+      margin-top: 18px;
+      padding: 0;
+    }
+  }
+  .footer-bottom {
+    margin: 0 auto 20px;
+    width: 1020px;
+    .footer-logo {
+      display: inline-block;
+      margin-right: 10px;
+      width: auto;
+      //a
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.5rem;
+    }
+    .copyright {
+      width: 745px;
+      display: inline-block;
+      margin: 8px 0 0;
+      text-align: center;
+      vertical-align: sub;
+      small {
+        font-size: 12px;
+      }
+    }
+  }
+}
+.sell-btn {
+  position: fixed;
+  z-index: 1000;
+  border-radius: 50%;
+  background-color: #ea352d;
+  color: #fff;
+  text-align: center;
+  bottom: 32px;
+  right: 32px;
+  width: 160px;
+  height: 160px;
+  font-size: 22px;
+  .push {
+    margin: 32px 0 0;
+  }
+  i {
+    margin: 8px 0 0;
+    font-size: 54px;
+  }
+}
