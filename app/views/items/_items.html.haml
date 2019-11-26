@@ -1,0 +1,7 @@
+- @items.each do |item|
+  %li.items__item__group__catalog__product
+    .items__item__group__catalog__product__picture
+      .items__item__group__catalog__product__picture__price
+        = converting_to_jpy(item.price)
+    .items__item__group__catalog__product__name
+      = item.name
