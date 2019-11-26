@@ -1,6 +1,32 @@
 .container.register
   .header
-    = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', class: 'header__logo'
+    %h1.haeder__h1
+      = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', class: 'header__h1__logo'
+    %nav
+      %ol
+        %li
+          会員情報
+          %br/
+          = fa_icon 'circle'
+        %li
+          電話番号認証
+          %br/
+          = fa_icon 'circle'
+        %li
+          お届け先住所入力
+          %br/
+          = fa_icon 'circle'
+        %li
+          支払い方法
+          %br/
+          = fa_icon 'circle'
+        %li
+          完了
+          %br/
+          = fa_icon 'circle'
+    .horizontal-line
+      ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+
   .main
     .main__text 会員情報入力
     .main__form
@@ -42,16 +68,28 @@
           .main__form__group__birthday
             .main__form__group__birthday__select-box
               = fa_icon 'chevron-down'
-              = f.select :birthday_year, options_for_select(1919..2019), {}, { autofocus: 'true'}
+              = f.select :birthday_year,["--"], {},{class: "main__form__group__birthday__select-box--year", id:"select_birth_year"}
             %span.main__form__group__birthday__text 年
             .main__form__group__birthday__select-box
               = fa_icon 'chevron-down'
-              %select(name="month")
+              = f.select :birthday_month, ["--"], {},{class: "main__form__group__birthday__select-box--month", id:"select_birth_month"}
             %span.main__form__group__birthday__text 月
             .main__form__group__birthday__select-box
               = fa_icon 'chevron-down'
-              %select(name="day")
+              = f.select :birthday_day, ["--"], {},{class: "main__form__group__birthday__select-box--day", id:"select_birth_day"}
             %span.main__form__group__birthday__text 日
+        %p.main__form__info ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .main__form__recaptcha
+          = image_tag 'recaptcha_image.png'
+        %p.main__form__consensus
+          「次へ進む」のボタンを押すことにより、
+          %a(href="/" target="_blank") 利用規約
+          に同意したものとみなします
+        = f.submit '次へ進む', class: 'main__form__submit-btn'
+        %p.main__form__personal-info
+          = link_to '/', class: 'link', target: '_blank' do
+            = '本人情報の登録について'
+            = fa_icon 'chevron-right'
 
   .footer
     %nav
