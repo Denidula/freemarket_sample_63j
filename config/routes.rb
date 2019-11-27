@@ -30,6 +30,7 @@ root to: "items#index"
     get 'notification'
     get 'profile'
     get 'card'
+    get 'identification'
   end
 
   namespace :transaction do

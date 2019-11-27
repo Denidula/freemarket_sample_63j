@@ -1,0 +1,91 @@
+
+.contents
+
+  = render partial: 'shared/header'
+  .nav
+    %ul
+      %li
+        メルカリ 
+        = fa_icon 'chevron-right'
+      %li.bold
+        マイページ
+        = fa_icon 'chevron-right'
+      %li.bold
+        支払い方法
+
+  .main.clearfix
+    
+    = render partial: 'mypage/shared/side_column'
+
+    .content
+      .userself-confimation
+        %h2.userself-confimation__title
+          本人情報の登録
+        .userself-confimation__detail
+          .userself-confimation__detail__explain
+            お客様の本人情報をご登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          = link_to '/', class: 'userself-confimation__detail__about' do
+            = '本人確認書類のアップロードについて'
+            = fa_icon 'chevron-right'
+
+          .userself-confimation__detail__form-group
+            %label.userself-confimation__detail__form-group__title
+              お名前
+            %p.userself-confimation__detail__form-group__form
+              寺澤
+          .userself-confimation__detail__form-group
+            %label.userself-confimation__detail__form-group__title
+              お名前 カナ
+            %p.userself-confimation__detail__form-group__form
+              テラサワ
+          .userself-confimation__detail__form-group
+            %label.userself-confimation__detail__form-group__title
+              生年月日
+            %p.userself-confimation__detail__form-group__form
+              1995/4/22
+
+          .userself-confimation__detail__form-group
+            %label.userself-confimation__detail__form-group__title
+              郵便番号
+            %span.userself-confimation__detail__form-group__form-arbitration
+              任意
+            %input{type: 'text', placeholder: '例）124-5678', class: 'userself-confimation__detail__form-group__input-default'}
+          .userself-confimation__detail__form-groupA
+            %label.userself-confimation__detail__form-groupA__title
+              都道府県
+            %span.userself-confimation__detail__form-groupA__form-arbitration
+              任意
+            .userself-confimation__detail__form-groupA__input-default
+              = form_for '' do |f|
+                = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--"
+                = fa_icon 'chevron-down', class: 'userself-confimation__detail__form-groupA__input-default__icon'
+          .userself-confimation__detail__form-group
+            %label.userself-confimation__detail__form-group__title
+              市区町村
+            %span.userself-confimation__detail__form-group__form-arbitration
+              任意
+            %input{type: 'text', placeholder: '例）横浜区', class: 'userself-confimation__detail__form-group__input-default'}
+          .userself-confimation__detail__form-group
+            %label.userself-confimation__detail__form-group__title
+              番地
+            %span.userself-confimation__detail__form-group__form-arbitration
+              任意
+            %input{type: 'text', placeholder: '例）青山1-1-1', class: 'userself-confimation__detail__form-group__input-default'}
+          .userself-confimation__detail__form-group
+            %label.userself-confimation__detail__form-group__title
+              建物名
+            %span.userself-confimation__detail__form-group__form-arbitration
+              任意
+            %input{type: 'text', placeholder: '例）柳ビル', class: 'userself-confimation__detail__form-group__input-default'}
+          .userself-confimation__detail__btn-default
+            登録する
+          .userself-confimation__detail__text-right
+            %p
+            = link_to '/', class: 'userself-confimation__detail__about' do
+              本人情報の登録について
+              = fa_icon 'chevron-right'
+
+
+  = render partial: 'shared/footer'
