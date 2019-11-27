@@ -118,7 +118,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |number|integer||
-|limit|integer||
+|limit_month|integer||
+|limit_year|integer||
 |security_code|integer||
 |user_id|integer|null: false, foreign_key: true|
 
