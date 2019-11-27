@@ -7,11 +7,11 @@
         %li
           会員情報
           %br/
-          = fa_icon 'circle'
-        %li
+          = fa_icon 'circle', style: 'color: red'
+        %li(style="color: red; font-weight: bold")
           電話番号認証
           %br/
-          = fa_icon 'circle'
+          = fa_icon 'circle', style: 'color: red'
         %li
           お届け先住所入力
           %br/
@@ -24,13 +24,15 @@
           完了
           %br/
           = fa_icon 'circle'
-    .horizontal-line
-      ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+    .horizontal-line(style="color: red; right: 340px")
+      ＿＿＿＿＿
+    .horizontal-line(style="right: 9px")
+      ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 
   .main
     .main__text 電話番号の確認
     .main__form
-      = form_for @user, url: registration_path(resource_name) do |f|
+      = form_for @user, url: step3_signup_index_path, meghod: :post do |f|
         .main__form__group
           = f.label '携帯電話の番号', class: 'main__form__group__label', for: "user_phone_number"
           = f.telephone_field :phone_number, class: "main__form__group__input-box", placeholder: "携帯電話の番号を入力"

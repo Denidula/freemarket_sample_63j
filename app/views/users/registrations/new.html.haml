@@ -7,7 +7,7 @@
     .main__login
       - if devise_mapping.omniauthable?
         .main__login__mail
-          = link_to "メールアドレスで登録する", users_sign_up_register_path, class: 'main__login__mail--btn'
+          = link_to "メールアドレスで登録する", step1_signup_index_path, class: 'main__login__mail--btn'
           %i.fa.fa-envelope
         .main__login__facebook
           = link_to "Facebookで登録する", user_facebook_omniauth_authorize_path, method: :post, class: 'main__login__facebook--btn'
