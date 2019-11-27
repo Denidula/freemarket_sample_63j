@@ -5,7 +5,7 @@
   .item-show-box
 
     %h1.item-show-name
-      メンズ ニット グレー 
+      = @item.name
 
     .item-show-main.clearfix
       .item-show-photo
@@ -15,7 +15,6 @@
               .stage__item.active{ style: 'width: 300px;' }
                 .stage__item__inner
                   = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m45896064172_1.jpg?1553586186', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
-
       %table.item-detail-table
         %tbody
           %tr
@@ -23,7 +22,7 @@
               出品者
             %td
               %p.link
-                出品者名
+                = 出品者名
               .face-icon
                 .rating-icon
                   = fa_icon 'laugh', class: 'good'
@@ -57,22 +56,22 @@
             %th
               商品のサイズ
             %td
-              M
+              = @item.size
           %tr
             %th
               商品の状態
             %td
-              新品、未使用
+              = @item.status
           %tr
             %th
               配送料の負担
             %td
-              送料込み(出品者負担)
+              = @item.charge
           %tr
             %th
               配送の方法
             %td
-              未定
+              = @item.delivery_method
           %tr
             %th
               配送元地域
@@ -83,11 +82,11 @@
             %th
               発送日の目安
             %td
-              4~7日で発送
+              = @item.send_date
 
     .item-price-box
       %span.item-price
-        ¥2,480
+        = converting_to_jpy(@item.price)
       %span.item-tax
         (税込)
       %span.item-shipping-fee
