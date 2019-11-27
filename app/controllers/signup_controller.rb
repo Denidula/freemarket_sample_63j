@@ -1,10 +1,10 @@
 class SignupController < ApplicationController
 
-  def step1
+  def input_user_info
     @user = User.new # 新規インスタンス作成
   end
 
-  def step2
+  def input_phone_number
     # step1で入力された値をsessionに保存
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
@@ -19,13 +19,13 @@ class SignupController < ApplicationController
     @user = User.new # 新規インスタンス作成
   end
 
-  def step3
+  def input_address
     # step2で入力された値をsessionに保存
     session[:phone_number] = user_params[:phone_number]
     @address = Address.new # 新規インスタンス作成
   end
 
-  def step4
+  def input_credit_card
     session[:zip_code] = address_params[:zip_code]
     # session[:prefecture] = address_params[:prefecture]
     session[:city] = address_params[:city]
@@ -53,7 +53,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      render '/signup/step1'
+      render '/signup/input_user_info'
     end
 
     @address = Address.create(

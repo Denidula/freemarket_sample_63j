@@ -30,7 +30,7 @@
   .main
     .main__text 会員情報入力
     .main__form
-      = form_for @user, url: step2_signup_index_path, meghod: :post do |f|
+      = form_for @user, url: input_phone_number_signup_index_path, meghod: :post do |f|
         .main__form__group
           = f.label 'ニックネーム', class: 'main__form__group__label', for: "user_nickname"
           %span.main__form__group__require 必須

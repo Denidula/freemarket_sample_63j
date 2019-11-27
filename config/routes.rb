@@ -8,14 +8,14 @@ root to: "items#index"
 
   resources :signup, only: [:index,:create] do
     collection do
-      get 'step1'
-      post 'step1' => 'signup#step1'
-      get 'step2'
-      post 'step2' => 'signup#step2'
-      get 'step3'
-      post 'step3' => 'signup#step3'
-      get 'step4'
-      post 'step4' => 'signup#step4'
+      get 'input_user_info'
+      post 'input_user_info' => 'signup#input_user_info'
+      get 'input_phone_number'
+      post 'input_phone_number' => 'signup#input_phone_number'
+      get 'input_address'
+      post 'input_address' => 'signup#input_address'
+      get 'input_credit_card'
+      post 'input_credit_card' => 'signup#input_credit_card'
       get 'done'
       post 'done' => 'signup#done'
     end
