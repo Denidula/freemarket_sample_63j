@@ -26,7 +26,7 @@
               最大10枚までアップロードできます
             .sell-dropbox.clearfix
               %label.sell-upload-drop-box
-                = f.file_field :images ,multiple: true
+                = f.file_field :images ,multiple: true, direct_upload: true
                 %pre.visible-pc
                   ドラッグアンドドロップ
                   またはクリックしてファイルをアップロード
