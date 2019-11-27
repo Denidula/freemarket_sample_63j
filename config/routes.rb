@@ -6,9 +6,19 @@ root to: "items#index"
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  devise_scope :user do 
-    get 'users/sign_up/register' => 'users/registrations#register'
-    get 'users/sign_up/sms_confirmation' => 'users/registrations#sms_confirmation'
+  resources :signup, only: [:index,:create] do
+    collection do
+      get 'step1'
+      post 'step1' => 'signup#step1'
+      get 'step2'
+      post 'step2' => 'signup#step2'
+      get 'step3'
+      post 'step3' => 'signup#step3'
+      get 'step4'
+      post 'step4' => 'signup#step4'
+      get 'done'
+      post 'done' => 'signup#done'
+    end
   end
   
   namespace :logout do
