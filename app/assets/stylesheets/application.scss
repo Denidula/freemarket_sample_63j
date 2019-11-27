@@ -1,8 +1,8 @@
+@import "items";
+@import "font-awesome";
 @import "./reset";
 @import "./footer";
-@import "items";
 @import "./top.scss";
-@import "font-awesome";
 @import "./mypage/mypage.scss";
 @import "./mypage/profile.scss";
 @import "./users/session.scss";
@@ -12,3 +12,4 @@
 @import "./logout.scss";
 @import "./card.scss";
 @import "./identification.scss";
+@import "./signup.scss";
