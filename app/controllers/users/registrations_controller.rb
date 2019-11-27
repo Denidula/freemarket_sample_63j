@@ -5,11 +5,33 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   def register
-    @user = User.new
+    @user = User.new(user_params)
+  end
+  
+  def create
+    @user = User.create(user_params)
   end
 
   def sms_confirmation
-    @user = User.new
+    @user = User.new(user_params)
+  end
+
+  private
+
+  def user_params
+    params.permit(
+      :nickname, 
+      :email, 
+      :password, 
+      :family_name_kanji, 
+      :first_name_kanji, 
+      :family_name_kana, 
+      :first_name_kana, 
+      :birthday_year, 
+      :birthday_month, 
+      :birthday_day, 
+      :phone_number
+    )
   end
 
   # GET /resource/sign_up
