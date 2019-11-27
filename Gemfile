@@ -77,7 +77,6 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
-
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -87,8 +86,8 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem "jquery-rails"
 gem "recaptcha"
-
 gem 'active_hash'
+gem 'pry-rails'
 
 group :production do
   gem 'unicorn', '5.4.1'
