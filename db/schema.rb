@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_093247) do
     t.string "charge", null: false
     t.string "delivery_method", null: false
     t.string "send_date", null: false
-    t.integer "user_id", null: false
-    t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,15 +48,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_093247) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nickname", null: false
-    t.string "family_name_kanji", null: false
-    t.string "first_name_kanji", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.integer "birthday_year", null: false
-    t.integer "birthday_month", null: false
-    t.integer "birthday_day", null: false
-    t.integer "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

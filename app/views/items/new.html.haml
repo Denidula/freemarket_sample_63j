@@ -6,143 +6,171 @@
       .top-link
         = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229', height: '49', width: '185'
 
-  .single-main
+  = form_for @item do |f|
 
-    %section.buy-item-contents
+    .single-main
 
-      %h2.sell-item-head
-        商品の情報を入力
+      %section.buy-item-contents
 
-      %form.sell-form(action="")
+        %h2.sell-item-head
+          商品の情報を入力
+
+        .sell-form
+          
+          .sell-upload-box
+            %h3.sell-upload-head
+              出品画像
+              %span.form-require
+                必須
+            %p
+              最大10枚までアップロードできます
+            .sell-dropbox.clearfix
+              .sell-upload-drop-box
+                %pre.visible-pc
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
+          .sell-content
+            .form-group
+              %label(for="")
+                商品名
+                %span.form-require
+                  必須
+              .input
+                = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "item-name"
+            .form-group
+              %label(for="")
+                商品の説明
+                %span.form-require
+                  必須
+              .text-area
+                = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: 5, class: "item-des"
+
+        .sell-form
         
-        .sell-upload-box
-          %h3.sell-upload-head
-            出品画像
-            %span.form-require
-              必須
-          %p
-            最大10枚までアップロードできます
-          .sell-dropbox.clearfix
-            .sell-upload-drop-box
-              %pre.visible-pc
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
-        .sell-content
-          .form-group
-            %label(for="")
-              商品名
-              %span.form-require
-                必須
-            .input
-          .form-group
-            %label(for="")
-              商品の説明
-              %span.form-require
-                必須
-            .text-area
-        .sell-content.clearfix
-          %h3.sell-sub-head
-            商品の詳細
-          .sell-form-box
-            .form-group
-              %label(for="")
-                カテゴリー
-                %span.form-require
-                  必須
-              .select
+          .sell-content.clearfix
+            %h3.sell-sub-head
+              商品の詳細
+            .sell-form-box
+              .form-group
+                %label(for="")
+                  カテゴリー
+                  %span.form-require
+                    必須
+                .select
 
-            .form-group
-              %label(for="")
-                商品の状態
-                %span.form-require
-                  必須
-              .select
-              
-        .sell-content.clearfix
-          %h3.sell-sub-head
-            配送について
-          .form-question
-            ?
-          .sell-form-box
-            .form-group
-              %label(for="")
-                配送料の負担
-                %span.form-require
-                  必須
-              .select
-
-            .form-group
-              %label(for="")
-                発送元の地域
-                %span.form-require
-                  必須
-              .select
-                = form_for '' do |f|
-                  = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: 'input'
+              .form-group
+                %label(for="")
+                  商品の状態
+                  %span.form-require
+                    必須
+                .select
+                  = f.select :status, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], prompt: "---"
                   = fa_icon 'chevron-down', class: 'select-icon'
-              
 
-            .form-group
-              %label(for="")
-                発送までの日数
-                %span.form-require
-                  必須
-              .select
+        .sell-form
+                
+          .sell-content.clearfix
+            %h3.sell-sub-head
+              配送について
+            .form-question
+              ?
+            .sell-form-box
+              .form-group
+                %label(for="")
+                  配送料の負担
+                  %span.form-require
+                    必須
+                .select
+                  = f.select :charge, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]], prompt: "---"
+                  = fa_icon 'chevron-down', class: 'select-icon'
 
-      %form.sell-form(action="")
-              
-        .sell-content.clearfix
-          %h3.sell-sub-head
-            販売価格(300〜9,999,999)
-          .form-question
-            ?
-          .sell-form-box
-            %ul.sell-price
-              %li.form-group
-                .clearfix
-                  %label.left(for="")
-                    価格
-                    %span
-                      必須
+              .form-group
+                %label(for="")
+                  配送の方法
+                  %span.form-require
+                    必須
+                .select
+                  = f.select :delivery_method, [["未定", "未定"], ["らくらくメルカリ便", "らくらくメルカリ便"], ["ゆうメール", "ゆうメール"], ["レターパック", "レターパック"], ["普通郵便(定形、定形外)", "普通郵便(定形、定形外)"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["クリックポスト", "クリックポスト"], ["ゆうパケット", "ゆうパケット"]], prompt: "---"
+                  = fa_icon 'chevron-down', class: 'select-icon'
+
+
+              .form-group
+                %label(for="")
+                  発送元の地域
+                  %span.form-require
+                    必須
+                .select
+                  = form_for '' do |f|
+                    = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: 'input'
+                    = fa_icon 'chevron-down', class: 'select-icon'
+                
+
+              .form-group
+                %label(for="")
+                  発送までの日数
+                  %span.form-require
+                    必須
+                .select
+                  = f.select :send_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]], prompt: "---"
+                  = fa_icon 'chevron-down', class: 'select-icon'
+
+        .sell-form
+                
+          .sell-content.clearfix
+            %h3.sell-sub-head
+              販売価格(300〜9,999,999)
+            .form-question
+              ?
+            .sell-form-box
+              %ul.sell-price
+                %li.form-group
+                  .clearfix
+                    %label.left
+                      価格
+                      %span
+                        必須
+                    .right
+                      ¥
+                      .input_1
+                        = f.text_field :price, placeholder: "例）300"
+
+                %li.clearfix
+                  .left
+                    販売手数料 (10%)
                   .right
-                    ¥
-                    .input_1
-                      %input{placeholder: "例）300  "}/
+                    ー
 
-              %li.clearfix
-                .left
-                  販売手数料 (10%)
-                .right
-                  ー
+                %li.profit.clearfix
+                  .left
+                    販売利益
+                  .right
+                    ー
 
-              %li.profit.clearfix
-                .left
-                  販売利益
-                .right
-                  ー
+        .sell-form
 
-        .sell-content.btn-box
-          %p
-            %span
-              禁止されている出品
-            、
-            %span
-              行為
-            を必ずご確認ください。
-          %p
-            またブランド品でシリアルナンバー等がある場合はご記載ください。
-            %span
-              偽ブランドの販売
-            は犯罪であり処罰される可能性があります。
-          %p
-            また、出品をもちまして
-            %span
-              加盟店規約
-            に同意したことになります。
-          %button.btn-red
-            出品する
-          .a
-            もどる
+          .sell-content.btn-box
+            %p
+              %span
+                禁止されている出品
+              、
+              %span
+                行為
+              を必ずご確認ください。
+            %p
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              %span
+                偽ブランドの販売
+              は犯罪であり処罰される可能性があります。
+            %p
+              また、出品をもちまして
+              %span
+                加盟店規約
+              に同意したことになります。
+
+            = f.submit :'出品する', class: "btn-red"
+            
+            .a
+              もどる
 
   .single-footer
     %nav

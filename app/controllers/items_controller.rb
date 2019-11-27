@@ -8,7 +8,20 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
+
+  def create
+    Item.create(item_params)
+    redirect_to root_path
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :price, :description, :status, :charge, :send_date, :delivery_method)
+  end
+
    
 
 end
