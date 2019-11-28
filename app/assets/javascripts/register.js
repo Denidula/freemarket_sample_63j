@@ -1,4 +1,21 @@
 // ==============================
+//       パスワード表示/非表示
+// ==============================
+
+$(function() {
+  var password  = '#user_password';
+  var passcheck = '#reveal-password';
+  
+  $(passcheck).change(function() {
+      if ($(this).prop('checked')) {
+          $(password).attr('type','text');
+      } else {
+          $(password).attr('type','password');
+      }
+  });
+});
+
+// ==============================
 //         生年月日登録用
 // ==============================
 
