@@ -69,7 +69,7 @@ header {
                   transition: opacity 400ms ease;
                 }
                 img {
-                  //position: absolute;
+                  
                   top: 0;
                   left: 0;
                   right: 0;
@@ -555,10 +555,7 @@ header {
               padding: 15px;
               font-size: 14px;
               z-index: 2;
-              //background-image: url('../images/chevron-down-solid.svg');
-              //background-repeat: no-repeat;
-              //background-size: 12px 10px;
-              //background-position: right 10px center;
+              
             }
             select::-ms-expand{
               display: none;
@@ -607,7 +604,7 @@ header {
         .input {
           width: 605px;
           height: 48px;
-          //border: 1px solid #ccc;
+          
           margin: 8px 0 0;
           border-radius: 4px;
           .item-name {
@@ -621,7 +618,7 @@ header {
         .text-area {
           width: 600px;
           height: 122px;
-          //border: 1px solid #ccc;
+          
           margin: 8px 0 0;
           border-radius: 4px;
           .item-des {
