@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def index
     @items = Item.all.order(created_at: :desc).limit(10)
   end
@@ -13,8 +14,14 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(item_params)
-    redirect_to root_path
+    begin
+      Item.create(item_params)
+      redirect_to root_path
+    rescue => exception
+      flash[:alert] = '更新に失敗しました'
+      redirect_to "/items/new"
+    end
+    
   end
 
   private
