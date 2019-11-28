@@ -88,6 +88,7 @@ gem "jquery-rails"
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'active_hash'
 gem 'pry-rails'
+gem 'payjp'
 
 group :production do
   gem 'unicorn', '5.4.1'
