@@ -11,7 +11,7 @@ Things you may want to cover:
 
 * Configuration
 
-<!-- ---------------------------------- -->
+---
 
 * Database creation
 
@@ -25,9 +25,10 @@ Things you may want to cover:
 |first_name_kanji|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birthday_year|string|null: false|
-|birthday_month|string|null: false|
-|birthday_date|string|null: false|
+|birthday_year|integer|null: false|
+|birthday_month|integer|null: false|
+|birthday_day|integer|null: false|
+|phone_number|integer||
 
 ### Association
 - has_many :comments
@@ -84,7 +85,7 @@ Things you may want to cover:
 
 
 
-## categorysテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |major|string|null: false|
@@ -105,7 +106,6 @@ Things you may want to cover:
 |city|string|null: false|
 |address|string|null: false|
 |building|string||
-|phone_number|integer||
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -118,7 +118,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |number|integer||
-|limit|integer||
+|limit_month|integer||
+|limit_year|integer||
 |security_code|integer||
 |user_id|integer|null: false, foreign_key: true|
 
@@ -138,7 +139,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-<!-- ---------------------------------- -->
+---
 
 * Database initialization
 

@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-
+    # idは仮置きです。
+    @item = Item.find(1)
   end
 
   def new
