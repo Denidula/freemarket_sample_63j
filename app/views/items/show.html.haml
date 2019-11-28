@@ -52,11 +52,12 @@
             %th
               ブランド
             %td
-          %tr
-            %th
-              商品のサイズ
-            %td
-              = @item.size
+          -if !@item.size.empty?
+            %tr
+              %th
+                商品のサイズ
+              %td
+                = @item.size
           %tr
             %th
               商品の状態
