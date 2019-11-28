@@ -14,11 +14,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
-    begin
-      Item.create(item_params)
+
+    if  Item.create(item_params)
       redirect_to root_path
-    rescue => exception
+    else
       flash[:alert] = '更新に失敗しました'
       redirect_to new_item_path
     end
