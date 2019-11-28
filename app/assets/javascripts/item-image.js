@@ -25,13 +25,13 @@ $(document).on('turbolinks:load', function() {
     function displayPicture(pictureOriginal){
       var insertPicture = "";
       insertPicture = appendPicture(pictureOriginal);
-      console.log(insertPicture);
+      
       if($('div').hasClass('image-box') == true){
         $('.image-ul:last').append(insertPicture);
-        console.log("move1");
+        
       }else{
         $('.image-ul').append(insertPicture);
-        console.log("move2");
+        
       }
     }
     
