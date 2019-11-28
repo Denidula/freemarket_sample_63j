@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     rescue => exception
       flash[:alert] = '更新に失敗しました'
-      redirect_to "/items/new"
+      redirect_to new_item_path
     end
     
   end
