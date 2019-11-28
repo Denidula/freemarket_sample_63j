@@ -22,6 +22,4 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :price, :description, :status, :charge, :send_date, :delivery_method, images: [])
   end
 
-   
-
 end
