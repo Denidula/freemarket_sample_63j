@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    
     begin
       Item.create(item_params)
       redirect_to root_path
