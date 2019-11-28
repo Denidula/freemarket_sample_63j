@@ -2,6 +2,7 @@
   .header{
     height: 128px;
     text-align: center;
+    background-color: #f7f7f7;
     &__logo{
       height: 49px; 
       width: 185px;
@@ -42,7 +43,6 @@
         &--btn{
           display: block;
           text-align: center;
-          // margin: 8px 0 0;
           border: 1px solid #ea352d;
           background: #ea352d;
           color: #fff;
@@ -64,7 +64,6 @@
         &--btn{
           display: block;
           text-align: center;
-          // margin: 8px 0 0;
           border: 1px solid #385185;
           background: #385185;
           color: #fff;
@@ -86,7 +85,6 @@
         &--btn{
           display: block;
           text-align: center;
-          // margin: 8px 0 0;
           border: 1px solid #979797;
           background: #fff;
           color: #000;
