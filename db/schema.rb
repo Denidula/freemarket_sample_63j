@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_053625) do
-
+ActiveRecord::Schema.define(version: 2019_11_27_065312) do
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -34,7 +33,37 @@ ActiveRecord::Schema.define(version: 2019_11_27_053625) do
   end
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "zip_code", null: false
     t.string "prefecture"
+    t.string "city", null: false
+    t.string "address", null: false
+    t.string "building"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number"
+    t.integer "limit_month"
+    t.integer "limit_year"
+    t.integer "security_code"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.string "description", null: false
+    t.string "size"
+    t.string "status", null: false
+    t.string "charge", null: false
+    t.string "delivery_method", null: false
+    t.string "send_date", null: false
+    t.integer "user_id", null: false
+    t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

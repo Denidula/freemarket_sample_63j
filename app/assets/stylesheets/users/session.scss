@@ -1,6 +1,7 @@
 .login{
   .header{
     height: 128px;
+    background-color: #f7f7f7;
     text-align: center;
     &__logo{
       height: 49px; 
@@ -41,7 +42,6 @@
       &__omniauth{
         display: block;
         text-align: center;
-        // margin: 8px 0 0;
         border: 1px solid #385185;
         background: #385185;
         color: #fff;
@@ -54,7 +54,6 @@
         &--btn{
           display: block;
           text-align: center;
-          // margin: 8px 0 0;
           border: 1px solid #385185;
           background: #385185;
           color: #fff;
@@ -76,7 +75,6 @@
         &--btn{
           display: block;
           text-align: center;
-          // margin: 8px 0 0;
           border: 1px solid #979797;
           background: #fff;
           color: #000;
