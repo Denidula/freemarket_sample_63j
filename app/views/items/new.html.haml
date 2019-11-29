@@ -4,7 +4,8 @@
   .single-header
     %h1
       .top-link
-        = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229', height: '49', width: '185'
+        = link_to '/' do
+          = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229', height: '49', width: '185'
 
   = form_for @item do |f|
 
