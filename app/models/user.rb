@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :sns_credentials
-
+  has_many :items
   def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider

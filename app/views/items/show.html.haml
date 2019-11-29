@@ -22,7 +22,7 @@
               出品者
             %td
               %p.link
-                出品者名
+                = @item.user.nickname
               .face-icon
                 .rating-icon
                   = fa_icon 'laugh', class: 'good'
@@ -98,7 +98,7 @@
 
     .item-description
       %p.item-description__inner
-        ・素材構成: ポリエステル
+        = @item.description
 
     .item-buttons.clearfix
       .item-button-left
