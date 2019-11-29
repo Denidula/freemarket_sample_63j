@@ -40,5 +40,6 @@ root to: "items#index"
 
   
   resources :items
+  post 'items/upload_image', to: 'items#upload_image'
   
 end
