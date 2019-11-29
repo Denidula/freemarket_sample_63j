@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # idは仮置きです。
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -25,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
   end
 
   def update
