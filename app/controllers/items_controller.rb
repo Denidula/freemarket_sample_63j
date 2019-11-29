@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # idは仮置きです。
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -22,6 +21,21 @@ class ItemsController < ApplicationController
       redirect_to new_item_path
     end
     
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+
+    if  Item.update(item_params)
+      redirect_to item_path
+    else
+      flash[:alert] = '更新に失敗しました'
+      redirect_to edit_item_path
+    end
+
   end
 
   private
