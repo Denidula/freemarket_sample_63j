@@ -45,10 +45,10 @@
           = f.password_field :password, autocomplete: "current-password", placeholder: '7文字以上', class: 'main__form__group__input-box'
           .main__form__group__password-revelation
             .main__form__group__password-revelation__checkbox
-              = f.check_box :password, {class: 'checkbox'}, true, false
+              = f.check_box :password, {id: 'reveal-password', class: 'checkbox'}, true, false
               = f.label :password, 'パスワードを表示する', for: "reveal-password"
         .main__form__group
-          %h3 本人確認
+          %h3(style="font-weight: bold") 本人確認
           %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
         .main__form__group
           = f.label 'お名前（全角）', class: 'main__form__group__label', for: "user_family_name_kanji"
@@ -80,7 +80,7 @@
             %span.main__form__group__birthday__text 日
         %p.main__form__info ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .main__form__recaptcha
-          = image_tag 'recaptcha_image.png'
+          = recaptcha_tags
         %p.main__form__consensus
           「次へ進む」のボタンを押すことにより、
           %a(href="/" target="_blank") 利用規約

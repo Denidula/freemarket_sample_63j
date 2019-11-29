@@ -11,11 +11,15 @@
     .main__login
       - if devise_mapping.omniauthable?
         .main__login__facebook
-          = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post, class: 'main__login__facebook--btn'
-          %i.fa.fa-facebook-f
+          = link_to user_facebook_omniauth_authorize_path, method: :post do
+            .main__login__facebook--btn
+              = "Facebookでログイン"
+              = fa_icon 'facebook-f'
         .main__login__google
-          = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, method: :post, class: 'main__login__google--btn'
-          %i.fa.fa-google
+          = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
+            .main__login__google--btn
+              = "Googleでログイン"
+              = fa_icon 'google'
 
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field__email

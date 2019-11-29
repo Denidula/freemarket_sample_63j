@@ -33,7 +33,7 @@ Things you may want to cover:
 ### Association
 - has_many :comments
 - has_many :items, dependent: :destroy
-- has_many :credit_cards, dependent: :destroy
+- has_one :credit_card, dependent: :destroy
 - has_one :address, dependent: :destroy
 - has_many :sns_credentials, dependent: :destroy
 

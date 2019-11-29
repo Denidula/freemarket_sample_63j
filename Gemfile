@@ -85,9 +85,12 @@ gem "omniauth-rails_csrf_protection"
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem "jquery-rails"
-gem "recaptcha"
+gem 'recaptcha', require: "recaptcha/rails"
 gem 'active_hash'
 gem 'pry-rails'
+gem 'payjp'
+
+gem 'jquery-rails'
 
 group :production do
   gem 'unicorn', '5.4.1'
