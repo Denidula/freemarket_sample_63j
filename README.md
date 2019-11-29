@@ -88,12 +88,12 @@ Things you may want to cover:
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|major|string|null: false|
-|medium|string|null: false|
-|small|string|null: false|
+|name|string|null: false|
+|ancestry|string||
 
 ### Association
 - has_many :items
+- has_ancestry
 
 
 
