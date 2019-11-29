@@ -1,10 +1,10 @@
-
 .single-contents
   
   .single-header
     %h1
       .top-link
-        = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229', height: '49', width: '185'
+        = link_to '/' do
+          = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2177740229', height: '49', width: '185'
 
   .single-main
 
@@ -17,10 +17,10 @@
           %h3.item-image
             = image_tag 'https://static.mercdn.net/thumb/photos/m45896064172_1.jpg?1553586186'
           %p.item-name
-            メンズ ニット グレー
+            = @item.name
           %form(action="")
             %p.buy-price
-              ¥2,480
+              = converting_to_jpy(@item.price)
               %span.in-shipping-fee
                 送料込み
             %ul.not-have
@@ -33,9 +33,13 @@
                   支払い金額
                 .buy-price-cell
                   %span
-                    ¥2,480
-            %button.buy-btn
-              購入する
+                    = converting_to_jpy(@item.price)
+
+      = form_tag(action: :pay, method: :post) do
+        %script.payjp-button{:src        => "https://checkout.pay.jp",
+                             :type       => "text/javascript", 
+                             "data-text" => "購入する",
+                             "data-key"  => "pk_test_1e7800d971ffc411c895cc3e"}
 
       %section.buy-content.buy-user-info
         .buy-content__inner
