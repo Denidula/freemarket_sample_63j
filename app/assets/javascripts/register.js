@@ -2,7 +2,7 @@
 //       パスワード表示/非表示
 // ==============================
 
-$(function() {
+$(document).on('turbolinks:load', function() {
   var password  = '#user_password';
   var passcheck = '#reveal-password';
   
