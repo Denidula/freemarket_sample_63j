@@ -22,6 +22,19 @@ class ItemsController < ApplicationController
     end
     
   end
+  
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    if  Item.update(item_params)
+      redirect_to item_path
+    else
+      flash[:alert] = '更新に失敗しました'
+      redirect_to edit_item_path
+    end
+  end
 
   require 'payjp'
 
@@ -41,8 +54,7 @@ class ItemsController < ApplicationController
   end
 
   def done
-  end
-
+    
   private
 
   def item_params
