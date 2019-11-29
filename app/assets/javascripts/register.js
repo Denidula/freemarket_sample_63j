@@ -64,7 +64,7 @@ $(document).on('turbolinks:load', function () {
     }).appendTo('#select_birth_day');
     // ２月の日にち、すなわちmonths[1]を28にセットし直す
     months[1] = 28;
-    //　年と月に入力されている情報を取得する
+    // 年と月に入力されている情報を取得する
     var year = $('#select_birth_year').val();
     var month = $("#select_birth_month").val();
     // yearとmonth共に数字が入力されている、すなわち共に'--'でないときに実行
@@ -72,9 +72,9 @@ $(document).on('turbolinks:load', function () {
       // monthに２月が選択されている時実行
       if (month == 2) {
         // yearが閏年の時、2月の日付が格納されているmonths[1]の値を29にする
-        if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
+        if (year % 4 == 0 && year % 100 !== 0 || year % 400 == 0) {
           months[1] = 29;
-        }
+        } 
       }
       // 日を入れる配列を宣言し、閏年を考慮したデータを格納してhamlの日の
       // セレクトボックスに反映させる
