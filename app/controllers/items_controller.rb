@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # idは仮置きです。
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -24,10 +23,39 @@ class ItemsController < ApplicationController
     
   end
 
+  require 'payjp'
+
+  def purchase
+    @item = Item.find(params[:id])
+  end
+  
+  def pay
+    @item = Item.find(params[:id])
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+    redirect_to action: :done
+  end
+
+  def done
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :status, :charge, :send_date, :delivery_method, images: [])
+    params.require(:item).permit(
+      :name, 
+      :price, 
+      :description, 
+      :status, 
+      :charge, 
+      :send_date, 
+      :delivery_method, 
+      images: []
+    )
   end
 
 end
