@@ -179,13 +179,17 @@
         display: flex;
         flex-wrap: wrap;
         list-style: none;
+        &__product:hover{
+          border: solid 1px #0095EE;
+        }
         &__product {
+          border: solid 1px transparent;
           margin: 10px;
-          width: 178px;
+          width: 180px;
           height: 252px;
           filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.4));
           &__picture {
-            background: url("https://static.mercdn.net/thumb/photos/m78549057165_1.jpg?1573813583");
+            background: url("https://www.nanohana-ph.jp/images/shop/noimage.png");
             background-size: cover;
             height: calc(100% - 64px);
             width: 100%;
