@@ -17,10 +17,8 @@
           = fa_icon 'tag', class: "tag-icon"
           ブランドから探す
       .searches_regist__bottom__right
-        .searches_regist__bottom__right__sign-in
-          新規会員登録
-        .searches_regist__bottom__right__log-in
-          ログイン
+        = link_to '新規会員登録', new_user_registration_path, class: 'searches_regist__bottom__right__sign-in'
+        = link_to 'ログイン', new_user_session_path, class: 'searches_regist__bottom__right__log-in'
 
 .advertisement
   = image_tag 'main-visual.png', class: 'main-visual'

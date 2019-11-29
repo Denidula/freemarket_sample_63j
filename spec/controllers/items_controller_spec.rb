@@ -13,4 +13,38 @@ describe ItemsController do
       expect(response).to render_template :index
     end
   end
+
+  describe 'GET #purchase' do
+    it "assigns the requested item to @item" do
+      item = create(:item)
+      get :purchase, params: { id: item }
+      expect(assigns(:item)).to  eq item
+    end
+
+    it "renders the :purchase template" do
+      item = create(:item)
+      get :purchase, params: { id: item }
+      expect(response).to render_template :purchase
+    end
+  end
+
+  describe 'POST #pay' do
+    it "assigns the requested item to @item" do
+      item = create(:item)
+      get :purchase, params: { id: item }
+      expect(assigns(:item)).to  eq item
+    end
+
+    it "renders the :done template" do
+      get :done
+      expect(response).to render_template :done
+    end
+  end
+
+  describe 'GET #done' do
+    it "renders the :done template" do
+      get :done
+      expect(response).to render_template :done
+    end
+  end
 end

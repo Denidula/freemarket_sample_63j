@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-root to: "items#index"
+  root to: "items#index"
+
   devise_for :users, :controllers => {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -33,12 +34,12 @@ root to: "items#index"
     get 'identification'
   end
 
-  namespace :transaction do
-    get 'buy'
+  resources :items do
+    collection do
+      get  'purchase/:id' => 'items#purchase', as: 'purchase'
+      post 'pay/:id'      => 'items#pay',      as: 'pay'
+      get  'done'         => 'items#done',     as: 'done'
+    end
   end
 
-
-  
-  resources :items
-  
 end
