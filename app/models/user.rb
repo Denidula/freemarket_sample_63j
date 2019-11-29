@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :sns_credentials
   has_many :items
+  has_one :address
   def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider

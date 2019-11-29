@@ -7,11 +7,11 @@ $(function() {
   var passcheck = '#reveal-password';
   
   $(passcheck).change(function() {
-      if ($(this).prop('checked')) {
-          $(password).attr('type','text');
-      } else {
-          $(password).attr('type','password');
-      }
+    if ($(this).prop('checked')) {
+        $(password).attr('type','text');
+    } else {
+        $(password).attr('type','password');
+    }
   });
 });
 

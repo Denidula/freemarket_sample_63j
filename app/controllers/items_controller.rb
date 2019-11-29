@@ -54,6 +54,7 @@ class ItemsController < ApplicationController
   end
 
   def done
+  end
     
   private
 
