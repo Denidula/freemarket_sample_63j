@@ -17,8 +17,27 @@
           = fa_icon 'tag', class: "tag-icon"
           ブランドから探す
       .searches_regist__bottom__right
-        = link_to '新規会員登録', new_user_registration_path, class: 'searches_regist__bottom__right__sign-in'
-        = link_to 'ログイン', new_user_session_path, class: 'searches_regist__bottom__right__log-in'
+        - if user_signed_in?
+          %ul
+            %li.like
+              = fa_icon 'heart'
+              いいね！一覧
+            %li
+              = fa_icon 'bell'
+              お知らせ
+            %li
+              = fa_icon 'check'
+              やることリスト
+            %li.last
+              = link_to mypage_path do
+                .menu-link
+                  %figure
+                    = image_tag 'https://cdn.pixabay.com/photo/2016/07/23/13/21/pokemon-1536855_1280.png', height: '32', width: '32'
+                  %span
+                    マイページ
+        - else
+          = link_to '新規会員登録', new_user_registration_path, class: 'searches_regist__bottom__right__sign-in'
+          = link_to 'ログイン', new_user_session_path, class: 'searches_regist__bottom__right__log-in'
 
 .advertisement
   = image_tag 'main-visual.png', class: 'main-visual'

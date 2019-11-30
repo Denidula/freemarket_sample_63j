@@ -17,19 +17,29 @@
             = fa_icon 'tag', class: 'red-icon'
             ブランドから探す
       .down-right
-        %ul
-          %li.like
-            = fa_icon 'heart'
-            いいね！一覧
-          %li
-            = fa_icon 'bell'
-            お知らせ
-          %li
-            = fa_icon 'check'
-            やることリスト
-          %li.last
-            .menu-link
-              %figure
-                = image_tag 'https://cdn.pixabay.com/photo/2016/07/23/13/21/pokemon-1536855_1280.png', height: '32', width: '32'
-              %span
-                マイページ
+        - if user_signed_in?
+          %ul
+            %li.like
+              = fa_icon 'heart'
+              いいね！一覧
+            %li
+              = fa_icon 'bell'
+              お知らせ
+            %li
+              = fa_icon 'check'
+              やることリスト
+            %li.last
+              = link_to mypage_path do
+                .menu-link
+                  %figure
+                    = image_tag 'https://cdn.pixabay.com/photo/2016/07/23/13/21/pokemon-1536855_1280.png', height: '32', width: '32'
+                  %span
+                    マイページ
+        - else
+          %ul
+            %li.like
+              = fa_icon 'heart'
+              新規会員登録
+            %li
+              = fa_icon 'bell'
+              ログイン
