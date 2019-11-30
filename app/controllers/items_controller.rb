@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :login_require, except: [:index, :show]
 
   def index
     @items = Item.all.order(created_at: :desc).limit(10)
@@ -69,6 +70,10 @@ class ItemsController < ApplicationController
       :delivery_method, 
       images: []
     )
+  end
+
+  def login_require
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end
