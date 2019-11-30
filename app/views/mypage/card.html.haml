@@ -1,7 +1,6 @@
-
 .contents
-
   = render partial: 'shared/header'
+
   .nav
     %ul
       %li
@@ -25,9 +24,10 @@
           .l-single-inner__list
             クレジットカード一覧
           .l-single-inner__add
-            .l-single-inner__add__card
-              = fa_icon 'credit-card', class: 'l-single-inner__add__card__credit'
-              クレジットカードを追加する
+            = link_to new_credit_card_path do
+              .l-single-inner__add__card
+                = fa_icon 'credit-card', class: 'l-single-inner__add__card__credit'
+                = 'クレジットカードを追加する'
           .l-single-inner__setting-not-regist
             支払い方法について
             =fa_icon 'chevron-right', class: 'l-single-inner__setting-not-regist__icon'

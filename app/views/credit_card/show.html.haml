@@ -1,10 +1,40 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(delete_credit_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+.contents
+  = render partial: 'shared/header'
+
+  .nav
+    %ul
+      %li
+        メルカリ 
+        = fa_icon 'chevron-right'
+      %li.bold
+        マイページ
+        = fa_icon 'chevron-right'
+      %li.bold
+        支払い方法
+
+  .main.clearfix    
+    = render partial: 'mypage/shared/side_column'
+
+    .content
+      .l-content
+        %h2.l-chapter-head
+          支払い方法
+        .l-single-inner
+          .l-single-inner__list
+            クレジットカード一覧
+            %p
+              = '◽️◽️'
+            %p
+              = "**** **** **** " + @default_card_information.last4
+            %p
+              - exp_month = @default_card_information.exp_month.to_s
+            %p
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+            = form_tag(delete_credit_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %button.card-delete-btn 削除する
+          .l-single-inner__setting-not-regist
+            支払い方法について
+            =fa_icon 'chevron-right', class: 'l-single-inner__setting-not-regist__icon'
+  = render partial: 'shared/footer'
