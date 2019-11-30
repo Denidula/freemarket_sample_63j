@@ -68,15 +68,12 @@
           %span.main__form__group__require 必須
           .main__form__group__birthday
             .main__form__group__birthday__select-box
-              = fa_icon 'chevron-down'
               = f.select :birthday_year,["--"], {},{class: "main__form__group__birthday__select-box--year", id:"select_birth_year"}
             %span.main__form__group__birthday__text 年
             .main__form__group__birthday__select-box
-              = fa_icon 'chevron-down'
               = f.select :birthday_month, ["--"], {},{class: "main__form__group__birthday__select-box--month", id:"select_birth_month"}
             %span.main__form__group__birthday__text 月
             .main__form__group__birthday__select-box
-              = fa_icon 'chevron-down'
               = f.select :birthday_day, ["--"], {},{class: "main__form__group__birthday__select-box--day", id:"select_birth_day"}
             %span.main__form__group__birthday__text 日
         %p.main__form__info ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
