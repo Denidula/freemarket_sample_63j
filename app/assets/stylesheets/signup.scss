@@ -103,11 +103,15 @@
         transition: all ease-out .3s;
         cursor: pointer;
         text-align: center;
-        margin: 20px auto;
+        margin: 24px auto;
       }
-
+      
       &__group{
-        margin: 16px;
+        margin: 24px;
+        
+        &__card-info{
+          text-align: right;
+        }
 
         select{
           padding: 0 5px;
@@ -190,27 +194,90 @@
         &__birthday{
           display: flex;
           &__select-box{
+            width: 100%;
             margin: 8px 0 8px;
+            display: inline-block;
             position: relative;
-            
-            .fa-chevron-down{
-              color: #888;
-              position: absolute;
-              right: 5px;
-              top: 15px;
-              font-size: 16px;
-            }
-            
+
             select{
-              padding: 0 5px;
+              padding: 0 15px;
               font-size: 16px;
               width: 76px;
-              height: 48px;
-              border: 1px solid #ccc;
-              background-color: rgba(00,00,00,0);
-              cursor: pointer;
               -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              background: transparent;
+              position: relative;
+              z-index: 1;            
             }
+
+            select::-ms-expand {
+              display: none;
+            }
+          }
+
+          &__select-box::after{
+            content: '';
+            width: 8px;
+            height: 8px;
+            border: 0px;
+            border-bottom: solid 2px #b4b3b3;
+            border-right: solid 2px #b4b3b3;
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 50%;
+            left: 55px;
+            margin-top: -8px;
+          }
+
+          &__text{
+            height: 48px;
+            line-height: 48px;
+            padding: 0 5px;
+            margin: 8px 0 8px;
+          }
+        }
+        &__card{
+          position: relative;
+          
+          &__select-box{
+            margin: 8px 0 8px;
+            width: 100%;
+            display: inline-block;
+            position: relative;
+          
+            select{
+              padding: 0 15px;
+              font-size: 16px;
+              width: 96px;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              background: transparent;
+              position: relative;
+              z-index: 1;            
+            }
+
+            select::-ms-expand {
+              display: none;
+            }
+          }
+          &__select-box::after{
+            content: '';
+            width: 8px;
+            height: 8px;
+            border: 0px;
+            border-bottom: solid 2px #b4b3b3;
+            border-right: solid 2px #b4b3b3;
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 50%;
+            left: 70px;
+            margin-top: -8px;
           }
 
           &__text{

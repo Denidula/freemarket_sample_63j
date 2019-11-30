@@ -33,33 +33,35 @@
   .main
     .main__text 支払い方法
     .main__form
-      = form_for @credit_card, url: signup_index_path, meghod: :post do |f|
+      = form_tag(signup_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
         .main__form__group
-          = f.label 'カード番号', class: 'main__form__group__label', for: "credit_card_number"
+          %label.main__form__group__label(for="card_number") カード番号
           %span.main__form__group__require 必須
-          = f.password_field :number, class: "main__form__group__input-box", placeholder: "半角数字のみ"
+          = text_field_tag "number", "", class: "main__form__group__input-box", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
           = image_tag 'creditcard_logos.png', class: 'main__form__group__logos'
+          %br
         .main__form__group
-          = f.label '有効期限', class: 'main__form__group__label', for: "credit_card_limit_month"
+          %label.main__form__group__label 有効期限
           %span.main__form__group__require 必須
-          .main__form__group__birthday
-            .main__form__group__birthday__select-box
-              = fa_icon 'chevron-down'
-              = f.select :limit_month, ["--"], {},{class: "main__form__group__birthday__select-box--month", id:"select_limit_month"}
-            %span.main__form__group__birthday__text 月
-            .main__form__group__birthday__select-box
-              = fa_icon 'chevron-down'
-              = f.select :limit_year,["--"], {},{class: "main__form__group__birthday__select-box--year", id:"select_limit_year"}
-            %span.main__form__group__birthday__text 年
+          .main__form__group__card
+            .main__form__group__card__select-box
+              %select#exp_month.main__form__group__card__select-box--month{name: "exp_month", type: "text"}
+                %option{value: ""} --
+              %span.main__form__group__card__text 月
+            .main__form__group__card__select-box
+              %select#exp_year.main__form__group__card__select-box--year{name: "exp_year", type: "text"}
+                %option{value: ""} --
+              %span.main__form__group__card__text 年
         .main__form__group
-          = f.label 'セキュリティコード', class: 'main__form__group__label', for: "address_zip_code"
+          %label.main__form__group__label セキュリティコード
           %span.main__form__group__require 必須
-          = f.telephone_field :security_code, class: "main__form__group__input-box", placeholder: "カード背面４桁もしくは３桁の番号"
-        %p.main__form__personal-info
-          = link_to '/', class: 'link', target: '_blank' do
-            = fa_icon 'question-circle'
-            = 'カード裏面の番号とは？'
-        = f.submit '次へ進む', class: 'main__form__submit-btn'
+          = text_field_tag "cvc", "", class: "main__form__group__input-box", placeholder: "カード背面４桁もしくは３桁の番号", maxlength: "4", id: "cvc"
+          %p.main__form__group__card-info
+            = link_to '/', class: 'link', target: '_blank' do
+              = fa_icon 'question-circle'
+              = 'カード裏面の番号とは？'
+        #card_token
+          = submit_tag "次へ進む", id: "token_submit", class: 'main__form__submit-btn'
 
   .footer
     %nav
