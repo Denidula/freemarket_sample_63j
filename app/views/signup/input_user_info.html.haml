@@ -33,7 +33,7 @@
     .main__form
       = form_for @user, url: input_phone_number_signup_index_path, meghod: :post do |f|
         .main__form__group
-          = f.label 'ニックネーム', class: 'main__form__group__label', for: "user_nickname"
+          = f.label 'ニックネーム', class: 'main__form__group__label', for: "user_nickname", autofocus: true
           %span.main__form__group__require 必須
           = f.text_field :nickname, class: "main__form__group__input-box", placeholder: "例）惣流・アスカ・ラングレー"
         .main__form__group
@@ -77,8 +77,8 @@
               = f.select :birthday_day, ["--"], {},{class: "main__form__group__birthday__select-box--day", id:"select_birth_day"}
             %span.main__form__group__birthday__text 日
         %p.main__form__info ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        .main__form__recaptcha
-          = recaptcha_tags
+        -# .main__form__recaptcha
+        -#   = recaptcha_tags
         %p.main__form__consensus
           「次へ進む」のボタンを押すことにより、
           %a(href="/" target="_blank") 利用規約
