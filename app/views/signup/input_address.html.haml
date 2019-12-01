@@ -39,6 +39,11 @@
           %span.main__form__group__require 必須
           = f.text_field :zip_code, class: "main__form__group__input-box", placeholder: "例）123-4567"
         .main__form__group
+          = f.label '都道府県', class: 'main__form__group__label', for: "address_prefecture_id"
+          %span.main__form__group__require 必須
+          .main__form__group__select
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
+        .main__form__group
           = f.label '市区町村', class: 'main__form__group__label', for: "address_city"
           %span.main__form__group__require 必須
           = f.text_field :city, class: "main__form__group__input-box", placeholder: "例）新宿区"

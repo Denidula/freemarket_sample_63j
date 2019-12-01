@@ -29,7 +29,7 @@ class SignupController < ApplicationController
 
   def input_credit_card
     session[:zip_code] = address_params[:zip_code]
-    # session[:prefecture] = address_params[:prefecture]
+    session[:prefecture_id] = address_params[:prefecture_id]
     session[:city] = address_params[:city]
     session[:address] = address_params[:address]
     session[:building] = address_params[:building]
@@ -60,7 +60,7 @@ class SignupController < ApplicationController
     @address = Address.create(
       user_id: @user.id, 
       zip_code: session[:zip_code], 
-      # prefecture: session[:prefecture], 
+      prefecture_id: session[:prefecture_id], 
       city: session[:city], 
       address: session[:address], 
       building: session[:building] 
@@ -102,7 +102,7 @@ class SignupController < ApplicationController
   def address_params
     params.require(:address).permit(
       :zip_code, 
-      # :prefecture, 
+      :prefecture_id, 
       :city, 
       :address, 
       :building

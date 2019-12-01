@@ -113,15 +113,45 @@
           text-align: right;
         }
 
-        select{
-          padding: 0 5px;
-          font-size: 16px;
+        &__select{
           width: 100%;
-          height: 48px;
-          border: 1px solid #ccc;
-          background-color: rgba(00,00,00,0);
-          cursor: pointer;
-          -webkit-appearance: none;
+          margin: 8px 0 8px;
+          display: inline-block;
+          position: relative;
+
+          #address_prefecture_id{
+            padding: 0 16px;
+            font-size: 16px;
+            width: 100%;
+            height: 48px;
+            border: 1px solid #ccc;
+            background-color: rgba(00,00,00,0);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            position: relative;
+            z-index: 1;
+          }
+
+          #address_prefecture_id::-ms-expand{
+            display: none;
+          }
+        }
+        &__select::after{
+          content: '';
+          width: 8px;
+          height: 8px;
+          border: 0px;
+          border-bottom: solid 2px #b4b3b3;
+          border-right: solid 2px #b4b3b3;
+          -ms-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          margin-top: -8px;
         }
 
         h3{
@@ -193,16 +223,18 @@
         }
         &__birthday{
           display: flex;
-          &__select-box{
+          &__select{
             width: 100%;
             margin: 8px 0 8px;
             display: inline-block;
             position: relative;
 
-            select{
+            &--box{
               padding: 0 15px;
               font-size: 16px;
               width: 76px;
+              height: 48px;
+              border: 1px solid #ccc;
               -webkit-appearance: none;
               -moz-appearance: none;
               appearance: none;
@@ -211,12 +243,12 @@
               z-index: 1;            
             }
 
-            select::-ms-expand {
+            &--box::-ms-expand {
               display: none;
             }
           }
 
-          &__select-box::after{
+          &__select::after{
             content: '';
             width: 8px;
             height: 8px;
@@ -252,6 +284,8 @@
               padding: 0 15px;
               font-size: 16px;
               width: 96px;
+              height: 48px;
+              border: 1px solid #ccc;
               -webkit-appearance: none;
               -moz-appearance: none;
               appearance: none;
