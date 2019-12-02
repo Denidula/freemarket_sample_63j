@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_053347) do
     t.string "charge", null: false
     t.string "delivery_method", null: false
     t.string "send_date", null: false
+    t.integer "prefecture_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
