@@ -64,6 +64,8 @@
                   %span.form-require
                     必須
                 .select
+                  = f.select :status, [[@parents[0][:name]], [@parents[1][:name]], [@parents[2][:name]], [@parents[3][:name]], [@parents[4][:name]], [@parents[5][:name]], [@parents[6][:name]], [@parents[7][:name]], [@parents[8][:name]], [@parents[9][:name]], [@parents[10][:name]], [@parents[11][:name]], [@parents[12][:name]]], prompt: "---"
+                  = fa_icon 'chevron-down', class: 'select-icon'
 
               .form-group
                 %label(for="")
@@ -71,8 +73,8 @@
                   %span.form-require
                     必須
                 .select
-                  = f.select :status, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], prompt: "---"
-                  = fa_icon 'chevron-down', class: 'select-icon'
+                  //= f.select :status, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], prompt: "---"
+                  //= fa_icon 'chevron-down', class: 'select-icon'
 
         .sell-form
                 

@@ -256,3 +256,14 @@ interior_small.children.create(
 interior_event.children.create(
   [{:name=>"正月"},{:name=>"成人式"},{:name=>"バレンタインデー"},{:name=>"ひな祭り"},{:name=>"子どもの日"},{:name=>"母の日"},{:name=>"父の日"},{:name=>"サマーギフト/お中元"},{:name=>"夏/夏休み"},{:name=>"ハロウィン"},{:name=>"敬老の日"},{:name=>"七五三"},{:name=>"お歳暮"},{:name=>"クリスマス"},{:name=>"冬一般"},{:name=>"その他"}]
 )
+
+
+book_music_game = Category.create(:name=>"本・音楽・ゲーム")
+toy = Category.create(:name=>"おもちゃ・ホビー・グッズ")
+beauty = Category.create(:name=>"コスメ・香水・美容")
+electric = Category.create(:name=>"家電・スマホ・カメラ")
+sports = Category.create(:name=>"スポーツ・レジャー")
+hand_made = Category.create(:name=>"ハンドメイド")
+ticket = Category.create(:name=>"チケット")
+car = Category.create(:name=>"自動車・オートバイ")
+others = Category.create(:name=>"その他")

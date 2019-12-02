@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @parents = Category.where(ancestry: nil).limit(13)
   end
 
   def create
