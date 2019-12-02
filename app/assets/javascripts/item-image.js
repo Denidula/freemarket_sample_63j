@@ -79,7 +79,7 @@ $(document).on('turbolinks:load', function() {
 
       var files = e.target.files;
       var d = (new $.Deferred()).resolve();
-
+    
       $.each(files,function(i,file){
         d = d.then(function(){
           return Uploader.upload(file);

@@ -35,11 +35,11 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :status, :charge, :send_date, :delivery_method, :prefecture_id)#.merge(images: uploaded_images)
+    params.require(:item).permit(:name, :price, :description, :status, :charge, :send_date, :delivery_method, :prefecture_id)#.merge(images: [uploaded_images])
   end
 
   def uploaded_images
-    params[:item][:images] if params[:item][:images]
+    params[:item][:images].map{|id| ActiveStorage::Blob.find(id)}
   end
 
   def create_blob(uploading_file)
