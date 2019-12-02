@@ -6,21 +6,17 @@ class SignupController < ApplicationController
   end
 
   def input_phone_number
-    # if verify_recaptcha
-      session[:nickname] = user_params[:nickname]
-      session[:email] = user_params[:email]
-      session[:password] = user_params[:password]
-      session[:family_name_kanji] = user_params[:family_name_kanji]
-      session[:first_name_kanji] = user_params[:first_name_kanji]
-      session[:family_name_kana] = user_params[:family_name_kana]
-      session[:first_name_kana] = user_params[:first_name_kana]
-      session[:birthday_yaer] = user_params[:birthday_year]
-      session[:birthday_month] = user_params[:birthday_month]
-      session[:birthday_day] = user_params[:birthday_day]
-      @user = User.new
-    # else
-      # redirect_to input_user_info_signup_index_path
-    # end
+    session[:nickname] = user_params[:nickname]
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password]
+    session[:family_name_kanji] = user_params[:family_name_kanji]
+    session[:first_name_kanji] = user_params[:first_name_kanji]
+    session[:family_name_kana] = user_params[:family_name_kana]
+    session[:first_name_kana] = user_params[:first_name_kana]
+    session[:birthday_yaer] = user_params[:birthday_year]
+    session[:birthday_month] = user_params[:birthday_month]
+    session[:birthday_day] = user_params[:birthday_day]
+    @user = User.new
   end
 
   def input_address
