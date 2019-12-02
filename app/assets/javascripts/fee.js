@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   function buildHTML(fee){
     html = `<div class="right">
             ¥${fee.toLocaleString()}
