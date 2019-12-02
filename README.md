@@ -65,6 +65,7 @@ Things you may want to cover:
 |send_date|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :images, dependent: :destroy
