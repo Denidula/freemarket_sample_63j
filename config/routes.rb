@@ -42,7 +42,7 @@ root to: "items#index"
   resources :items do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
-      get 'get<div class="code-title" data-title="Gemfile">_category_grandchildren', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
 

@@ -58,14 +58,14 @@
             %h3.sell-sub-head
               商品の詳細
             .sell-form-box
-              .form-group
+              #category.form-group
                 %label(for="")
                   カテゴリー
                   %span.form-require
                     必須
                 .select
-                  //= f.select :status, [[@parents[0][:name]], [@parents[1][:name]], [@parents[2][:name]], [@parents[3][:name]], [@parents[4][:name]], [@parents[5][:name]], [@parents[6][:name]], [@parents[7][:name]], [@parents[8][:name]], [@parents[9][:name]], [@parents[10][:name]], [@parents[11][:name]], [@parents[12][:name]]], prompt: "---"
-                  //= fa_icon 'chevron-down', class: 'select-icon'
+                  = f.select :category, @category_parent_array, {}, {id: 'parent_category'}
+                  = fa_icon 'chevron-down', class: 'select-icon'
 
               .form-group
                 %label(for="")
