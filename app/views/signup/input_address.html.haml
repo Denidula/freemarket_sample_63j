@@ -35,22 +35,22 @@
     .main__form
       = form_for @address, url: input_credit_card_signup_index_path, meghod: :post do |f|
         .main__form__group
-          = f.label '郵便番号', class: 'main__form__group__label', for: "address_zip_code"
+          = f.label '郵便番号（ハイフン不要）', class: 'main__form__group__label', for: "address_zip_code"
           %span.main__form__group__require 必須
-          = f.text_field :zip_code, class: "main__form__group__input-box", placeholder: "例）123-4567"
+          = f.text_field :zip_code, class: "main__form__group__input-box", placeholder: "例）1234567", required: 'required', type: 'tel', pattern: '^\d{7}'
         .main__form__group
           = f.label '都道府県', class: 'main__form__group__label', for: "address_prefecture_id"
           %span.main__form__group__require 必須
           .main__form__group__select
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, { required: 'required' }
         .main__form__group
           = f.label '市区町村', class: 'main__form__group__label', for: "address_city"
           %span.main__form__group__require 必須
-          = f.text_field :city, class: "main__form__group__input-box", placeholder: "例）新宿区"
+          = f.text_field :city, class: "main__form__group__input-box", placeholder: "例）新宿区", required: 'required', pattern: '[^\x20-\x7E]*'
         .main__form__group
           = f.label '番地', class: 'main__form__group__label', for: "address_address"
           %span.main__form__group__require 必須
-          = f.text_field :address, class: "main__form__group__input-box", placeholder: "例）早稲田鶴巻町３０２−５"
+          = f.text_field :address, class: "main__form__group__input-box", placeholder: "例）早稲田鶴巻町３０２−５", required: 'required'
         .main__form__group
           = f.label '建物名', class: 'main__form__group__label', for: "address_building"
           %span.main__form__group__optional 任意

@@ -37,7 +37,7 @@
         .main__form__group
           %label.main__form__group__label(for="card_number") カード番号
           %span.main__form__group__require 必須
-          = text_field_tag "number", "", class: "main__form__group__input-box", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+          = text_field_tag "number", "", class: "main__form__group__input-box", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number", required: 'required'
           = image_tag 'creditcard_logos.png', class: 'main__form__group__logos'
           %br
         .main__form__group
@@ -45,17 +45,17 @@
           %span.main__form__group__require 必須
           .main__form__group__card
             .main__form__group__card__select-box
-              %select#exp_month.main__form__group__card__select-box--month{name: "exp_month", type: "text"}
+              %select#exp_month.main__form__group__card__select-box--month{name: "exp_month", type: "text", required: 'required'}
                 %option{value: ""} --
               %span.main__form__group__card__text 月
             .main__form__group__card__select-box
-              %select#exp_year.main__form__group__card__select-box--year{name: "exp_year", type: "text"}
+              %select#exp_year.main__form__group__card__select-box--year{name: "exp_year", type: "text", required: 'required'}
                 %option{value: ""} --
               %span.main__form__group__card__text 年
         .main__form__group
           %label.main__form__group__label セキュリティコード
           %span.main__form__group__require 必須
-          = text_field_tag "cvc", "", class: "main__form__group__input-box", placeholder: "カード背面４桁もしくは３桁の番号", maxlength: "4", id: "cvc"
+          = text_field_tag "cvc", "", class: "main__form__group__input-box", placeholder: "カード背面４桁もしくは３桁の番号", maxlength: "4", id: "cvc", required: 'required'
           %p.main__form__group__card-info
             = link_to '/', class: 'link', target: '_blank' do
               = fa_icon 'question-circle'
