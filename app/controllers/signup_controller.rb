@@ -1,4 +1,5 @@
 class SignupController < ApplicationController
+  before_action :correct_referer, except: :input_user_info
 
   def input_user_info
     @user = User.new
@@ -116,6 +117,12 @@ class SignupController < ApplicationController
       :limit_year, 
       :security_code 
     )
+  end
+
+  def correct_referer
+    if request.referer.nil?
+      redirect_to action: 'input_user_info'
+    end
   end
 
 end
