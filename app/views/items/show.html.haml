@@ -52,12 +52,18 @@
             %th
               ブランド
             %td
-          -if !@item.size.empty?
+          -if !@item.size.nil?
             %tr
               %th
                 商品のサイズ
               %td
                 = @item.size
+          -else
+            %tr
+              %th
+                商品のサイズ
+              %td
+                = '--'
           %tr
             %th
               商品の状態

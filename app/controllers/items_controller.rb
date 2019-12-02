@@ -68,8 +68,8 @@ class ItemsController < ApplicationController
       :charge, 
       :send_date, 
       :delivery_method, 
-      images: []
-    )
+      # images: []
+    ).merge(user_id: current_user.id, category_id: 1) #category_idは仮置きです
   end
 
   def login_require
