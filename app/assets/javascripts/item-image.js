@@ -39,27 +39,6 @@ $(document).on('turbolinks:load', function() {
       }
     }
 
-  //アップロードする記述
-
-    var Uploader = {
-      upload: function(imageFile){
-        var def =$.Deferred();
-        var formData = new FormData();
-        formData.append('image', imageFile);
-        $.ajax({
-          type: "POST",
-          url: '/items/upload_image',
-          data: formData,
-          dataType: 'json',
-          processData: false,
-          contentType: false,
-          success: def.resolve
-        })
-        return def.promise();
-      }
-    }
-    
-
     $(".sell-dropbox").on("change",function(e){
       
     //見た目上、複数選択できてるように見せる
@@ -74,19 +53,6 @@ $(document).on('turbolinks:load', function() {
       if(picture_file){
         reader.readAsDataURL(picture_file);
       }
-
-    //選択するたびにアップロードする
-
-      var files = e.target.files;
-      var d = (new $.Deferred()).resolve();
-    
-      $.each(files,function(i,file){
-        d = d.then(function(){
-          return Uploader.upload(file);
-        });
-      });
-      
-      $('.sell-dropbox').val('');
 
     });
 
