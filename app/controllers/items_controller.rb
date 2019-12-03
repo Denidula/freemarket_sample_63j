@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  protect_from_forgery
+  before_action :find_item, only: [:show, :edit, :update]
   before_action :login_require, except: [:index, :show]
 
   def index
@@ -6,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def new
@@ -25,11 +26,10 @@ class ItemsController < ApplicationController
   end
   
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    if  Item.update(item_params)
+    if  @item.update(item_params)
       redirect_to item_path
     else
       flash[:alert] = '更新に失敗しました'
@@ -59,6 +59,10 @@ class ItemsController < ApplicationController
     
   private
 
+  def find_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(
       :name, 
@@ -68,10 +72,10 @@ class ItemsController < ApplicationController
       :charge, 
       :send_date, 
       :delivery_method, 
-      # images: []
+      images: []
     ).merge(user_id: current_user.id, category_id: 1) #category_idは仮置きです
   end
-
+    
   def login_require
     redirect_to new_user_session_path unless user_signed_in?
   end

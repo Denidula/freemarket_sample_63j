@@ -31,9 +31,9 @@
               .image-contents.clearfix
                 .image-content
                   %ul.image-ul
-                          
+              
               %label.sell-upload-drop-box
-                = f.file_field :images, multiple: true, direct_upload: true
+                = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: 'post_img_last'
                 %pre.visible-pc
                   ドラッグアンドドロップ
                   またはクリックしてファイルをアップロード
@@ -44,14 +44,14 @@
                 %span.form-require
                   必須
               .input
-                = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "item-name"
+                = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "item-name", required: 'required', maxlength: '40'
             .form-group
               %label(for="")
                 商品の説明
                 %span.form-require
                   必須
               .text-area
-                = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: 5, class: "item-des"
+                = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: 5, class: "item-des", required: 'required', maxlength: '1000'
 
         .sell-form
         
@@ -140,7 +140,7 @@
                     .right
                       ¥
                       .input_1
-                        = f.text_field :price, placeholder: "例）300", type: 'tel', autocomplete: 'off'
+                        = f.text_field :price, placeholder: "例）300", type: 'tel', autocomplete: 'off', required: 'required'
 
                 %li.clearfix
                   .left

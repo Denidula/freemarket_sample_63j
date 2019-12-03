@@ -13,8 +13,20 @@
           .stage-outer
             .stage{ style: 'left: 0px;' 'width: 300px;' }
               .stage__item.active{ style: 'width: 300px;' }
+                #main-image.stage__item__upper
+                  - if @item.images.attached?
+                    - @item.images.last(1).each do |image|
+                      = image_tag image, id: 'image-upper'
+                  - else
+                    = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png', alt: 'メンズ ニット グレー'
                 .stage__item__inner
-                  = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
+                  - if @item.images.attached?
+                    - @item.images.each_with_index.reverse_each do |image, index|
+                      = image_tag image, class: "image-select", id: "image-#{index}"
+                  - else
+                    = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
+
+
       %table.item-detail-table
         %tbody
           %tr

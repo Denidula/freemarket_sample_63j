@@ -31,9 +31,16 @@
               .image-contents.clearfix
                 .image-content
                   %ul.image-ul
+                    - @item.images.reverse_each do |image|
+                      %li.image-box
+                        %figure
+                          = image_tag image
+                        .box-bottom.clearfix
+                          .edit 編集
+                          .delete 削除
                           
               %label.sell-upload-drop-box
-                = f.file_field :images, multiple: true, direct_upload: true
+                = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: 'post_img_last'
                 %pre.visible-pc
                   ドラッグアンドドロップ
                   またはクリックしてファイルをアップロード
@@ -44,14 +51,14 @@
                 %span.form-require
                   必須
               .input
-                = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "item-name"
+                = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "item-name", required: 'required', maxlength: '40'
             .form-group
               %label(for="")
                 商品の説明
                 %span.form-require
                   必須
               .text-area
-                = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: 5, class: "item-des"
+                = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: 5, class: "item-des", requied: 'required', maxlength: '1000'
 
         .sell-form
         
@@ -140,19 +147,19 @@
                     .right
                       ¥
                       .input_1
-                        = f.text_field :price, placeholder: "例）300"
+                        = f.text_field :price, placeholder: "例）300", autocomplete: 'off', type: 'tel', required: 'required'
 
                 %li.clearfix
                   .left
                     販売手数料 (10%)
-                  .right
-                    ー
+                  #fee.right
+                    ¥#{((@item.price * 0.1).round).to_s(:delimited)}
 
                 %li.profit.clearfix
                   .left
                     販売利益
-                  .right
-                    ー
+                  #profit.right
+                    ¥#{(@item.price - (@item.price * 0.1).round).to_s(:delimited)}
 
         .sell-form
 
