@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_12_02_111045) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -34,6 +35,11 @@ ActiveRecord::Schema.define(version: 2019_12_02_111045) do
   end
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+
+    t.integer "prefecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    
     t.integer "zip_code", null: false
     t.integer "prefecture_id"
     t.string "city", null: false
@@ -44,12 +50,23 @@ ActiveRecord::Schema.define(version: 2019_12_02_111045) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+  end
+
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+
     t.string "card_id", null: false
     t.string "customer_id", null: false
+
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -68,8 +85,14 @@ ActiveRecord::Schema.define(version: 2019_12_02_111045) do
     t.string "charge", null: false
     t.string "delivery_method", null: false
     t.string "send_date", null: false
+
+    t.integer "prefecture_id", null: false
+    t.string "parent_category"
+    t.string "child_category"
+    t.string "grandchild_category"
+
     t.integer "user_id", null: false
-    t.integer "category_id", null: false
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
