@@ -19,6 +19,6 @@
 
     .content
       .logout
-        %input{type: 'submit', value: 'ログアウト', class: 'logout__destroy'}
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout__destroy'
 
   = render partial: 'shared/footer'

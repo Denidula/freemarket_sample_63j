@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
+  before_action :login_require, except: [:index, :show]
 
   def index
     @items = Item.all.order(created_at: :desc).limit(10)
   end
 
   def show
-    # idは仮置きです。
-    @item = Item.find(1)
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -28,13 +28,22 @@ class ItemsController < ApplicationController
     end
     
   end
+  
+  def edit
+    @item = Item.find(params[:id])
+  end
 
-  def upload_image
-    @image_blob = create_blob(params[:image])
-    respond_to do |format|
-      format.json { @image_blob.id }
+  def update
+    if  Item.update(item_params)
+      redirect_to item_path
+    else
+      flash[:alert] = '更新に失敗しました'
+      redirect_to edit_item_path
     end
   end
+
+  require 'payjp'
+
 
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -44,6 +53,25 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  
+  def purchase
+    @item = Item.find(params[:id])
+  end
+  
+  def pay
+    @item = Item.find(params[:id])
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+    redirect_to action: :done
+  end
+
+  def done
+  end
+    
   private
 
   def item_params
@@ -58,18 +86,11 @@ class ItemsController < ApplicationController
       :prefecture_id,
       :parent_category,
       :child_category,
-      :grandchild_category)#.merge(images: [uploaded_images])
+      :grandchild_category)
   end
 
-  def uploaded_images
-    params[:item][:images].map{|id| ActiveStorage::Blob.find(id)}
-  end
-
-  def create_blob(uploading_file)
-    ActiveStorage::Blob.create_after_upload! \
-      io: uploading_file.open,
-      filename: uploading_file.original_filename,
-      content_type: uploading_file.content_type
+  def login_require
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end

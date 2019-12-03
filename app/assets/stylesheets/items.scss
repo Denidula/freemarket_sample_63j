@@ -43,11 +43,9 @@ header {
       float: left;
       min-width: 300px;
       max-width: 300px;
-      min-height: 375px;
       margin: 0 auto;
       background: #fafafa;
       position: relative;
-      height: 375px;
       .carousel {
         position: relative;
         .stage-outer {
@@ -60,21 +58,18 @@ header {
               float: left;
               user-select: none;
               &__inner {
-                min-height: 300px;
                 position: relative;
                 width: 100%;
-                height: 300px;
-                padding: 0 0 100%;
+                max-height: 420px;
+                padding: 0 0;
                 .carousel-image {
                   transition: opacity 400ms ease;
                 }
-                img {
-                  
+                img {                  
                   top: 0;
                   left: 0;
                   right: 0;
-                  width: auto;
-                  height: 100%;
+                  width: 100%;
                   margin: auto;
                 }
               }
@@ -237,6 +232,65 @@ header {
         }
       }
     }
+  }
+}
+
+.item-edit-block{
+  width: 700px;
+  background-color: #fff;
+  margin: 24px auto;
+
+  .edit__btns{
+    padding: 12px 16px;
+    text-align: center;
+
+    &__btn{
+      padding: 14px 0;
+      margin: 16px 0;
+
+      &--edit{
+        color: #fff;
+        background-color: red;
+        padding: 16px 290px;
+        font-size: 14px;
+      }
+      &--stop{
+        color: #fff;
+        background-color: #aaa;
+        padding: 16px 262px;
+        font-size: 14px;
+      }
+      &--delete{
+        color: #fff;
+        background-color: #aaa;
+        padding: 16px 262px;
+        font-size: 14px;
+      }
+
+    }
+  }
+
+}
+
+.message-container__edit-block{
+  .message-content{
+    text-align: center;
+    padding: 20px 24px;
+    &__btn--red{
+      color: #fff;
+      background-color: red;
+      padding: 15px 282px;
+    }
+    &__btn{
+      color: #fff;
+      background-color: gray;
+      padding: 15px 250px;
+    }
+  }
+  .message-content__text{
+    background-color: #fff;
+    text-align: center;
+    padding: 12px 24px;
   }
 }
 
@@ -478,6 +532,12 @@ header {
             }
             .right {
               float: right;
+            }
+            #fee{
+              font-size: 14px;
+            }
+            #profit{
+              font-size: 28px;
             }
           }
           li:first-child {

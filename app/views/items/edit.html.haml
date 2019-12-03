@@ -59,14 +59,12 @@
             %h3.sell-sub-head
               商品の詳細
             .sell-form-box
-              #category.form-group
+              .form-group
                 %label(for="")
                   カテゴリー
                   %span.form-require
                     必須
                 .select
-                  = f.select :parent_category, @category_parent_array, {}, {id: 'parent_category'}
-                  = fa_icon 'chevron-down', class: 'select-icon'
 
               .form-group
                 %label(for="")
@@ -110,8 +108,9 @@
                   %span.form-require
                     必須
                 .select
-                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'input'
-                  = fa_icon 'chevron-down', class: 'select-icon'
+                  = form_for '' do |f|
+                    = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: 'input'
+                    = fa_icon 'chevron-down', class: 'select-icon'
                 
 
               .form-group
@@ -141,18 +140,18 @@
                     .right
                       ¥
                       .input_1
-                        = f.text_field :price, placeholder: "例）300", type: 'tel', autocomplete: 'off'
+                        = f.text_field :price, placeholder: "例）300"
 
                 %li.clearfix
                   .left
                     販売手数料 (10%)
-                  #fee.right
+                  .right
                     ー
 
                 %li.profit.clearfix
                   .left
                     販売利益
-                  #profit.right
+                  .right
                     ー
 
         .sell-form
@@ -176,10 +175,10 @@
                 加盟店規約
               に同意したことになります。
 
-            = f.submit :'出品する', class: "btn-red"
+            = f.submit :'変更する', class: "btn-red"
             
             .a
-              もどる
+              キャンセル
 
   .single-footer
     %nav

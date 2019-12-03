@@ -1,7 +1,8 @@
 .container.register
   .header
     %h1.haeder__h1
-      = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', class: 'header__h1__logo'
+      = link_to '/' do
+        = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', class: 'header__h1__logo'
     %nav
       %ol
         %li
@@ -34,8 +35,8 @@
     .main__form
       = form_for @user, url: input_address_signup_index_path, meghod: :post do |f|
         .main__form__group
-          = f.label '携帯電話の番号', class: 'main__form__group__label', for: "user_phone_number"
-          = f.telephone_field :phone_number, class: "main__form__group__input-box", placeholder: "携帯電話の番号を入力"
+          = f.label '携帯電話の番号（ハイフン不要）', class: 'main__form__group__label', for: "user_phone_number"
+          = f.telephone_field :phone_number, class: "main__form__group__input-box", placeholder: "090xxxxxxxx", required: 'required', type: 'tel', pattern: '^0\d{10}'
         %p.main__form__info 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         = f.submit 'SMSを送信する', class: 'main__form__submit-btn'
         %p.main__form__info ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。

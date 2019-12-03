@@ -14,7 +14,7 @@
             .stage{ style: 'left: 0px;' 'width: 300px;' }
               .stage__item.active{ style: 'width: 300px;' }
                 .stage__item__inner
-                  = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m45896064172_1.jpg?1553586186', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
+                  = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
       %table.item-detail-table
         %tbody
           %tr
@@ -22,7 +22,7 @@
               出品者
             %td
               %p.link
-                出品者名
+                = @item.user.nickname
               .face-icon
                 .rating-icon
                   = fa_icon 'laugh', class: 'good'
@@ -52,12 +52,18 @@
             %th
               ブランド
             %td
-          -if !@item.size.empty?
+          -if !@item.size.nil?
             %tr
               %th
                 商品のサイズ
               %td
                 = @item.size
+          -else
+            %tr
+              %th
+                商品のサイズ
+              %td
+                = '--'
           %tr
             %th
               商品の状態
@@ -78,7 +84,7 @@
               配送元地域
             %td
               .link
-                東京都
+                = @item.user.address.prefecture.name
           %tr
             %th
               発送日の目安
@@ -93,12 +99,11 @@
       %span.item-shipping-fee
         送料込み
 
-    .item-buy-btn
-      購入画面に進む
+    = link_to '購入画面に進む', purchase_items_path(@item), class: 'item-buy-btn'
 
     .item-description
       %p.item-description__inner
-        ・素材構成: ポリエステル
+        = @item.description
 
     .item-buttons.clearfix
       .item-button-left
@@ -118,7 +123,19 @@
           = fa_icon 'lock'
           %span
             あんしん・あんぜんへの取り組み
-      
+
+  - if user_signed_in? && @item.user.id == current_user.id
+    .item-edit-block
+      .edit__btns
+        .edit__btns__btn
+          = link_to '商品の編集', edit_item_path(@item), class: 'edit__btns__btn--edit'
+        %span
+          or
+        .edit__btns__btn
+          = link_to '出品を一旦停止する', '/', class: 'edit__btns__btn--stop'
+        .edit__btns__btn
+          = link_to 'この商品を削除する', '/', class: 'edit__btns__btn--delete'
+
   .item-detail-message
     .message-container
       .message-content

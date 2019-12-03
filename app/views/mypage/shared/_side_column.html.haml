@@ -4,9 +4,10 @@
     .mypage-nav-list
       %ul
         %li
-          .list-item.active
-            マイページ
-            = fa_icon 'chevron-right', class: 'right-icon'
+          = link_to mypage_path do
+            .list-item
+              = 'マイページ'
+              = fa_icon 'chevron-right', class: 'right-icon'
         %li
           .list-item
             お知らせ
@@ -20,9 +21,10 @@
             いいね！一覧
             = fa_icon 'chevron-right', class: 'right-icon'
         %li
-          .list-item
-            出品する
-            = fa_icon 'chevron-right', class: 'right-icon'
+          = link_to new_item_path do
+            .list-item
+              = '出品する'
+              = fa_icon 'chevron-right', class: 'right-icon'
         %li
           .list-item
             出品した商品-出品中
@@ -56,30 +58,34 @@
       .mypage-nav-list
       %ul
         %li
-          .list-item
-            プロフィール
-            = fa_icon 'chevron-right', class: 'right-icon'
+          = link_to mypage_profile_path do
+            .list-item
+              = 'プロフィール'
+              = fa_icon 'chevron-right', class: 'right-icon'
         %li
           .list-item
             発送元・お届け先住所変更
             = fa_icon 'chevron-right', class: 'right-icon'
         %li
-          .list-item
-            支払い方法
-            = fa_icon 'chevron-right', class: 'right-icon'
+          = link_to mypage_card_path do
+            .list-item
+              = '支払い方法'
+              = fa_icon 'chevron-right', class: 'right-icon'
         %li
           .list-item
             メール/パスワード
             = fa_icon 'chevron-right', class: 'right-icon'
         %li
-          .list-item
-            本人情報
-            = fa_icon 'chevron-right', class: 'right-icon'
+          = link_to mypage_identification_path do
+            .list-item
+              = '本人情報'
+              = fa_icon 'chevron-right', class: 'right-icon'
         %li
           .list-item
             電話番号の確認
             = fa_icon 'chevron-right', class: 'right-icon'
         %li
-          .list-item
-            ログアウト
-            = fa_icon 'chevron-right', class: 'right-icon'
+          = link_to logout_path do
+            .list-item
+              = 'ログアウト'
+              = fa_icon 'chevron-right', class: 'right-icon'
