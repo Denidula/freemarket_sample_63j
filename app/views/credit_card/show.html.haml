@@ -12,8 +12,7 @@
       %li.bold
         支払い方法
 
-  .main.clearfix
-    
+  .main.clearfix    
     = render partial: 'mypage/shared/side_column'
 
     .content
@@ -23,11 +22,18 @@
         .l-single-inner
           .l-single-inner__list
             クレジットカード一覧
-          .l-single-inner__add
-            = link_to new_credit_card_path do
-              .l-single-inner__add__card
-                = fa_icon 'credit-card', class: 'l-single-inner__add__card__credit'
-                = 'クレジットカードを追加する'
+            %p
+              = '◽️◽️'
+            %p
+              = "**** **** **** " + @default_card_information.last4
+            %p
+              - exp_month = @default_card_information.exp_month.to_s
+            %p
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+            = form_tag(delete_credit_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %button.card-delete-btn 削除する
           .l-single-inner__setting-not-regist
             支払い方法について
             =fa_icon 'chevron-right', class: 'l-single-inner__setting-not-regist__icon'
