@@ -1,7 +1,5 @@
 
 $(function(){
-
-  let count = 0
   
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
@@ -21,8 +19,6 @@ $(function(){
 
     $('#category').append(childSelectHtml);
     
-    count += 1;
-    console.log(count);
   }
   // 孫カテゴリーの表示作成
   function appendGrandchidrenBox(insertHTML){
@@ -34,15 +30,9 @@ $(function(){
                               </select>
                               <i class='fa fa-chevron-down select-icon'></i>
                             </div>`;
-    if ($('.grandchild').length) {
-      console.log('あるよ');
-    }else{
+
       $('#category').append(grandchildSelectHtml);
-    }
     
-    
-    count += 1;
-    console.log(count);
   }
 
   // 親カテゴリー選択後のイベント
