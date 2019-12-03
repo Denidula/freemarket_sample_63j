@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_053347) do
+ActiveRecord::Schema.define(version: 2019_11_30_065206) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_053347) do
   end
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "prefecture"
+    t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "zip_code", null: false
@@ -52,13 +52,11 @@ ActiveRecord::Schema.define(version: 2019_11_29_053347) do
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "number"
-    t.integer "limit_month"
-    t.integer "limit_year"
-    t.integer "security_code"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -78,6 +76,9 @@ ActiveRecord::Schema.define(version: 2019_11_29_053347) do
     t.string "delivery_method", null: false
     t.string "send_date", null: false
     t.integer "prefecture_id", null: false
+    t.string "parent_category"
+    t.string "child_category"
+    t.string "grandchild_category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

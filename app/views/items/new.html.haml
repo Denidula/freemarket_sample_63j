@@ -64,7 +64,7 @@
                   %span.form-require
                     必須
                 .select
-                  = f.select :category, @category_parent_array, {}, {id: 'parent_category'}
+                  = f.select :parent_category, @category_parent_array, {}, {id: 'parent_category'}
                   = fa_icon 'chevron-down', class: 'select-icon'
 
               .form-group

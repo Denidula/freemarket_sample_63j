@@ -55,7 +55,10 @@ class ItemsController < ApplicationController
       :charge, 
       :send_date, 
       :delivery_method, 
-      :prefecture_id)#.merge(images: [uploaded_images])
+      :prefecture_id,
+      :parent_category,
+      :child_category,
+      :grandchild_category)#.merge(images: [uploaded_images])
   end
 
   def uploaded_images
