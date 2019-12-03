@@ -63,15 +63,16 @@ Things you may want to cover:
 |charge|string|null: false|
 |delivery_method|string|null: false|
 |send_date|string|null: false|
+|parent_category|string|null: false|
+|child_category|string|null: false|
+|grandchild_category|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|category_id|integer|null: false, foreign_key: true|
 |prefecture_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :images, dependent: :destroy
 - has_many :comments, dependent: :destroy
 - belongs_to :user
-- belongs_to :category
 
 
 
@@ -93,7 +94,6 @@ Things you may want to cover:
 |ancestry|string||
 
 ### Association
-- has_many :items
 - has_ancestry
 
 
