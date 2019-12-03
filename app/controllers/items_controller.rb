@@ -12,6 +12,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @parents = Category.where(ancestry: nil).limit(13)
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
   end
 
   def create
@@ -39,6 +44,16 @@ class ItemsController < ApplicationController
 
   require 'payjp'
 
+
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  
   def purchase
     @item = Item.find(params[:id])
   end
@@ -72,8 +87,12 @@ class ItemsController < ApplicationController
       :charge, 
       :send_date, 
       :delivery_method, 
+      :prefecture_id,
+      :parent_category,
+      :child_category,
+      :grandchild_category,
       images: []
-    ).merge(user_id: current_user.id, category_id: 1) #category_idは仮置きです
+    ).merge(user_id: current_user.id) #category_idは仮置きです
   end
     
   def login_require
