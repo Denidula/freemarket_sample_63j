@@ -3,6 +3,8 @@ $(document).on('turbolinks:load', function() {
 
   $(function(){
 
+  //追加するHTMLを定義
+
     function appendPicture(picture){
 
       var html = `<li class = "image-box" >
@@ -22,6 +24,8 @@ $(document).on('turbolinks:load', function() {
       return html;
     }
 
+  //見た目上、HTMLを追加する
+
     function displayPicture(pictureOriginal){
       var insertPicture = "";
       insertPicture = appendPicture(pictureOriginal);
@@ -34,9 +38,10 @@ $(document).on('turbolinks:load', function() {
         
       }
     }
-    
 
     $(".sell-dropbox").on("change",function(e){
+      
+    //見た目上、複数選択できてるように見せる
 
       var picture_file = e.target.files[0];
       var reader = new FileReader();
@@ -48,10 +53,10 @@ $(document).on('turbolinks:load', function() {
       if(picture_file){
         reader.readAsDataURL(picture_file);
       }
-      
-    })
+
+    });
 
 
-  })
+  });
 
-})
+});
