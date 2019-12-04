@@ -63,7 +63,6 @@ $(document).on('turbolinks:load', function() {
 // ==================================
 //   下部の画像をホバーすると選択される
 // ==================================
-
   
 $(document).on('turbolinks:load', function(){
   function buildHTML(src){
@@ -73,7 +72,6 @@ $(document).on('turbolinks:load', function(){
 
   $('.image-select').mouseover(function(){
     src = $(this).attr('src');
-    image_id = $(this).attr('id');
     var image = buildHTML(src);
     $('#main-image').empty();
     $('#main-image').append(image);
@@ -82,4 +80,40 @@ $(document).on('turbolinks:load', function(){
       $(this).removeClass("active");
     });
   });
+});
+
+// ==================================================
+// 下部の画像群からマウスアウトしてもアクティブ状態が維持される
+// ==================================================
+
+$(document).on('turbolinks:load', function(){
+  var image_last_id = $('.image-select').attr('id')
+  $(`#${image_last_id}`).addClass("active");
+  $('.stage__item__inner__group').mouseleave(function(){
+    var upper_src = $('#image-upper').attr('src');
+    for ( var i = 9; i >= 0; i-- ){
+      var bottom_src = $(`#image-${i}`).attr('src');
+      if(upper_src == bottom_src){
+        $(`#image-${i}`).addClass("active");
+      } else {
+        $(`#image-${i}`).removeClass("active");
+      }
+    }
+  })
+});
+
+// ====================================================================
+// 下部の画像群にマウスインすると上部画像と一致しない画像のアクティブクラスをリムーブ
+// ====================================================================
+
+$(document).on('turbolinks:load', function(){
+  $('.stage__item__inner__group').mouseover(function(){
+    var upper_src = $('#image-upper').attr('src');
+    for ( var i = 9; i >= 0; i-- ){
+      var bottom_src = $(`#image-${i}`).attr('src');
+      if(upper_src !== bottom_src){
+        $(`#image-${i}`).removeClass("active");
+      } 
+    } 
+  })
 });
