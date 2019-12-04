@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   protect_from_forgery
-  before_action :find_item, only: [:show, :edit, :update]
+  before_action :find_item, only: [:show, :edit, :update, :purchase, :pay]
   before_action :login_require, except: [:index, :show]
 
   def index
@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
 
   def update
     if  @item.update(item_params)
+      delete_images
       redirect_to item_path
     else
       flash[:alert] = '更新に失敗しました'
@@ -55,11 +56,9 @@ class ItemsController < ApplicationController
 
   
   def purchase
-    @item = Item.find(params[:id])
   end
   
   def pay
-    @item = Item.find(params[:id])
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     charge = Payjp::Charge.create(
       amount: @item.price,
@@ -91,8 +90,15 @@ class ItemsController < ApplicationController
       :parent_category,
       :child_category,
       :grandchild_category,
-      images: []
-    ).merge(user_id: current_user.id) #category_idは仮置きです
+      images: [],
+    ).merge(user_id: current_user.id)
+  end
+
+  def delete_images
+    params[:item][:images_blob_ids].each do |image_id|
+      image = @item.images.find(image_id)
+      image.purge
+    end
   end
     
   def login_require

@@ -38,6 +38,11 @@
                         .box-bottom.clearfix
                           .edit 編集
                           .delete 削除
+
+              %p （削除用仮フォーム）削除するものはチェックしてください
+              - @item.images.reverse_each do |image|
+                = f.check_box :images_blob_ids, {multiple: true}, image.id, false
+                = image_tag image, style: "width: 100px; height: 130px; object-fit: cover;"
                           
               %label.sell-upload-drop-box
                 = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: 'post_img_last'
@@ -72,6 +77,8 @@
                   %span.form-require
                     必須
                 .select
+                  -# = f.select :parent_category, @category_parent_array, {}, {id: 'parent_category'}
+                  -# = fa_icon 'chevron-down', class: 'select-icon'
 
               .form-group
                 %label(for="")
@@ -115,9 +122,8 @@
                   %span.form-require
                     必須
                 .select
-                  = form_for '' do |f|
-                    = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: 'input'
-                    = fa_icon 'chevron-down', class: 'select-icon'
+                  = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: 'input'
+                  = fa_icon 'chevron-down', class: 'select-icon'
                 
 
               .form-group
@@ -182,7 +188,7 @@
                 加盟店規約
               に同意したことになります。
 
-            = f.submit :'変更する', class: "btn-red"
+            = f.submit '変更する', class: "btn-red"
             
             .a
               キャンセル
