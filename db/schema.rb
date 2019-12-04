@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 2019_12_04_042428) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+  end
+
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "card_id", null: false
     t.string "customer_id", null: false
@@ -61,13 +68,13 @@ ActiveRecord::Schema.define(version: 2019_12_04_042428) do
     t.string "charge", null: false
     t.string "delivery_method", null: false
     t.string "send_date", null: false
+    t.bigint "user_id"
     t.integer "prefecture_id", null: false
     t.string "parent_category", null: false
     t.string "child_category", null: false
     t.string "grandchild_category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
