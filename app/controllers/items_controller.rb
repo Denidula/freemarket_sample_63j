@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   protect_from_forgery
   before_action :find_item, only: [:show, :edit, :update]
-  before_action :login_require, except: [:index, :show]
+  #before_action :login_require, except: [:index, :show]
 
   def index
     @items = Item.all.order(created_at: :desc).limit(10)

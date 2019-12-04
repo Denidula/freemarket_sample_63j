@@ -47,4 +47,11 @@ describe ItemsController do
       expect(response).to render_template :done
     end
   end
+
+  describe 'GET #new' do
+    it "renders the :new template" do
+      get :new
+      expect(response).to render_template :new
+    end
+  end
 end
