@@ -46,7 +46,4 @@ Rails.application.routes.draw do
     end
   end
 
-
-  post 'items/upload_image', to: 'items#upload_image'
-  
 end
