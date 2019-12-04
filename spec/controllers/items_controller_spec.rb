@@ -108,7 +108,7 @@ RSpec.describe Item, type: :model do
         expect(build(:item, user_id: nil)).to be_valid
       end
 
-      it 'is valid with name and price' do
+      it 'is valid with all' do
         expect(build(:item)).to be_valid
       end
 
