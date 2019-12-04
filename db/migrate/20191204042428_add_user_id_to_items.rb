@@ -1,5 +1,5 @@
 class AddUserIdToItems < ActiveRecord::Migration[5.2]
   def change
-    add_column :items, :user_id, :integer, null: false
+    add_reference :items, :user, foreign_key: true
   end
 end

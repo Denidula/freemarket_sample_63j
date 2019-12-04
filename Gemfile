@@ -90,7 +90,7 @@ gem 'active_hash'
 gem 'pry-rails'
 gem 'payjp'
 gem "aws-sdk-s3", require: false
-
+gem "gretel"
 gem 'ancestry'
 
 group :production do
