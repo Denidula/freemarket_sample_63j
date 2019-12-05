@@ -1,0 +1,32 @@
+
+.contents
+
+  = render partial: 'shared/header'
+
+
+  .search-container.clearfix
+    .search-left
+      左だよ
+    .search-right
+      %section.items-box-container.clearfix
+
+        -if @search.present?
+          %h2.search-result-head
+            =@search
+            %span.search-result-head-text
+              の検索結果
+
+          .search-result-number
+            ="1-#{@items.count}件表示"
+
+        -else
+
+          %h2.search-result-nil
+            新着商品
+
+        .items-box-content.clearfix
+          %ul.clearfix
+            = render 'items/items'
+
+
+= render partial: 'shared/footer'

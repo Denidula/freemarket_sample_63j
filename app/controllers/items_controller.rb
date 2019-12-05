@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   protect_from_forgery
+
   before_action :find_item, only: [:show, :edit, :update, :purchase, :pay]
   before_action :login_require, except: [:index, :show]
 
