@@ -1,22 +1,25 @@
-%header
-  .header-inner
-    .header-inner__up
-      .inner-image
+%header.header
+  .searches_regist
+    .searches_regist__top
+      .searches_regist__top__image
         = link_to '/' do
-          = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2749976048', alt: 'mercari', height: '36', width: '134'
-      .inner-form
-        何かお探しですか？
-        = fa_icon 'search'
-    .header-inner__down
-      .down-left
-        %ul
-          %li
-            = fa_icon 'list-ul', class: 'red-icon'
-            カテゴリーから探す
-          %li
-            = fa_icon 'tag', class: 'red-icon'
-            ブランドから探す
-      .down-right
+          = image_tag "mercari_logo_horizontal.png", size: "134x40", alt: "Mercari"
+      .searches_regist__top__search
+        = form_tag searches_path, method: :get do
+          = text_field_tag :search, "",placeholder:"何かお探しですか？", class: 'searches_regist__top__search__text'
+          = button_tag type: 'submit', name: nil, class: 'searches_regist__top__search__btn' do
+            = fa_icon 'search'
+            
+       
+    .searches_regist__bottom
+      .searches_regist__bottom__left
+        .searches_regist__bottom__left__category-search
+          = fa_icon 'list-ul', class: "list-ul-icon"
+          カテゴリーから探す
+        .searches_regist__bottom__left__bland-search
+          = fa_icon 'tag', class: "tag-icon"
+          ブランドから探す
+      .searches_regist__bottom__right
         - if user_signed_in?
           %ul
             %li.like
@@ -36,10 +39,5 @@
                   %span
                     マイページ
         - else
-          %ul
-            %li.like
-              = fa_icon 'heart'
-              新規会員登録
-            %li
-              = fa_icon 'bell'
-              ログイン
+          = link_to '新規会員登録', new_user_registration_path, class: 'searches_regist__bottom__right__sign-in'
+          = link_to 'ログイン', new_user_session_path, class: 'searches_regist__bottom__right__log-in'
