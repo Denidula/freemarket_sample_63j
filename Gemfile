@@ -89,8 +89,10 @@ gem 'recaptcha', require: "recaptcha/rails"
 gem 'active_hash'
 gem 'pry-rails'
 gem 'payjp'
-
-gem 'jquery-rails'
+gem "aws-sdk-s3", require: false
+gem "gretel"
+gem 'ancestry'
+gem 'kaminari'
 
 group :production do
   gem 'unicorn', '5.4.1'

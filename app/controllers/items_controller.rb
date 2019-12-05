@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  protect_from_forgery
+
+  before_action :find_item, only: [:show, :edit, :update, :purchase, :pay]
   before_action :login_require, except: [:index, :show]
 
   def index
@@ -6,11 +9,15 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def new
     @item = Item.new
+    @parents = Category.where(ancestry: nil).limit(13)
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
   end
 
   def create
@@ -25,11 +32,11 @@ class ItemsController < ApplicationController
   end
   
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    if  Item.update(item_params)
+    if  @item.update(item_params)
+      delete_images
       redirect_to item_path
     else
       flash[:alert] = '更新に失敗しました'
@@ -45,12 +52,20 @@ class ItemsController < ApplicationController
 
   require 'payjp'
 
+
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  
   def purchase
-    @item = Item.find(params[:id])
   end
   
   def pay
-    @item = Item.find(params[:id])
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     charge = Payjp::Charge.create(
       amount: @item.price,
@@ -65,6 +80,10 @@ class ItemsController < ApplicationController
     
   private
 
+  def find_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(
       :name, 
@@ -74,10 +93,21 @@ class ItemsController < ApplicationController
       :charge, 
       :send_date, 
       :delivery_method, 
-      images: []
-    )
+      :prefecture_id,
+      :parent_category,
+      :child_category,
+      :grandchild_category,
+      images: [],
+    ).merge(user_id: current_user.id)
   end
 
+  def delete_images
+    params[:item][:images_blob_ids].each do |image_id|
+      image = @item.images.find(image_id)
+      image.purge
+    end
+  end
+    
   def login_require
     redirect_to new_user_session_path unless user_signed_in?
   end

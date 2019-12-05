@@ -47,4 +47,72 @@ describe ItemsController do
       expect(response).to render_template :done
     end
   end
+
+  describe 'GET #new' do
+    it "renders the :new template" do
+      get :new
+      expect(response).to render_template :new
+    end
+  end
+end
+
+
+RSpec.describe Item, type: :model do
+  describe '#create' do
+    context 'can save' do
+      it 'is valid with name' do
+        expect(build(:item, name: nil)).to be_valid
+      end
+
+      it 'is valid with price' do
+        expect(build(:item, price: nil)).to be_valid
+      end
+
+      it 'is valid with description' do
+        expect(build(:item, description: nil)).to be_valid
+      end
+
+      it 'is valid with size' do
+        expect(build(:item, size: nil)).to be_valid
+      end
+
+      it 'is valid with status' do
+        expect(build(:item, status: nil)).to be_valid
+      end
+
+      it 'is valid with charge' do
+        expect(build(:item, charge: nil)).to be_valid
+      end
+
+      it 'is valid with delivery_method' do
+        expect(build(:item, delivery_method: nil)).to be_valid
+      end
+
+      it 'is valid with send_date' do
+        expect(build(:item, send_date: nil)).to be_valid
+      end
+
+      it 'is valid with parent_category' do
+        expect(build(:item, parent_category: nil)).to be_valid
+      end
+
+      it 'is valid with child_category' do
+        expect(build(:item, child_category: nil)).to be_valid
+      end
+
+      it 'is valid with grandchild_category' do
+        expect(build(:item, grandchild_category: nil)).to be_valid
+      end
+
+      it 'is valid with user_id' do
+        expect(build(:item, user_id: nil)).to be_valid
+      end
+
+      it 'is valid with all' do
+        expect(build(:item)).to be_valid
+      end
+
+    end
+
+  end
 end

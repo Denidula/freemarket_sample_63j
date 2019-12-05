@@ -2,6 +2,11 @@
   %li.items__item__group__catalog__product
     = link_to item do
       .items__item__group__catalog__product__picture
+        - if item.images.attached?
+          - item.images.last(1).each do |image|
+            = image_tag image
+        - else
+          = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
         .items__item__group__catalog__product__picture__price
           = converting_to_jpy(item.price)
       .items__item__group__catalog__product__name

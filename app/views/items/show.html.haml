@@ -13,8 +13,21 @@
           .stage-outer
             .stage{ style: 'left: 0px;' 'width: 300px;' }
               .stage__item.active{ style: 'width: 300px;' }
+                #main-image.stage__item__upper
+                  - if @item.images.attached?
+                    - @item.images.last(1).each do |image|
+                      = image_tag image, id: 'image-upper'
+                  - else
+                    = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png', alt: 'メンズ ニット グレー'
                 .stage__item__inner
-                  = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
+                  .stage__item__inner__group
+                    - if @item.images.attached?
+                      - @item.images.each_with_index.reverse_each do |image, index|
+                        = image_tag image, class: "image-select", id: "image-#{index}"
+                    - else
+                      = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png', alt: 'メンズ ニット グレー', class: 'carousel-image', style: 'opacity: 1;'
+
+
       %table.item-detail-table
         %tbody
           %tr
@@ -41,23 +54,29 @@
               カテゴリー
             %td
               .major.link
-                メンズ
+                = @item.parent_category
               .mid.link
                 = fa_icon 'chevron-right'
-                トップス
+                = @item.child_category
               .small.link
                 = fa_icon 'chevron-right'
-                ニット/セーター
+                = @item.grandchild_category
           %tr
             %th
               ブランド
             %td
-          -if !@item.size.empty?
+          -if !@item.size.nil?
             %tr
               %th
                 商品のサイズ
               %td
                 = @item.size
+          -else
+            %tr
+              %th
+                商品のサイズ
+              %td
+                = '--'
           %tr
             %th
               商品の状態
@@ -78,7 +97,7 @@
               配送元地域
             %td
               .link
-                = @item.user.address.prefecture.name
+                = @item.prefecture.name
           %tr
             %th
               発送日の目安

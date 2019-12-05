@@ -2,7 +2,12 @@
 .contents
 
   = render partial: 'shared/header'
-  = render partial: 'shared/nav'
+
+  .nav
+    %ul
+      %li.breadcrumbs
+        - breadcrumb :mypage
+        = breadcrumbs separator: " &rsaquo; "
 
   .main.clearfix
     

@@ -3,14 +3,10 @@
 
   .nav
     %ul
-      %li
-        メルカリ 
-        = fa_icon 'chevron-right'
-      %li.bold
-        マイページ
-        = fa_icon 'chevron-right'
-      %li.bold
-        支払い方法
+      %li.breadcrumbs
+        - breadcrumb :mypage
+        - breadcrumb :card
+        = breadcrumbs separator: " &rsaquo; "
 
   .main.clearfix    
     = render partial: 'mypage/shared/side_column'

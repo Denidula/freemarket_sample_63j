@@ -31,9 +31,9 @@
               .image-contents.clearfix
                 .image-content
                   %ul.image-ul
-                          
+              
               %label.sell-upload-drop-box
-                = f.file_field :images, multiple: true, direct_upload: true
+                = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: 'post_img_last'
                 %pre.visible-pc
                   ドラッグアンドドロップ
                   またはクリックしてファイルをアップロード
@@ -44,14 +44,14 @@
                 %span.form-require
                   必須
               .input
-                = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "item-name"
+                = f.text_field :name, placeholder: "商品名（必須 40文字まで)", class: "item-name", required: 'required', maxlength: '40'
             .form-group
               %label(for="")
                 商品の説明
                 %span.form-require
                   必須
               .text-area
-                = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: 5, class: "item-des"
+                = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: 5, class: "item-des", required: 'required', maxlength: '1000'
 
         .sell-form
         
@@ -59,12 +59,14 @@
             %h3.sell-sub-head
               商品の詳細
             .sell-form-box
-              .form-group
+              #category.form-group
                 %label(for="")
                   カテゴリー
                   %span.form-require
                     必須
                 .select
+                  = f.select :parent_category, @category_parent_array, {}, {id: 'parent_category'}
+                  = fa_icon 'chevron-down', class: 'select-icon'
 
               .form-group
                 %label(for="")
@@ -108,9 +110,8 @@
                   %span.form-require
                     必須
                 .select
-                  = form_for '' do |f|
-                    = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: 'input'
-                    = fa_icon 'chevron-down', class: 'select-icon'
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'input'
+                  = fa_icon 'chevron-down', class: 'select-icon'
                 
 
               .form-group
@@ -140,18 +141,18 @@
                     .right
                       ¥
                       .input_1
-                        = f.text_field :price, placeholder: "例）300"
+                        = f.text_field :price, placeholder: "例）300", type: 'tel', autocomplete: 'off', required: 'required'
 
                 %li.clearfix
                   .left
                     販売手数料 (10%)
-                  .right
+                  #fee.right
                     ー
 
                 %li.profit.clearfix
                   .left
                     販売利益
-                  .right
+                  #profit.right
                     ー
 
         .sell-form
