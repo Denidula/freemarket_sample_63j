@@ -127,8 +127,22 @@
           or
         .edit__btns__btn
           = link_to '出品を一旦停止する', '/', class: 'edit__btns__btn--stop'
-        .edit__btns__btn
-          = link_to 'この商品を削除する', '/', class: 'edit__btns__btn--delete'
+        .edit__btns__btn#modal-open-btn
+          %button.edit__btns__btn--delete#item-delete-btn この商品を削除する
+        #overlay
+          #modalWindow
+            .modal-message-box
+              .modal-message-box__c 
+                確認
+              .modal-message-box__r 
+                削除すると二度と復活できません。
+                %br/
+                削除する代わりに停止することもできます。
+                %br 
+                %br/
+                本当に削除しますか？
+            %p#modal-close-btn キャンセル
+            = link_to '削除する', item_path(@item), method: :delete, id: 'delete-comformation-btn'
 
   .item-detail-message
     .message-container
