@@ -3,11 +3,13 @@
     .searches_regist__top
       .searches_regist__top__image
         = image_tag "mercari_logo_horizontal.png", size: "134x40", alt: "Mercari"
-      %form.searches_regist__top__search
-        %input{type: 'text', name: 'keyword', placeholder: '何かお探しですか？', class: 'searches_regist__top__search__text'}
-        %label{class: 'searches_regist__top__search__btn'}
-          = fa_icon 'search'
-          %input{type: 'submit', value: 'send', class: 'searches_regist__top__search__btn__hidden'}
+      .searches_regist__top__search
+        = form_tag searches_path, method: :get do
+          = text_field_tag :search, "",placeholder:"何かお探しですか？", class: 'searches_regist__top__search__text'
+          = button_tag type: 'submit', :name => nil, class: 'searches_regist__top__search__btn' do
+            = fa_icon 'search'
+            
+       
     .searches_regist__bottom
       .searches_regist__bottom__left
         .searches_regist__bottom__left__category-search
