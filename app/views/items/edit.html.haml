@@ -39,16 +39,23 @@
                           .edit 編集
                           .delete 削除
 
-              %p （削除用仮フォーム）削除するものはチェックしてください
+                          
+              - if @item.images.length < 10
+                #image-drop-zone
+                  %label.sell-upload-drop-box
+                    - @item.images.each_with_index.reverse_each do |image, index|
+                      = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: "post_img_#{index+1}"
+                    %pre.visible-pc
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+
+              -# 以下は仮置きのフォームです
+              .delete-form{style: "margin-top:15px; background-color: lightyellow; color: blue;"} （画像削除用仮フォーム）削除するものはチェックしてください（ここから）
               - @item.images.reverse_each do |image|
                 = f.check_box :images_blob_ids, {multiple: true}, image.id, false
-                = image_tag image, style: "width: 100px; height: 130px; object-fit: cover;"
-                          
-              %label.sell-upload-drop-box
-                = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: 'post_img_last'
-                %pre.visible-pc
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
+                = image_tag image, style: "width: 100px; height: 130px; object-fit: cover; background-color: #efefef"
+              .delete-form{style: "margin-top:15px; background-color: lightyellow; color: blue;"} （画像削除用仮フォーム）削除するものはチェックしてください（ここまで）
+
           .sell-content
             .form-group
               %label(for="")

@@ -32,11 +32,12 @@
                 .image-content
                   %ul.image-ul
               
-              %label.sell-upload-drop-box
-                = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: 'post_img_last'
-                %pre.visible-pc
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
+              #image-drop-zone
+                %label.sell-upload-drop-box
+                  = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: 'post_img_0', name: "item[images][]"
+                  %pre.visible-pc
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
           .sell-content
             .form-group
               %label(for="")

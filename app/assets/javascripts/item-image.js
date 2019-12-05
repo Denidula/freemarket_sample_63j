@@ -48,15 +48,52 @@ $(document).on('turbolinks:load', function() {
   })
 })
 
-// ==================================
-//     画像を都度選択できるようにする
-// ==================================
+// ===========================================
+// 画像を都度選択できるようにする/10枚までアップできる
+// ===========================================
 
 $(document).on('turbolinks:load', function() {
   var input_area = $('.sell-upload-drop-box');
-  $(document).on('change', '#post_img,#post_img_last',function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img">`);
+  $(document).on('change', `#post_img_0`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_1">`);
     input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_1`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_2">`);
+    input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_2`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_3">`);
+    input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_3`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_4">`);
+    input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_4`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_5">`);
+    input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_5`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_6">`);
+    input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_6`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_7">`);
+    input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_7`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_8">`);
+    input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_8`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_9">`);
+    input_area.prepend(new_input);
+  });
+  $(document).on('change', `#post_img_9`,function(event) {
+    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_10">`);
+    input_area.prepend(new_input);
+    $('#image-drop-zone').empty();
   });
 });
 
