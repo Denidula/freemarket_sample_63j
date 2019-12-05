@@ -1,45 +1,5 @@
-%header.header
-  .searches_regist
-    .searches_regist__top
-      .searches_regist__top__image
-        = image_tag "mercari_logo_horizontal.png", size: "134x40", alt: "Mercari"
-      .searches_regist__top__search
-        = form_tag searches_path, method: :get do
-          = text_field_tag :search, "",placeholder:"何かお探しですか？", class: 'searches_regist__top__search__text'
-          = button_tag type: 'submit', :name => nil, class: 'searches_regist__top__search__btn' do
-            = fa_icon 'search'
-            
-       
-    .searches_regist__bottom
-      .searches_regist__bottom__left
-        .searches_regist__bottom__left__category-search
-          = fa_icon 'list-ul', class: "list-ul-icon"
-          カテゴリーから探す
-        .searches_regist__bottom__left__bland-search
-          = fa_icon 'tag', class: "tag-icon"
-          ブランドから探す
-      .searches_regist__bottom__right
-        - if user_signed_in?
-          %ul
-            %li.like
-              = fa_icon 'heart'
-              いいね！一覧
-            %li
-              = fa_icon 'bell'
-              お知らせ
-            %li
-              = fa_icon 'check'
-              やることリスト
-            %li.last
-              = link_to mypage_path do
-                .menu-link
-                  %figure
-                    = image_tag 'https://cdn.pixabay.com/photo/2016/07/23/13/21/pokemon-1536855_1280.png', height: '32', width: '32'
-                  %span
-                    マイページ
-        - else
-          = link_to '新規会員登録', new_user_registration_path, class: 'searches_regist__bottom__right__sign-in'
-          = link_to 'ログイン', new_user_session_path, class: 'searches_regist__bottom__right__log-in'
+
+= render partial: 'shared/header'
 
 .advertisement
   = image_tag 'main-visual.png', class: 'main-visual'
