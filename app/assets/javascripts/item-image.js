@@ -154,3 +154,28 @@ $(document).on('turbolinks:load', function(){
     } 
   })
 });
+
+
+// =============================
+//  トップページの画像を自動スライド
+// =============================
+
+
+$(document).on('turbolinks:load', function(){
+
+  $(function() {
+
+    $('.slider').slick({
+      prevArrow:'',
+      nextArrow:'',
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      speed: 800
+    });
+
+  });
+
+})
+
+
