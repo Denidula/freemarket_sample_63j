@@ -156,6 +156,10 @@ $(document).on('turbolinks:load', function(){
 });
 
 
+// =============================
+//  トップページの画像を自動スライド
+// =============================
+
 
 $(document).on('turbolinks:load', function(){
 
