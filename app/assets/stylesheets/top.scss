@@ -150,10 +150,8 @@
 }
 
 .advertisement {
-  .main-visual{
-    width: 100vw;
-    height: 360px;
-    object-fit: cover;
+  li {
+    display: none;
   }
 }
 

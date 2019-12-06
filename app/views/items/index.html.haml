@@ -2,7 +2,15 @@
 = render partial: 'shared/header'
 
 .advertisement
-  = image_tag 'main-visual.png', class: 'main-visual'
+  //= image_tag 'main-visual.png', class: 'main-visual' 
+  %ul.slider
+    %li
+      = image_tag 'https://i.gyazo.com/b1d4256aef4f64f62449ac2586456426.jpg', alt: '', height: '390', width: '1369', class: ''
+    %li
+      = image_tag 'https://i.gyazo.com/3c8a6ce8598707dafc3fa9ca975f7f15.jpg', alt: '', height: '390', width: '1369', class: ''
+    %li
+      = image_tag 'https://i.gyazo.com/9fc7572182c48c3027a6e47cc422cfd3.jpg', alt: '', height: '390', width: '1369', class: ''
+
 
 .popular_category
   %h1.popular_category__title
