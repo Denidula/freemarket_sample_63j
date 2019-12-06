@@ -482,7 +482,7 @@ header {
     text-align: center;
   }
   .sell-form:nth-child(3){
-    margin-top: 30px;
+    // margin-top: 30px;
   }
   .sell-form {
     border-top: 1px solid #eee;
@@ -697,7 +697,7 @@ header {
         }
         .text-area {
           width: 600px;
-          height: 122px;
+          min-height: 122px;
           
           margin: 8px 0 0;
           border-radius: 4px;

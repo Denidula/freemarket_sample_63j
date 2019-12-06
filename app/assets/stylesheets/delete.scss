@@ -10,10 +10,9 @@
 }
 
 #modalWindow {
-  width: 500px;
-  height: 300px;
+  width: 600px;
   position: absolute;
-  top: 20%;
+  top: 23%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -24,39 +23,36 @@
 
   .modal-message-box {
     width: 100%;
-    height: calc(100% - 60px);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     &__c {
-      height: 20px;
       font-weight: bold;
       font-size: 16px;
-      margin-top: 50px;
-      padding-top: 30px;
-      margin-bottom: -50px;
+      margin-top: 70px;
     }
     &__r {
-      font-size: 12px;
+      font-size: 14px;
+      margin-bottom: 70px;
     }
   }
   #delete-comformation-btn {
-    width: 249px;
+    width: 299px;
     height: 60px;
     line-height: 60px;
     color: #38aef0;
-    font-size: 12px;
+    font-size: 14px;
     border-top: 1px solid #aaa;
     border-left: 1px solid #aaa;
   }
   
   #modal-close-btn {
-    width: 250px;
+    width: 300px;
     height: 60px;
     line-height: 60px;
     color: #666;
-    font-size: 12px;
+    font-size: 14px;
     border-top: 1px solid #aaa;
     cursor: pointer;
   }
