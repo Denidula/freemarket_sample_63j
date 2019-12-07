@@ -5,8 +5,8 @@
         = link_to '/' do
           = image_tag "mercari_logo_horizontal.png", size: "134x40", alt: "Mercari"
       .searches_regist__top__search
-        = form_tag searches_path, method: :get do
-          = text_field_tag :search, "",placeholder:"何かお探しですか？", class: 'searches_regist__top__search__text'
+        = search_form_for(@q, url: search_path) do |f|
+          = f.search_field :name_cont, class: "searches_regist__top__search__text", placeholder:"何かお探しですか？"
           = button_tag type: 'submit', name: nil, class: 'searches_regist__top__search__btn' do
             = fa_icon 'search'
             
