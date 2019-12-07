@@ -36,7 +36,9 @@ class ItemsController < ApplicationController
 
   def update
     if  @item.update(item_params)
-      delete_images
+      if params[:item][:images_blob_ids]
+        delete_images
+      end
       redirect_to item_path
     else
       flash[:alert] = '更新に失敗しました'
