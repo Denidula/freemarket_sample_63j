@@ -1,8 +1,5 @@
-
 .contents
-
   = render partial: 'shared/header'
-
 
   .search-container.clearfix
     .search-left
@@ -26,24 +23,25 @@
             = f.search_field :name_cont, class: "form-group__text-field", id: 'input_keyword', placeholder: '例）値下げ'
 
           .form-group#category_search
-            = f.label :parent_category, {class: "form-group__labels", for: :select_category} do
+            = f.label :parent_category, {class: "form-group__labels", for: :parent_category_search} do
               = fa_icon 'bars'
               カテゴリーを選択する
-            = f.select :parent_category, @category_parent_array, {}, {id: 'select_category', class: 'form-group__text-field'}
-            .chevron-down
+            .select#parent_wrapper
+              = f.select :parent_category_eq, @category_parent_array, {}, {id: 'parent_category_search', class: 'form-group__text-field'}
+              .chevron-down
 
-          .form-group
-            = f.label :name, {class: "form-group__labels", for: :input_bland} do
-              = fa_icon 'tag'
-              ブランド名から探す
-            = f.text_field :name, class: "form-group__text-field", id: 'input_bland', placeholder: '例）シャネル'
+          -# .form-group
+          -#   = f.label :name, {class: "form-group__labels", for: :input_bland} do
+          -#     = fa_icon 'tag'
+          -#     ブランド名から探す
+          -#   = f.text_field :name, class: "form-group__text-field", id: 'input_bland', placeholder: '例）シャネル'
 
-          .form-group
-            = f.label :name, {class: "form-group__labels", for: :size_select} do
-              = fa_icon 'compress'
-              サイズを指定する
-            = f.select :size, @size_array, {}, {id: 'size_select', class: 'form-group__text-field'}
-            .chevron-down
+          -# .form-group
+          -#   = f.label :name, {class: "form-group__labels", for: :size_select} do
+          -#     = fa_icon 'compress'
+          -#     サイズを指定する
+          -#   = f.select :size, @size_array, {}, {id: 'size_select', class: 'form-group__text-field'}
+          -#   .chevron-down
 
           .form-group
             = f.label :parent_category, {class: "form-group__labels", for: :price_select} do
@@ -53,77 +51,77 @@
             .chevron-down
             = f.number_field :price_gteq, class: 'form-group__text-field-left', placeholder: '¥ Min'
             %span.tilde ~
-            = f.number_field :price_lt, class: 'form-group__text-field-right', placeholder: '¥ Max'
+            = f.number_field :price_lteq, class: 'form-group__text-field-right', placeholder: '¥ Max'
 
           .form-group{style: 'min-height: 230px'}
-            = f.label :condition, {class: "form-group__labels", for: :condition_check} do
+            = f.label :status, {class: "form-group__labels"} do
               = fa_icon 'star'
               商品の状態
             .form-group__check-boxes
               .form-group__check-boxes__box
-                = f.check_box :condition_1, {:checked => false}, true, false
-                = f.label :condition_1, {} do
-                  すべて
+                = f.check_box :status_in, {multiple: true}, 'すべて', nil
+                = f.label :status_in, {for: 'q_status_in_すべて'} do
+                  = 'すべて'
               .form-group__check-boxes__box
-                = f.check_box :condition_2, {:checked => false}, true, false
-                = f.label :condition_2, {} do
-                  新品・未使用
+                = f.check_box :status_in, {multiple: true}, '新品、未使用', nil
+                = f.label :status_in, {for: 'q_status_in_新品未使用'} do
+                  = '新品・未使用'
               .form-group__check-boxes__box
-                = f.check_box :condition_3, {:checked => false}, true, false
-                = f.label :condition_3, {} do
-                  未使用に近い
+                = f.check_box :status_in, {multiple: true}, '未使用に近い', nil
+                = f.label :status_in, {for: 'q_status_in_未使用に近い'} do
+                  = '未使用に近い'
               .form-group__check-boxes__box
-                = f.check_box :condition_4, {:checked => false}, true, false
-                = f.label :condition_4, {} do
-                  目立った傷や汚れなし
+                = f.check_box :status_in, {multiple: true}, '目立った傷や汚れなし', nil
+                = f.label :status_in, {for: 'q_status_in_目立った傷や汚れなし'} do
+                  = '目立った傷や汚れなし'
               .form-group__check-boxes__box
-                = f.check_box :condition_5, {:checked => false}, true, false
-                = f.label :condition_5, {} do
-                  やや傷や汚れあり
+                = f.check_box :status_in, {multiple: true}, 'やや傷や汚れあり', nil
+                = f.label :status_in, {for: 'q_status_in_やや傷や汚れあり'} do
+                  = 'やや傷や汚れあり'
               .form-group__check-boxes__box
-                = f.check_box :condition_6, {:checked => false}, true, false
-                = f.label :condition_6, {} do
-                  傷や汚れあり
+                = f.check_box :status_in, {multiple: true}, '傷や汚れあり', nil
+                = f.label :status_in, {for: 'q_status_in_傷や汚れあり'} do
+                  = '傷や汚れあり'
               .form-group__check-boxes__box
-                = f.check_box :condition_7, {:checked => false}, true, false
-                = f.label :condition_7, {} do
-                  全体的に状態が悪い
+                = f.check_box :status_in, {multiple: true}, '全体的に状態が悪い', nil
+                = f.label :status_in, {for: 'q_status_in_全体的に状態が悪い'} do
+                  = '全体的に状態が悪い'
 
           .form-group{style: 'min-height: 140px'}
-            = f.label :charge, {class: "form-group__labels", for: :charge_check} do
+            = f.label :charge, {class: "form-group__labels"} do
               = fa_icon 'truck'
               配送料の負担
             .form-group__check-boxes
               .form-group__check-boxes__box
-                = f.check_box :charge_1, {:checked => false}, true, false
-                = f.label :charge_1, {} do
-                  すべて
+                = f.check_box :charge_in, {multiple: true}, 'すべて', nil
+                = f.label :charge_in, {for: 'q_charge_in_すべて'} do
+                  = 'すべて'
               .form-group__check-boxes__box
-                = f.check_box :charge_2, {:checked => false}, true, false
-                = f.label :charge_2, {} do
-                  着払い(購入者負担)
+                = f.check_box :charge_in, {multiple: true}, '着払い(購入者負担)', nil
+                = f.label :charge_in, {for: 'q_charge_in_着払い購入者負担'} do
+                  = '着払い(購入者負担)'
               .form-group__check-boxes__box
-                = f.check_box :charge_3, {:checked => false}, true, false
-                = f.label :charge_3, {} do
-                  送料込み(出品者負担)
+                = f.check_box :charge_in, {multiple: true}, '送料込み(出品者負担)', nil
+                = f.label :charge_in, {for: 'q_charge_in_送料込み出品者負担'} do
+                  = '送料込み(出品者負担)'
 
-          .form-group{style: 'min-height: 120px'}
-            = f.label :status, {class: "form-group__labels", for: :status_check} do
-              = fa_icon 'shopping-cart'
-              販売状況
-            .form-group__check-boxes
-              .form-group__check-boxes__box
-                = f.check_box :status_1, {:checked => false}, true, false
-                = f.label :status_1, {} do
-                  すべて
-              .form-group__check-boxes__box
-                = f.check_box :status_2, {:checked => false}, true, false
-                = f.label :status_2, {} do
-                  販売中
-              .form-group__check-boxes__box
-                = f.check_box :status_3, {:checked => false}, true, false
-                = f.label :status_3, {} do
-                  売り切れ
+          -# .form-group{style: 'min-height: 120px'}
+          -#   = f.label :sale_status, {class: "form-group__labels"} do
+          -#     = fa_icon 'shopping-cart'
+          -#     配送料の負担
+          -#   .form-group__check-boxes
+          -#     .form-group__check-boxes__box
+          -#       = f.check_box :sale_status_in, {multiple: true}, 'すべて', nil
+          -#       = f.label :sale_status_in, {for: 'q_sale_status_in_すべて'} do
+          -#         = 'すべて'
+          -#     .form-group__check-boxes__box
+          -#       = f.check_box :sale_status_in, {multiple: true}, '販売中', nil
+          -#       = f.label :sale_status_in, {for: 'q_sale_status_in_販売中'} do
+          -#         = '販売中'
+          -#     .form-group__check-boxes__box
+          -#       = f.check_box :sale_status_in, {multiple: true}, '売り切れ', nil
+          -#       = f.label :sale_status_in, {for: 'q_sale_status_in_売り切れ'} do
+          -#         = '売り切れ'
 
           .btns
             = f.submit 'クリア', type: :reset, class: 'btns__clear-btn'
@@ -137,6 +135,18 @@
             = @keyword
             %span.search-result-head-text
               の検索結果
+
+          .search-result-number
+            = "1-#{@items.count}件表示"
+
+          .items-box-content.clearfix
+            %ul.clearfix
+              = render 'items/items'
+
+        - elsif @items.count > 0 && @keyword == ""
+          %h2.search-result-head
+            %span.search-result-head-text{style: 'font-weight: bold; font-size: 24px'}
+              検索結果
 
           .search-result-number
             = "1-#{@items.count}件表示"
