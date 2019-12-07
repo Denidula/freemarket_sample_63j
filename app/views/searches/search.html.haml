@@ -53,7 +53,7 @@
             %span.tilde ~
             = f.number_field :price_lteq, class: 'form-group__text-field-right', placeholder: '¥ Max'
 
-          .form-group{style: 'min-height: 230px'}
+          .form-group#status_search
             = f.label :status, {class: "form-group__labels"} do
               = fa_icon 'star'
               商品の状態
@@ -87,7 +87,7 @@
                 = f.label :status_in, {for: 'q_status_in_全体的に状態が悪い'} do
                   = '全体的に状態が悪い'
 
-          .form-group{style: 'min-height: 140px'}
+          .form-group#charge_search
             = f.label :charge, {class: "form-group__labels"} do
               = fa_icon 'truck'
               配送料の負担
@@ -145,8 +145,9 @@
 
         - elsif @items.count > 0 && @keyword == ""
           %h2.search-result-head
-            %span.search-result-head-text{style: 'font-weight: bold; font-size: 24px'}
-              検索結果
+            %span.search-result-head-text
+              %p
+                検索結果
 
           .search-result-number
             = "1-#{@items.count}件表示"
@@ -160,13 +161,13 @@
             = @keyword
             %span.search-result-head-text
               の検索結果
-          %p{style: "font-size: 14px"}
+          %p
             該当する商品が見つかりません。検索条件を変えて、再度お試しください。
           %br/
           %br/
 
           %h2.search-result-nil
-            %p{style: "font-size: 22px; font-weight: bold;"}
+            %p
               新着商品
 
           .items-box-content.clearfix
@@ -175,7 +176,7 @@
 
         - else
           %h2.search-result-nil
-            %p{style: "font-size: 22px; font-weight: bold;"}
+            %p
               新着商品
 
           .items-box-content.clearfix

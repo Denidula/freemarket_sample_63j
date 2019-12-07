@@ -97,6 +97,14 @@
           }
         }
 
+        #status_search{
+          min-height: 230px
+        }
+
+        #charge_search{
+          min-height: 140px
+        }
+
         .form-group{
           margin-bottom: 30px;
           position: relative;
@@ -190,6 +198,9 @@
       float: right;
       width: 700px;
 
+      p{
+        font-size: 14px
+      }
       .search-result-head {
         font-size: 22px;
         margin: 0 0 8px;
@@ -198,7 +209,18 @@
         .search-result-head-text {
           font-size: 18px;
           font-weight: 400;
+          p{
+            font-weight: bold;
+            font-size: 24px
+          }
         }
+      }
+      .search-result-nil {
+        p{
+          font-size: 22px; 
+          font-weight: bold;
+        }
+
       }
       .search-result-number {
         margin: 12px 0;
