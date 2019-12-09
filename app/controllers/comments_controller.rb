@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :login_require, except: [:index, :show]
 
   def create
-    @comment = Comment.create(text: comment_params[:text], item_id: comment_params[:item_id], user_id: current_user.id)
+    @comment = Comment.create(text: params[:comment][:text], item_id: comment_params[:item_id], user_id: current_user.id)
     respond_to do |format|
       format.html { redirect_to item_path(params[:item_id]) }
       format.json
