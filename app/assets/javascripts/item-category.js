@@ -16,7 +16,7 @@ $(document).on('turbolinks:load', function(){
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           </select>
-                          <i class='fa fa-chevron-down select-icon'></i>
+                          <div class='chevron-down'></div>
                         </div>`;
   
       $('#category').append(childSelectHtml);
@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function(){
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
-                                <i class='fa fa-chevron-down select-icon'></i>
+                                <div class='chevron-down'></div>
                               </div>`;
   
         $('#category').append(grandchildSelectHtml);
