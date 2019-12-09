@@ -32,6 +32,25 @@ class ItemsController < ApplicationController
   end
   
   def edit
+    @parents = Category.where(ancestry: nil).limit(13)
+
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+    
+    @category_child_array = [{id: "---", name: "---"}]
+    @parent = Category.find_by(name: @item.parent_category)
+    @parent.children.each do |child|
+      @category_child_array += [{id: child.id, name: child.name}]
+    end
+    
+    @category_grandchild_array = [{id: "---", name: "---"}]
+    @children = Category.find_by(name: @item.parent_category, ancestry: nil).children
+    @child = @children.find_by(name: @item.child_category)
+    @child.children.each do |grandchild|
+      @category_grandchild_array += [{id: grandchild.id, name: grandchild.name}]
+    end
   end
 
   def update

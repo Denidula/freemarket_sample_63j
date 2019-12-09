@@ -84,8 +84,15 @@
                   %span.form-require
                     必須
                 .select
-                  -# = f.select :parent_category, @category_parent_array, {}, {id: 'parent_category'}
-                  -# .chevron-down
+                  = f.select :parent_category, @category_parent_array, {}, {id: 'parent_category'}
+                  .chevron-down
+                .select#children_wrapper
+                  = f.select :child_category, options_for_select(@category_child_array.map{|c|[c[:name], c[:name], {'data-category' => c[:id]}]}, @item.child_category), {}, {id: 'child_category'}
+                  .chevron-down
+                .select#grandchildren_wrapper
+                  = f.select :grandchild_category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:name], {'data-category' => c[:id]}]}, @item.grandchild_category), {}, {id: 'grandchild_category'}
+                  -# = f.select :grandchild_category, @category_grandchild_array, {}, {id: 'grandchild_category'}
+                  .chevron-down
 
               .form-group
                 %label(for="")
