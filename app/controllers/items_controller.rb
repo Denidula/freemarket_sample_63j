@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @parents = Category.where(ancestry: nil).limit(13)
-    @category_parent_array = ["---"]
+    @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     if  Item.create(item_params)
       redirect_to root_path
     else
-      flash[:alert] = '更新に失敗しました'
+      flash[:alert] = '出品に失敗しました'
       redirect_to new_item_path
     end
     
