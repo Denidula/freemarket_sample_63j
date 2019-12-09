@@ -9,6 +9,23 @@ class SearchesController < ApplicationController
     @q = Item.ransack(params[:q])
     @keyword = params[:q][:name_cont]
     @items = @q.result(distinct: true).order(created_at: :desc).limit(132)
+
+    if @q.child_category_eq
+      @category_child_array = [{id: "---", name: "---"}]
+      @parent = Category.find_by(name: @q.parent_category_eq)
+      @parent.children.each do |child|
+        @category_child_array += [{id: child.id, name: child.name}]
+      end
+    end
+    
+    if @q.grandchild_category_eq
+      @category_grandchild_array = [{id: "---", name: "---"}]
+      @children = Category.find_by(name: @q.parent_category_eq, ancestry: nil).children
+      @child = @children.find_by(name: @q.child_category_eq)
+      @child.children.each do |grandchild|
+        @category_grandchild_array += [{id: grandchild.id, name: grandchild.name}]
+      end
+    end
   end
 
   def get_category_parent

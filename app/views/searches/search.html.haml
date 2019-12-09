@@ -29,6 +29,14 @@
             .select#parent_wrapper
               = f.select :parent_category_eq, @category_parent_array, {}, {id: 'parent_category_search', class: 'form-group__text-field'}
               .chevron-down
+            - if @q.child_category_eq
+              .select#children_wrapper{style: "margin-top: -10px"}
+                = f.select :child_category_eq, options_for_select(@category_child_array.map{|c|[c[:name], c[:name], {'data-category' => c[:id]}]}, @q.child_category_eq), {}, {id: 'child_category', class: 'form-group__text-field'}
+                .chevron-down{style: "top: 105px"}
+            - if @q.grandchild_category_eq
+              .select#grandchildren_wrapper{style: "margin-top: -10px"}
+                = f.select :grandchild_category_eq, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:name], {'data-category' => c[:id]}]}, @q.grandchild_category_eq), {}, {id: 'grandchild_category', class: 'form-group__text-field'}
+                .chevron-down{style: "top: 163px"}
 
           -# .form-group
           -#   = f.label :name, {class: "form-group__labels", for: :input_bland} do
