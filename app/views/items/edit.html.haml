@@ -91,7 +91,6 @@
                   .chevron-down
                 .select#grandchildren_wrapper
                   = f.select :grandchild_category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:name], {'data-category' => c[:id]}]}, @item.grandchild_category), {}, {id: 'grandchild_category'}
-                  -# = f.select :grandchild_category, @category_grandchild_array, {}, {id: 'grandchild_category'}
                   .chevron-down
 
               .form-group
