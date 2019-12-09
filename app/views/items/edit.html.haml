@@ -85,7 +85,7 @@
                     必須
                 .select
                   -# = f.select :parent_category, @category_parent_array, {}, {id: 'parent_category'}
-                  -# = fa_icon 'chevron-down', class: 'select-icon'
+                  -# .chevron-down
 
               .form-group
                 %label(for="")
@@ -94,7 +94,7 @@
                     必須
                 .select
                   = f.select :status, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], prompt: "---"
-                  = fa_icon 'chevron-down', class: 'select-icon'
+                  .chevron-down
 
         .sell-form
                 
@@ -111,7 +111,7 @@
                     必須
                 .select
                   = f.select :charge, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]], prompt: "---"
-                  = fa_icon 'chevron-down', class: 'select-icon'
+                  .chevron-down
 
               .form-group
                 %label(for="")
@@ -120,7 +120,7 @@
                     必須
                 .select
                   = f.select :delivery_method, [["未定", "未定"], ["らくらくメルカリ便", "らくらくメルカリ便"], ["ゆうメール", "ゆうメール"], ["レターパック", "レターパック"], ["普通郵便(定形、定形外)", "普通郵便(定形、定形外)"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["クリックポスト", "クリックポスト"], ["ゆうパケット", "ゆうパケット"]], prompt: "---"
-                  = fa_icon 'chevron-down', class: 'select-icon'
+                  .chevron-down
 
 
               .form-group
@@ -130,7 +130,7 @@
                     必須
                 .select
                   = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: 'input'
-                  = fa_icon 'chevron-down', class: 'select-icon'
+                  .chevron-down
                 
 
               .form-group
@@ -140,7 +140,7 @@
                     必須
                 .select
                   = f.select :send_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]], prompt: "---"
-                  = fa_icon 'chevron-down', class: 'select-icon'
+                  .chevron-down
 
         .sell-form
                 
