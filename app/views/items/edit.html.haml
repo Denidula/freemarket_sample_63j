@@ -78,7 +78,7 @@
             %h3.sell-sub-head
               商品の詳細
             .sell-form-box
-              .form-group
+              #category.form-group
                 %label(for="")
                   カテゴリー
                   %span.form-require
@@ -160,7 +160,7 @@
                     .right
                       ¥
                       .input_1
-                        = f.text_field :price, placeholder: "例）300", autocomplete: 'off', type: 'tel', required: 'required'
+                        = f.text_field :price, placeholder: "例）300", autocomplete: 'off', type: 'tel', required: 'required', pattern: '[3-9][0-9]{2}|[1-9][0-9]{3,6}'
 
                 %li.clearfix
                   .left
