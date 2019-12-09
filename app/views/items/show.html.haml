@@ -165,14 +165,14 @@
 
   .item-detail-message
     .message-container
+      = render partial: 'comment'
       .message-content
-        .message-form
+        = form_with(model: [@item, @comment], local: true, class: 'message-form', id: 'new-comment') do |form|
           %p
             相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          .textarea
-          %button.message-submit
-            %span
-              コメントする
+          = form.text_field :text, class: 'textarea'
+          %label
+            = form.submit 'コメントする', class: 'message-submit', id: 'comment-submit'
 
   .social-media-box
     %ul.medias

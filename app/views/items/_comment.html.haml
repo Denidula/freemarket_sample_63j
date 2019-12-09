@@ -1,0 +1,18 @@
+.message-content
+  %ul.message-content__all
+    - if @comments
+      - @comments.each do |comment|
+        %li.message-content__all__self
+          .message-content__all__self__left
+            .message-content__all__self__left__nickname
+              = comment.user.nickname
+            .message-content__all__self__left__comment
+              = fa_icon 'comment', class: 'balloon'
+              = comment.text
+              .message-content__all__self__left__comment__icon
+                = fa_icon 'edit', class: 'message-content__all__self__left__comment__icon__left'
+                = fa_icon 'trash', class: 'message-content__all__self__left__comment__icon__right'
+          .message-content__all__self__right
+            = image_tag 'http://static.mercdn.net/images/member_photo_noimage_thumb.png', size: '40x40', size: '40x40', class: 'message-content__all__self__right__user-icon'
+            .message-content__all__self__right__seller
+              出品者
