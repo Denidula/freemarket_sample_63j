@@ -320,13 +320,17 @@ header {
     p {
       padding: 8px;
       font-size: 14px;
+    }
+    .alert_message{
       background: #fff6de;
     }
     .textarea {
       margin: 8px 0 0;
-      width: 652px;
-      height: 104px;
+      padding: 10px;
+      width: 630px;
+      height: 90px;
       border: 1px solid gray;
+      resize: vertical;
     }
     .message-submit {
       width: 100%;

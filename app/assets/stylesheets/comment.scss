@@ -32,16 +32,27 @@
         &__icon {
           display: flex;
           justify-content: space-between;
+          .create_date{
+            color: #aaa;
+            position: absolute;
+            left: 45px;
+            bottom: 13px;
+          }
           &__left {
             color: #aaaaaa;
             font-size: 20px;
             font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: -5px;
             }
           &__right {
             color: #aaaaaa;
             font-size: 20px;
             font-weight: bold;
             z-index: 2;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
           }
         }
       }
