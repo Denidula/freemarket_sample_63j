@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to :user, optional: true
   has_many_attached :images
+  has_many :comments
 
   validates :name, presence: true 
   validates :name, length: { maximum: 40 } 
