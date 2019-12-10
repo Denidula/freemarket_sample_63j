@@ -67,7 +67,6 @@ $(document).on('turbolinks:load', function() {
         contentType: false
       })
       .done(function(data){
-        // var input_text = $('#comment_text').val();
         var html = commentHTML(data);
         $('.message-content__all').append(html);
         $('.textarea').val('');

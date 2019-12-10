@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function(){
     function appendChidrenBox(insertHTML){
       var childSelectHtml = '';
       childSelectHtml = `<div class='select' id= 'children_wrapper'>
-                          <select id="child_category" required = "required" name="item[child_category]">
+                          <select id="child_category" name="item[child_category]" required>
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           </select>
@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function(){
     function appendGrandchidrenBox(insertHTML){
       var grandchildSelectHtml = '';
       grandchildSelectHtml = `<div class='select' id= 'grandchildren_wrapper'>
-                                <select class = "grandchild" id="grandchild_category" name="item[grandchild_category]">
+                                <select class = "grandchild" id="grandchild_category" name="item[grandchild_category]" required>
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
@@ -102,3 +102,43 @@ $(document).on('turbolinks:load', function(){
   });
 
 });
+
+// ==================================================
+// 子カテゴリ、孫カテゴリが選択されたいないときにアラートを出す（出品画面）
+// ==================================================
+$(document).on('turbolinks:load', function(){
+  $('#new_item').on('submit', function(e){
+    var child_category = $("#child_category").val();
+    var grandchild_category = $("#grandchild_category").val();
+    if(child_category == "---" || grandchild_category == "---"){
+      e.preventDefault();
+      $.ajax({
+      }).done(function(){
+        alert('カテゴリを選択してください');
+        $('input[name="commit"]').prop('disabled', false);
+      }).fail(function(){
+        alert('ajax失敗');
+      })
+    }
+  })
+})
+
+// ==================================================
+// 子カテゴリ、孫カテゴリが選択されたいないときにアラートを出す（編集画面）
+// ==================================================
+$(document).on('turbolinks:load', function(){
+  $('.edit_item').on('submit', function(e){
+    var child_category = $("#child_category").val();
+    var grandchild_category = $("#grandchild_category").val();
+    if(child_category == "---" || grandchild_category == "---"){
+      e.preventDefault();
+      $.ajax({
+      }).done(function(){
+        alert('カテゴリを選択してください');
+        $('input[name="commit"]').prop('disabled', false);
+      }).fail(function(){
+        alert('ajax失敗');
+      })
+    }
+  })
+})

@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
   def create
 
     if  Item.create(item_params)
+      flash[:notice] = '商品が出品されました'
       redirect_to root_path
     else
       flash[:alert] = '出品に失敗しました'
@@ -60,6 +61,7 @@ class ItemsController < ApplicationController
       if params[:item][:images_blob_ids]
         delete_images
       end
+      flash[:notice] = '商品情報が更新されました'
       redirect_to item_path
     else
       flash[:alert] = '更新に失敗しました'
@@ -70,6 +72,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
+    flash[:alert] = '商品を削除しました'
     redirect_to mypage_path
   end
 
