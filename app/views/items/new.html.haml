@@ -33,7 +33,7 @@
                   %ul.image-ul
               
               #image-drop-zone
-                %label.sell-upload-drop-box
+                %label.sell-upload-drop-box#image-drop-zone__label{for: "post_img_0"}
                   = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: 'post_img_0', name: "item[images][]"
                   %pre.visible-pc
                     ドラッグアンドドロップ

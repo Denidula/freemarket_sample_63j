@@ -31,30 +31,29 @@
               .image-contents.clearfix
                 .image-content
                   %ul.image-ul
-                    - @item.images.reverse_each do |image|
-                      %li.image-box
+                    - @item.images.each_with_index do |image, index|
+                      %li.image-box{id: "image-box-#{index}"}
                         %figure
                           = image_tag image
                         .box-bottom.clearfix
                           .edit 編集
-                          .delete 削除
+                          .delete{id: "delete-#{index}"} 削除
 
                           
               - if @item.images.length < 10
                 #image-drop-zone
-                  %label.sell-upload-drop-box
-                    - @item.images.each_with_index.reverse_each do |image, index|
-                      = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: "post_img_#{index+1}"
+                  %label.sell-upload-drop-box#image-drop-zone__label{for: "post_img_#{@item.images.length}"}
+                    - @item.images.each_with_index do |image, index|
+                      = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: "post_img_#{index}"
                     %pre.visible-pc
                       ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
+                    = f.file_field :images, multiple: true, class: 'sell-upload-drop-file', id: "post_img_#{@item.images.length}"
 
-              -# 以下は仮置きのフォームです
-              .delete-form{style: "margin-top:15px; background-color: lightyellow; color: blue;"} （画像削除用仮フォーム）削除するものはチェックしてください（ここから）
-              - @item.images.reverse_each do |image|
-                = f.check_box :images_blob_ids, {multiple: true}, image.id, false
-                = image_tag image, style: "width: 100px; height: 130px; object-fit: cover; background-color: #efefef"
-              .delete-form{style: "margin-top:15px; background-color: lightyellow; color: blue;"} （画像削除用仮フォーム）削除するものはチェックしてください（ここまで）
+              .delete-form{style: "display:none; margin-top:15px; background-color: lightyellow; color: blue;"} （画像削除用仮フォーム）削除するものはチェックしてください（ここから）
+              - @item.images.each_with_index do |image, index|
+                = f.check_box :images_blob_ids, {multiple: true, class: "check-box-#{index}", style: "display:none;"}, image.id, false
+                = image_tag image, style: "display:none; width: 100px; height: 130px; object-fit: cover; background-color: #efefef"
 
           .sell-content
             .form-group

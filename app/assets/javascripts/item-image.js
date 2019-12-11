@@ -4,8 +4,8 @@
 
 $(document).on('turbolinks:load', function() {
   $(function(){
-    function appendPicture(picture){
-      var html = `<li class = "image-box" >
+    function appendPicture(image_id, picture){
+      var html = `<li class = "image-box" id="image-box-${image_id}">
                     <figure>
                       <img src = "${picture}">
                     </figure>
@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function() {
                       <div class = "edit">
                         編集
                       </div>
-                      <div class = "delete">
+                      <div class = "delete" id="delete-${image_id}">
                         削除
                       </div>
                     </div>
@@ -22,9 +22,9 @@ $(document).on('turbolinks:load', function() {
       return html;
     }
 
-    function displayPicture(pictureOriginal){
+    function displayPicture(image_id, pictureOriginal){
       var insertPicture = "";
-      insertPicture = appendPicture(pictureOriginal);
+      insertPicture = appendPicture(image_id, pictureOriginal);
       
       if($('div').hasClass('image-box') == true){
         $('.image-ul:last').append(insertPicture);
@@ -34,13 +34,15 @@ $(document).on('turbolinks:load', function() {
     }
     
     $(".sell-dropbox").on("change",function(e){
+      var li_count = $('.image-box').length;
       var picture_file = e.target.files[0];
       var reader = new FileReader();
-
+      
       reader.addEventListener("load", function(){
-        displayPicture(reader.result);
+        var image_id = li_count;
+        displayPicture(image_id, reader.result);
       },false);
-
+      
       if(picture_file){
         reader.readAsDataURL(picture_file);
       }  
@@ -48,52 +50,63 @@ $(document).on('turbolinks:load', function() {
   })
 })
 
+// ==================
+//    削除機能（edit）
+// ==================
+
+$(document).on('turbolinks:load', function(){
+  $('.delete').on('click', function(){
+    var image_id = $(this).attr('id');
+    image_id = image_id.slice(-1);
+    image_id = parseInt(image_id);
+    $(`.check-box-${image_id}`).prop('checked', true);
+  })
+})
+
+// ======================
+//    削除機能（new&edit）
+// ======================
+
+$(document).on('turbolinks:load', function(){
+  $(document).on('click', `.delete`, function(){
+    var li_count = $('.image-box').length;
+    li_count = parseInt(li_count);
+    var image_id = $(this).attr('id');
+    image_id = image_id.slice(-1);
+    image_id = parseInt(image_id);
+    $(`#image-box-${image_id}`).remove();
+    $(`#post_img_${image_id}`).remove();
+    if (li_count < 10){
+      for( var i = image_id; i <= li_count - 1; i++ ){
+        $(`#post_img_${i + 1}`).attr('id', `post_img_${i}`);
+      };
+      $("#image-drop-zone__label").attr('for', `post_img_${li_count - 1}`)
+    } if (li_count == 10) {
+      for( var i = image_id; i <= 9; i++){
+        $(`#post_img_${i + 1}`).attr('id', `post_img_${i}`);
+      }
+      $("#image-drop-zone__label").attr('for', `post_img_${li_count - 1}`)
+      $('#image-drop-zone').show();
+    }
+  })
+})
+
 // ===========================================
 // 画像を都度選択できるようにする/10枚までアップできる
 // ===========================================
 
-$(document).on('turbolinks:load', function() {
-  var input_area = $('.sell-upload-drop-box');
-  $(document).on('change', `#post_img_0`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_1">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_1`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_2">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_2`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_3">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_3`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_4">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_4`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_5">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_5`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_6">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_6`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_7">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_7`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_8">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_8`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_9">`);
-    input_area.prepend(new_input);
-  });
-  $(document).on('change', `#post_img_9`,function(event) {
-    var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_10">`);
-    input_area.prepend(new_input);
-    $('#image-drop-zone').empty();
+$(function(){
+  $(document).on('change', `.sell-dropbox`, function(){
+    var li_count = $('.image-box').length;
+    if(li_count < 10){
+      var input_area = $('.sell-upload-drop-box');
+      var new_input = $(`<input multiple= "multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_${li_count + 1}">`);
+      input_area.append(new_input);
+      $("#image-drop-zone__label").attr('for', `post_img_${li_count + 1}`);
+      if (li_count + 1 == 10){
+        $('#image-drop-zone').hide();
+      }
+    }
   });
 });
 
@@ -184,7 +197,8 @@ $(document).on('turbolinks:load', function(){
 
 $(document).on('turbolinks:load', function(){
   $('#new_item').on('submit', function(e){
-    if(!($('#post_img_1').length)){
+    li_count = $('.image-box').length;
+    if(!(li_count)){
       e.preventDefault();
       $.ajax({
       }).done(function(){
