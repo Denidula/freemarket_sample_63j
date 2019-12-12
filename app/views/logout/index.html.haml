@@ -4,14 +4,10 @@
   = render partial: 'shared/header'
   .nav
     %ul
-      %li
-        メルカリ 
-        = fa_icon 'chevron-right'
-      %li.bold
-        マイページ
-        = fa_icon 'chevron-right'
-      %li.bold
-        ログアウト
+      %li.breadcrumbs
+        - breadcrumb :mypage
+        - breadcrumb :logout
+        = breadcrumbs separator: " &rsaquo; "
 
   .main.clearfix
     

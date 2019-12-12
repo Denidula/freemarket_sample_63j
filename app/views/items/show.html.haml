@@ -235,13 +235,13 @@
                       %span
                         = rand(1..50)
 
-  .nav
+  .footer-nav
     %ul
       %li
-        メルカリ 
+        = link_to 'メルカリ', root_path
         = fa_icon 'chevron-right'
-      %li.bold
-        メンズ ニット グレー
-
+      %li
+        %p
+          = @item.name
   
   = render partial: 'shared/footer'

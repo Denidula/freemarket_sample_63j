@@ -21,6 +21,16 @@ crumb :card do
   parent :mypage
 end
 
+crumb :logout do
+  link "ログアウト", mypage_profile_path
+  parent :mypage
+end
+
+crumb :logout do
+  link "ログアウト", mypage_profile_path
+  parent :mypage
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

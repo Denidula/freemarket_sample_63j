@@ -23,3 +23,34 @@
     }
   }
 }
+.footer-nav{
+  width: 70%;
+  margin: 0 auto;
+  background-color: #F7F7F7;
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px #eee solid;
+  ul{
+    li{
+      float: left;
+      a{
+        font-size: 14px;
+        color: #333;
+        padding: 0 5px;
+      }
+      a:hover{
+        color: #aaa;
+        text-decoration: underline;
+      }
+      .fa{
+        font-size: 10px;
+        color: #333;
+      }
+      p{
+        padding-left: 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+}
