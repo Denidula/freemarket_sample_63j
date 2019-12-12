@@ -46,15 +46,15 @@
         .main__form__group
           = f.label '市区町村', class: 'main__form__group__label', for: "address_city"
           %span.main__form__group__require 必須
-          = f.text_field :city, class: "main__form__group__input-box", placeholder: "例）新宿区", required: 'required', pattern: '[^\x20-\x7E]*'
+          = f.text_field :city, class: "main__form__group__input-box", placeholder: "例）港区", required: 'required', pattern: '[^\x20-\x7E]*'
         .main__form__group
           = f.label '番地', class: 'main__form__group__label', for: "address_address"
           %span.main__form__group__require 必須
-          = f.text_field :address, class: "main__form__group__input-box", placeholder: "例）早稲田鶴巻町３０２−５", required: 'required'
+          = f.text_field :address, class: "main__form__group__input-box", placeholder: "例）六本木６−１０−１", required: 'required'
         .main__form__group
           = f.label '建物名', class: 'main__form__group__label', for: "address_building"
           %span.main__form__group__optional 任意
-          = f.text_field :building, class: "main__form__group__input-box", placeholder: "例）ステージグランデ早稲田７０６"
+          = f.text_field :building, class: "main__form__group__input-box", placeholder: "例）六本木ヒルズ森タワー７０１号室"
         = f.submit '次へ進む', class: 'main__form__submit-btn'
 
   .footer
