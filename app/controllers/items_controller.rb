@@ -6,6 +6,10 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.order(created_at: :desc)
+    @ladies_items = Item.all.order(created_at: :desc).where(parent_category: "レディース").limit(10)
+    @mens_items = Item.all.order(created_at: :desc).where(parent_category: "メンズ").limit(10)
+    @toy_items = Item.all.order(created_at: :desc).where(parent_category: "おもちゃ・ホビー・グッズ").limit(10)
+    @devise_items = Item.all.order(created_at: :desc).where(parent_category: "家電・スマホ・カメラ").limit(10)
   end
 
   def show
