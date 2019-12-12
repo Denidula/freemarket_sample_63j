@@ -63,6 +63,9 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if params[:item][:images] != nil && params[:item][:images].include?("")
+      params[:item][:images].clear
+    end
     if  @item.update(item_params)
       if params[:item][:images_blob_ids]
         delete_images

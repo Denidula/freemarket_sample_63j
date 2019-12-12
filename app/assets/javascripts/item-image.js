@@ -50,19 +50,6 @@ $(document).on('turbolinks:load', function() {
   })
 })
 
-// ==================
-//    削除機能（edit）
-// ==================
-
-$(document).on('turbolinks:load', function(){
-  $('.delete').on('click', function(){
-    var image_id = $(this).attr('id');
-    image_id = image_id.slice(-1);
-    image_id = parseInt(image_id);
-    $(`.check-box-${image_id}`).prop('checked', true);
-  })
-})
-
 // ======================
 //    削除機能（new&edit）
 // ======================
@@ -87,6 +74,46 @@ $(document).on('turbolinks:load', function(){
       }
       $("#image-drop-zone__label").attr('for', `post_img_${li_count - 1}`)
       $('#image-drop-zone').show();
+    }
+  })
+})
+
+// ==================
+//    削除機能（edit）
+// ==================
+
+$(document).on('turbolinks:load', function(){
+  $('.delete').on('click', function(){
+    function buildHTML(id){
+      html = `
+      <div id="image-drop-zone">
+        <label class="sell-upload-drop-box" for="post_img_9" id="image-drop-zone__label">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_0">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_1">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_2">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_3">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_4">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_5">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_6">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_7">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_8">
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_9">
+          <pre class="visible-pc">ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード</pre>
+          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_10">
+        </label>
+      </div>`
+      return html;
+    }
+
+    var image_id = $(this).attr('id');
+    image_id = image_id.slice(-1);
+    image_id = parseInt(image_id);
+    $(`.check-box-${image_id}`).prop('checked', true);
+
+    var li_count = $('.image-box').length;
+    if(li_count == 10){
+      var html = buildHTML(li_count);
+      $(".sell-dropbox").append(html);
     }
   })
 })
