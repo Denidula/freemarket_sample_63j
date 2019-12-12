@@ -1,4 +1,4 @@
-- @items.each do |item|
+- @items.limit(10).each do |item|
   -if item.parent_category == "おもちゃ・ホビー・グッズ"
     %li.items__item__group__catalog__product
       = link_to item do

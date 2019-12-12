@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   before_action :login_require, except: [:index, :show]
 
   def index
-    @items = Item.all.order(created_at: :desc).limit(10)
+    @items = Item.all.order(created_at: :desc)
   end
 
   def show

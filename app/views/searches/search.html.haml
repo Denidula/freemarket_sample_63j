@@ -149,7 +149,7 @@
 
           .items-box-content.clearfix
             %ul.clearfix
-              = render 'items/items'
+              = render 'items'
 
         - elsif @items.count > 0 && @keyword == ""
           %h2.search-result-head
@@ -162,7 +162,7 @@
 
           .items-box-content.clearfix
             %ul.clearfix
-              = render 'items/items'
+              = render 'items'
 
         - elsif @items.count == 0
           %h2.search-result-head
