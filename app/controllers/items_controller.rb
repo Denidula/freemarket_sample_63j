@@ -11,10 +11,12 @@ class ItemsController < ApplicationController
     @toy_items = Item.all.order(created_at: :desc).where(parent_category: "おもちゃ・ホビー・グッズ").limit(10)
     @devise_items = Item.all.order(created_at: :desc).where(parent_category: "家電・スマホ・カメラ").limit(10)
   end
-
+  
   def show
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
+    @user_items = Item.order(created_at: :desc).where(user_id: @item.user.id).limit(6)
+    @category_items = Item.all.order(created_at: :desc).where(parent_category: @item.parent_category).limit(6)
   end
 
   def new

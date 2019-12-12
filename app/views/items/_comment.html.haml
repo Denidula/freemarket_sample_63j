@@ -1,6 +1,6 @@
-.message-content
-  %ul.message-content__all
-    - if @comments
+- if @comments
+  .message-content
+    %ul.message-content__all
       - @comments.each do |comment|
         %li.message-content__all__self
           .message-content__all__self__left
