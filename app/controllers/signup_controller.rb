@@ -49,11 +49,13 @@ class SignupController < ApplicationController
     )
     if @user.save
       session[:id] = @user.id
+      flash[:notice] = '登録完了しました'
       redirect_to done_signup_index_path
     else
+      flash[:alert] = '登録に失敗しました'
       render '/signup/input_user_info'
     end
-
+    
     @address = Address.create(
       user_id: @user.id, 
       zip_code: session[:zip_code], 
@@ -62,14 +64,18 @@ class SignupController < ApplicationController
       address: session[:address], 
       building: session[:building] 
     )
-
+    
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     if params['payjp-token'].blank?
-      redirect_to action: "new"
+      flash[:alert] = 'ご登録のカードは使用できません'
+      render '/signup/input_user_info'
     else
       customer = Payjp::Customer.create(card: params['payjp-token'])
       @card = CreditCard.new(user_id: @user.id, customer_id: customer.id, card_id: customer.default_card)
-      @card.save
+      unless @card.save
+        flash[:alert] = 'ご登録のカードは使用できません'
+        render '/signup/input_user_info'
+      end
     end
   end
 
