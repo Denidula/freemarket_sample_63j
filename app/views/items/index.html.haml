@@ -15,14 +15,14 @@
     %h1.popular_category__title
       人気のカテゴリー
     %ul.popular_category__sorts
-      %li.popular_category__sorts__sort レディース
-      %li.popular_category__sorts__sort メンズ
-      %li.popular_category__sorts__sort 家電・スマホ・カメラ
-      %li.popular_category__sorts__sort おもちゃ・ホビー・グッズ
+      %li.popular_category__sorts__sort#scroll_to_ladies レディース
+      %li.popular_category__sorts__sort#scroll_to_mens メンズ
+      %li.popular_category__sorts__sort#scroll_to_devise 家電・スマホ・カメラ
+      %li.popular_category__sorts__sort#scroll_to_toy おもちゃ・ホビー・グッズ
 
   .items
     .items__item
-      .items__item__group
+      .items__item__group#ladies_index
         .items__item__group__top
           %h2.items__item__group__top__title
             レディース新着アイテム
@@ -30,7 +30,7 @@
         %ul.items__item__group__catalog
           = render 'ladies_items'
 
-      .items__item__group
+      .items__item__group#mens_index
         .items__item__group__top
           %h2.items__item__group__top__title
             メンズ新着アイテム
@@ -38,7 +38,7 @@
         %ul.items__item__group__catalog
           = render 'mens_items'
 
-      .items__item__group
+      .items__item__group#devise_index
         .items__item__group__top
           %h2.items__item__group__top__title
             家電・スマホ・カメラ新着アイテム
@@ -46,7 +46,7 @@
         %ul.items__item__group__catalog
           = render 'devise_items'
 
-      .items__item__group
+      .items__item__group#toy_index
         .items__item__group__top
           %h2.items__item__group__top__title
             おもちゃ・ホビー・グッズ新着アイテム
@@ -58,14 +58,14 @@
     %h.popular_bland__title
       人気のブランド
     %ul.popular_bland__sorts
-      %li.popular_bland__sorts__sort シャネル
-      %li.popular_bland__sorts__sort ルイヴィトン
-      %li.popular_bland__sorts__sort シュプリーム
-      %li.popular_bland__sorts__sort ナイキ
+      %li.popular_bland__sorts__sort#scroll_to_chanel シャネル
+      %li.popular_bland__sorts__sort#scroll_to_vuitton ルイヴィトン
+      %li.popular_bland__sorts__sort#scroll_to_supreme シュプリーム
+      %li.popular_bland__sorts__sort#scroll_to_nike ナイキ
 
   .items
     .items__item
-      .items__item__group
+      .items__item__group#chanel_index
         .items__item__group__top
           %h2.items__item__group__top__title
             シャネル新着アイテム
@@ -73,7 +73,7 @@
         %ul.items__item__group__catalog
           = render 'items'
 
-      .items__item__group
+      .items__item__group#vuitton_index
         .items__item__group__top
           %h2.items__item__group__top__title
             ルイヴィトン新着アイテム
@@ -81,7 +81,7 @@
         %ul.items__item__group__catalog
           = render 'items'
 
-      .items__item__group
+      .items__item__group#supreme_index
         .items__item__group__top
           %h2.items__item__group__top__title
             シュプリーム新着アイテム
@@ -89,7 +89,7 @@
         %ul.items__item__group__catalog
           = render 'items'
 
-      .items__item__group
+      .items__item__group#nike_index
         .items__item__group__top
           %h2.items__item__group__top__title
             ナイキ新着アイテム
