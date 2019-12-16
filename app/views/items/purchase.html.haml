@@ -15,7 +15,8 @@
       %section.buy-content.buy-item
         .buy-content__inner
           %h3.item-image
-            = image_tag 'https://www.nanohana-ph.jp/images/shop/noimage.png'
+            - @item.images.first(1).each do |image|
+              = image_tag image
           %p.item-name
             = @item.name
           %form(action="")
