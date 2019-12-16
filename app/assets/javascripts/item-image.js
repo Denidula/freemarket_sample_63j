@@ -136,7 +136,7 @@ $(document).on("turbolinks:load", function(){
 $(document).on("turbolinks:load", function(){
   $(document).on('click', `.delete`, function(){
     var img_count = $('.image-box').length + 1;
-    for(var i = 9; i >= 2; i--){
+    for(var i = 10; i >= 2; i--){
       if(img_count == i){
         $("#image-drop-zone").removeClass(`have-${i}-image`);
         $("#image-drop-zone").addClass(`have-${i - 1}-image`);
