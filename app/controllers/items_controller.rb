@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   protect_from_forgery
-
   before_action :find_item, only: [:show, :edit, :update, :purchase, :pay]
   before_action :login_require, except: [:index, :show]
 
@@ -85,9 +84,6 @@ class ItemsController < ApplicationController
     redirect_to mypage_path
   end
 
-  require 'payjp'
-
-
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
@@ -96,6 +92,7 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  require 'payjp'
   
   def purchase
   end

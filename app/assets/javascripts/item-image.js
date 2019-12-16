@@ -84,37 +84,10 @@ $(document).on('turbolinks:load', function(){
 
 $(document).on('turbolinks:load', function(){
   $('.delete').on('click', function(){
-    function buildHTML(id){
-      html = `
-      <div id="image-drop-zone">
-        <label class="sell-upload-drop-box" for="post_img_9" id="image-drop-zone__label">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_0">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_1">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_2">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_3">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_4">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_5">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_6">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_7">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_8">
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_9">
-          <pre class="visible-pc">ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード</pre>
-          <input multiple="multiple" name="item[images][]" class="sell-upload-drop-file" type="file" id="post_img_10">
-        </label>
-      </div>`
-      return html;
-    }
-
     var image_id = $(this).attr('id');
     image_id = image_id.slice(-1);
     image_id = parseInt(image_id);
     $(`.check-box-${image_id}`).prop('checked', true);
-
-    var li_count = $('.image-box').length;
-    if(li_count == 10){
-      var html = buildHTML(li_count);
-      $(".sell-dropbox").append(html);
-    }
   })
 })
 
@@ -122,7 +95,7 @@ $(document).on('turbolinks:load', function(){
 // 画像を都度選択できるようにする/10枚までアップできる
 // ===========================================
 
-$(function(){
+$(document).on("turbolinks:load", function(){
   $(document).on('change', `.sell-dropbox`, function(){
     var li_count = $('.image-box').length;
     if(li_count < 10){
@@ -136,6 +109,44 @@ $(function(){
     }
   });
 });
+
+// ==================================
+//       ドロップゾーンの変形（追加時）
+// ==================================
+
+$(document).on("turbolinks:load", function(){
+  $(document).on('change', `.sell-dropbox`, function(){
+    var img_count = $('.image-box').length + 1;
+    if(img_count == 1){
+      $("#image-drop-zone").addClass("have-1-image");
+    }
+    for(var i = 2; i <= 9; i++){
+      if(img_count == i){
+        $("#image-drop-zone").removeClass(`have-${i - 1}-image`);
+        $("#image-drop-zone").addClass(`have-${i}-image`);
+      }
+    }
+  })
+})
+
+// ==================================
+//       ドロップゾーンの変形（消去時）
+// ==================================
+
+$(document).on("turbolinks:load", function(){
+  $(document).on('click', `.delete`, function(){
+    var img_count = $('.image-box').length + 1;
+    for(var i = 9; i >= 2; i--){
+      if(img_count == i){
+        $("#image-drop-zone").removeClass(`have-${i}-image`);
+        $("#image-drop-zone").addClass(`have-${i - 1}-image`);
+      }
+    }
+    if(img_count == 1){
+      $("#image-drop-zone").removeClass("have-1-image");
+    }
+  })
+})
 
 // ==================================
 // （表示機能）下部の画像をホバーすると選択される
