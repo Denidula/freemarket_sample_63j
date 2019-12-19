@@ -14,8 +14,8 @@ class ItemsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
-    @user_items = Item.order(created_at: :desc).where(user_id: @item.user.id).limit(6)
-    @category_items = Item.all.order(created_at: :desc).where(parent_category: @item.parent_category).limit(6)
+    @user_items = Item.order(created_at: :desc).where(user_id: @item.user.id).where.not(id: @item.id).limit(6)
+    @category_items = Item.all.order(created_at: :desc).where(parent_category: @item.parent_category).where.not(id: @item.id).limit(6)
   end
 
   def new
